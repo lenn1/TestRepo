@@ -35,7 +35,6 @@
         [[NSUserDefaults standardUserDefaults]setObject:[NSNumber numberWithInt:0] forKey:@"SoundEnabled"];
         [[NSUserDefaults standardUserDefaults]synchronize];
         //[menuItem1 setString:@"Enable Sound"];
-        // jojo hier wird was geändert
     }
     else
     {
@@ -58,7 +57,8 @@
     self = [super init];
     if (self)
     {
-        CGSize size = [[CCDirector sharedDirector] winSize];
+        CCDirector* director = [CCDirector sharedDirector];
+        CGSize size = [director winSize];
         
         CCSprite* bg = [CCSprite spriteWithFile:@"hintergrund.png"];
         bg.position = ccp(size.width/2,size.height/2);
