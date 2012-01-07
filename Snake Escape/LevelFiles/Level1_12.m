@@ -17,8 +17,8 @@
 +(NSArray *)getNeededHighScores
 {
 	NSNumber* oneStar = [NSNumber numberWithInt:5000];
-	NSNumber* twoStar = [NSNumber numberWithInt:10000];
-	NSNumber* threeStar = [NSNumber numberWithInt:13000];
+	NSNumber* twoStar = [NSNumber numberWithInt:20000];
+	NSNumber* threeStar = [NSNumber numberWithInt:29000];
 	return [NSArray arrayWithObjects:oneStar,twoStar,threeStar, nil];
 }
 -(void)LevelSetup
