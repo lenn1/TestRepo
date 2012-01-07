@@ -88,13 +88,13 @@
     portalEntry.position = schlangeLayer.schlange.position;
     [astLayer addAeste:portalEntry,nil];
     fireSound = [[SimpleAudioEngine sharedEngine]playEffect:@"feuer.mp3"];
+    [[SimpleAudioEngine sharedEngine]playBackgroundMusic:@"HintergrundVoegel.mp3" loop:YES];
+    [[SimpleAudioEngine sharedEngine]setBackgroundMusicVolume:0.05];
     [super onEnter];
 }
 -(void)onEnterTransitionDidFinish
 {
     [super onEnterTransitionDidFinish];
-    [[SimpleAudioEngine sharedEngine]playBackgroundMusic:@"HintergrundVoegel.mp3" loop:YES];
-    [[SimpleAudioEngine sharedEngine]setBackgroundMusicVolume:0.05];
     
 }
 -(void)onExit
@@ -367,11 +367,7 @@
             physicsEnabled = YES;
             schlangeLayer.schlangeInAir = YES;
             schlangeLayer.body.velocity = ccp(0, 100);
-            CCTexture2D *texture = [[CCTextureCache sharedTextureCache] addImage: @"schlangeflug.png"];
-            CGRect rect = CGRectZero;
-            rect.size = texture.contentSize;
-            [schlangeLayer.schlange setTexture:texture];
-            [schlangeLayer.schlange setTextureRect:rect];
+            [schlangeLayer.schlange setDisplayFrame:[[CCSpriteFrameCache sharedSpriteFrameCache]spriteFrameByName:@"schlange0"]];
         }
     }
     
@@ -455,11 +451,7 @@
         [[SimpleAudioEngine sharedEngine]stopEffect:schlangeLayer.aufziehsound];
         physicsEnabled = YES;
         schlangeLayer.schlangeInAir = YES;
-        CCTexture2D *texture = [[CCTextureCache sharedTextureCache] addImage: @"schlangeflug.png"];
-        CGRect rect = CGRectZero;
-        rect.size = texture.contentSize;
-        [schlangeLayer.schlange setTexture:texture];
-        [schlangeLayer.schlange setTextureRect:rect];
+        [schlangeLayer.schlange setDisplayFrame:[[CCSpriteFrameCache sharedSpriteFrameCache]spriteFrameByName:@"schlange0"]];
     }
 }
 

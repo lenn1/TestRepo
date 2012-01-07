@@ -16,23 +16,18 @@
 {
     if(self=[super init])
     {
-        
-        [[CCTextureCache sharedTextureCache] addImage: @"schlange52.png"];
-        [[CCTextureCache sharedTextureCache] addImage: @"schlange53.png"];
-        [[CCTextureCache sharedTextureCache] addImage: @"schlange57.png"];
-        [[CCTextureCache sharedTextureCache] addImage: @"schlange62.png"];
-        [[CCTextureCache sharedTextureCache] addImage: @"schlange68.png"];
-        [[CCTextureCache sharedTextureCache] addImage: @"schlange70.png"];
-        [[CCTextureCache sharedTextureCache] addImage: @"schlange75.png"];
-        [[CCTextureCache sharedTextureCache] addImage: @"schlange80.png"];
+        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"schlangeLangZiehenSpriteSheet.plist"];
+        CCSpriteBatchNode *spriteSheet = [CCSpriteBatchNode batchNodeWithFile:@"schlangeLangZiehenSpriteSheet.png"];
+        [schlange addChild:spriteSheet];
         
         abschussradius = 80;
         touchStartedOnSchlange = NO;
         levelWidth = Width;
-        schlange = [CCSprite spriteWithFile:@"schlangeflug.png"];
+        schlange = [CCSprite spriteWithSpriteFrameName:@"schlange0"];
         schlange.scale = 0.01;
         [self addChild:schlange];
-        
+    
+
         
         //PHYSIK
         
@@ -51,9 +46,7 @@
 -(void)runSchlangMovesToAstAnimationWithAst:(AstNormal*)ast
 {
 
-    [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"schlangeLangZiehenSpriteSheet.plist"];
-    CCSpriteBatchNode *spriteSheet = [CCSpriteBatchNode batchNodeWithFile:@"schlangeLangZiehenSpriteSheet.png"];
-    [schlange addChild:spriteSheet];
+
 
 
     NSMutableArray *frames = [NSMutableArray array];
@@ -196,24 +189,21 @@
     }
 
     
-    CCTexture2D *texture;
-    CGRect rect = CGRectZero;
+    CCSpriteFrame *texture;
     
-    if(entfernung > 0 && entfernung < 53) texture = [[CCTextureCache sharedTextureCache] addImage: @"schlange52.png"];
-    else if(entfernung >= 53 && entfernung < 57) texture = [[CCTextureCache sharedTextureCache] addImage: @"schlange53.png"];
-    else if(entfernung >= 57 && entfernung < 62) texture = [[CCTextureCache sharedTextureCache] addImage: @"schlange57.png"];
-    else if(entfernung >= 62 && entfernung < 68) texture = [[CCTextureCache sharedTextureCache] addImage: @"schlange62.png"];
-    else if(entfernung >= 68 && entfernung < 70) texture = [[CCTextureCache sharedTextureCache] addImage: @"schlange68.png"];
-    else if(entfernung >= 70 && entfernung < 75) texture = [[CCTextureCache sharedTextureCache] addImage: @"schlange70.png"];
-    else if(entfernung >= 75 && entfernung < 80) texture = [[CCTextureCache sharedTextureCache] addImage: @"schlange75.png"];
-    else if(entfernung >= 80 /*&& entfernung < 90*/ )texture = [[CCTextureCache sharedTextureCache] addImage: @"schlange80.png"];
+    if(entfernung > 0 && entfernung < 53) texture = [[CCSpriteFrameCache sharedSpriteFrameCache]spriteFrameByName:@"schlange1"];
+    else if(entfernung >= 53 && entfernung < 57) texture =[[CCSpriteFrameCache sharedSpriteFrameCache]spriteFrameByName:@"schlange2"];
+    else if(entfernung >= 57 && entfernung < 62) texture = [[CCSpriteFrameCache sharedSpriteFrameCache]spriteFrameByName:@"schlange3"];
+    else if(entfernung >= 62 && entfernung < 68) texture = [[CCSpriteFrameCache sharedSpriteFrameCache]spriteFrameByName:@"schlange4"];
+    else if(entfernung >= 68 && entfernung < 70) texture = [[CCSpriteFrameCache sharedSpriteFrameCache]spriteFrameByName:@"schlange5"];
+    else if(entfernung >= 70 && entfernung < 75) texture = [[CCSpriteFrameCache sharedSpriteFrameCache]spriteFrameByName:@"schlange6"];
+    else if(entfernung >= 75 && entfernung < 80) texture = [[CCSpriteFrameCache sharedSpriteFrameCache]spriteFrameByName:@"schlange7"];
+    else if(entfernung >= 80 /*&& entfernung < 90*/ )texture = [[CCSpriteFrameCache sharedSpriteFrameCache]spriteFrameByName:@"schlange8"];
     /*else if(entfernung >= 90 && entfernung < 100) texture = [[CCTextureCache sharedTextureCache] addImage: @"schlange90.png"];
      else if(entfernung >= 100) texture = [[CCTextureCache sharedTextureCache] addImage: @"schlange100.png"];
      */
     
-    rect.size = texture.contentSize;
-    [schlange setTexture:texture];
-    [schlange setTextureRect:rect];
+    [schlange setDisplayFrame:texture];
 
 }
 -(void)ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event
@@ -261,11 +251,14 @@
             if ([[self delegate]respondsToSelector:@selector(schlangeAbschiessenCancel)])
                 [[self delegate]schlangeAbschiessenCancel];
         }
-        CCTexture2D *texture = [[CCTextureCache sharedTextureCache] addImage: @"schlangeflug.png"];
+       /* CCTexture2D *texture = [[CCTextureCache sharedTextureCache] addImage: @"schlangeflug.png"];
         CGRect rect = CGRectZero;
         rect.size = texture.contentSize;
         [schlange setTexture:texture];
         [schlange setTextureRect:rect];
+        */
+        
+        [schlange setDisplayFrame:[[CCSpriteFrameCache sharedSpriteFrameCache]spriteFrameByName:@"schlange0"]];
         [[SimpleAudioEngine sharedEngine]stopEffect:aufziehsound];
         
         if([touch tapCount] == 2)
