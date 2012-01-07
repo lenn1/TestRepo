@@ -18,7 +18,8 @@
     return scene;
 }
 
-- (id)init {
+- (id)init 
+{
     self = [super init];
     if (self) 
     {
@@ -37,8 +38,6 @@
         [self addChild:fade];
         
         [self repeater];
-        NSLog(@"Musab soll mal mithelfen!");
-        NSLog(@"Das sagen alle !!! ");
 
                 
     }

@@ -16,6 +16,16 @@
     self = [super init];
     if (self) 
     {
+        int fontsize;
+        if([[CCDirector sharedDirector]winSizeInPixels].width > 480)
+        {
+            fontsize = 35;
+        }
+        else
+        {
+            fontsize = 40;
+        }
+        
         CCSprite* backGround = [CCSprite spriteWithFile:@"menu_pause.png"];
         CGSize winSize = [[CCDirector sharedDirector]winSize];
         backGround.position = ccp(winSize.width/2,winSize.height/2);
@@ -31,7 +41,7 @@
         resume.position = ccp(125, -85);
         
         
-        CCLabelTTF* levelName = [CCLabelTTF labelWithString:[_levelName substringFromIndex:7] fontName:@"eartmb.ttf" fontSize:40];
+        CCLabelTTF* levelName = [CCLabelTTF labelWithString:[_levelName substringFromIndex:7] fontName:@"eartmb.ttf" fontSize:fontsize];
         levelName.position = ccp(230,183);
         CCRenderTexture* levelNameStroke = [UsefulStuff createStrokeTTF:levelName size:3 color:ccBLACK];
         [self addChild:levelNameStroke];
@@ -43,16 +53,14 @@
         CCLabelTTF* highscoreLabel;
         if(highscore != 0)
         {
-            highscoreLabel = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"%d",highscore] fontName:@"eartmb.ttf" fontSize:40];
-            highscoreLabel.position = ccp(250,143);
+            highscoreLabel = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"%d",highscore] fontName:@"eartmb.ttf" fontSize:fontsize];
+            highscoreLabel.position = ccp(255,143);
 
         }
         else
         {
-            highscoreLabel = [CCLabelTTF labelWithString:@"No Score" fontName:@"eartmb.ttf" fontSize:40];
-            highscoreLabel.position = ccp(260,143);
-
-
+            highscoreLabel = [CCLabelTTF labelWithString:@"No Score" fontName:@"eartmb.ttf" fontSize:fontsize];
+            highscoreLabel.position = ccp(265,143);
         }
         CCRenderTexture* highScoreLabelStroke = [UsefulStuff createStrokeTTF:highscoreLabel size:3 color:ccBLACK];
         [self addChild:highScoreLabelStroke];
