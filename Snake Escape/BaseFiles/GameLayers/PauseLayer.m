@@ -42,7 +42,7 @@
         
         
         CCLabelTTF* levelName = [CCLabelTTF labelWithString:[_levelName substringFromIndex:7] fontName:@"eartmb.ttf" fontSize:fontsize];
-        levelName.position = ccp(230,183);
+        levelName.position = ccp(240,179);
         CCRenderTexture* levelNameStroke = [UsefulStuff createStrokeTTF:levelName size:3 color:ccBLACK];
         [self addChild:levelNameStroke];
         [self addChild:levelName];
@@ -54,12 +54,12 @@
         if(highscore != 0)
         {
             highscoreLabel = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"%d",highscore] fontName:@"eartmb.ttf" fontSize:fontsize];
-            highscoreLabel.position = ccp(255,143);
+            highscoreLabel.position = ccp(265,143);
 
         }
         else
         {
-            highscoreLabel = [CCLabelTTF labelWithString:@"No Score" fontName:@"eartmb.ttf" fontSize:fontsize];
+            highscoreLabel = [CCLabelTTF labelWithString:@"" fontName:@"eartmb.ttf" fontSize:fontsize];
             highscoreLabel.position = ccp(265,143);
         }
         CCRenderTexture* highScoreLabelStroke = [UsefulStuff createStrokeTTF:highscoreLabel size:3 color:ccBLACK];
