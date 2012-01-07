@@ -38,6 +38,8 @@
         
         [self repeater];
         NSLog(@"Musab soll mal mithelfen!");
+        NSLog(@"Das sagen alle !!! ");
+
                 
     }
     return self;
