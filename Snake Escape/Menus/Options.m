@@ -30,6 +30,7 @@
 {
     if([[SimpleAudioEngine sharedEngine]enabled])
     {
+        //HEHE
         //Das Spiel wird derbe geil!"
         
         [[SimpleAudioEngine sharedEngine]setEnabled:NO];
