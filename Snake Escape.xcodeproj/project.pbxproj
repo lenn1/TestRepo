@@ -2340,7 +2340,6 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/Snake Escape/Chipmunk-iPhone\"",
 					"\"$(SRCROOT)/Snake Escape/libs/Chipmunk-iPhone\"",
 				);
 				OTHER_LDFLAGS = "-lz";
@@ -2368,7 +2367,6 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/Snake Escape/Chipmunk-iPhone\"",
 					"\"$(SRCROOT)/Snake Escape/libs/Chipmunk-iPhone\"",
 				);
 				OTHER_LDFLAGS = "-lz";
