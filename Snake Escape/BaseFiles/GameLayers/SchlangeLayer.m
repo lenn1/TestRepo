@@ -251,12 +251,6 @@
             if ([[self delegate]respondsToSelector:@selector(schlangeAbschiessenCancel)])
                 [[self delegate]schlangeAbschiessenCancel];
         }
-       /* CCTexture2D *texture = [[CCTextureCache sharedTextureCache] addImage: @"schlangeflug.png"];
-        CGRect rect = CGRectZero;
-        rect.size = texture.contentSize;
-        [schlange setTexture:texture];
-        [schlange setTextureRect:rect];
-        */
         
         [schlange setDisplayFrame:[[CCSpriteFrameCache sharedSpriteFrameCache]spriteFrameByName:@"schlange0"]];
         [[SimpleAudioEngine sharedEngine]stopEffect:aufziehsound];
