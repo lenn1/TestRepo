@@ -16,4 +16,5 @@
 }
 +(CCScene*) scene;
 -(void)goToMainMenu;
+-(void)drawMenu;
 @end

@@ -29,15 +29,12 @@
 -(void)toggleSound
 {
     if([[SimpleAudioEngine sharedEngine]enabled])
-    {
-        //HEHE
-        //muhaha
-        //Das Spiel wird derbe geil!"
-        
+    {        
         [[SimpleAudioEngine sharedEngine]setEnabled:NO];
         [[NSUserDefaults standardUserDefaults]setObject:[NSNumber numberWithInt:0] forKey:@"SoundEnabled"];
         [[NSUserDefaults standardUserDefaults]synchronize];
-        //[menuItem1 setString:@"Enable Sound"];
+        [self drawMenu];
+
     }
     else
     {
@@ -45,7 +42,9 @@
         [[NSUserDefaults standardUserDefaults]setObject:[NSNumber numberWithInt:1] forKey:@"SoundEnabled"];
         [[NSUserDefaults standardUserDefaults]synchronize];
         [[SimpleAudioEngine sharedEngine]playBackgroundMusic:@"soundtrack.mp3" loop:YES];
-       // [menuItem1 setString:@"Disable Sound"];
+        [self drawMenu];
+
+    
     }
     
 }
@@ -55,6 +54,33 @@
     NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
     [[NSUserDefaults standardUserDefaults] removePersistentDomainForName:appDomain];
     [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:0.5 scene:[MainMenu scene]]];
+    
+}
+-(void)drawMenu
+{
+    if(menu)
+    {
+        [self removeChild:menu cleanup:YES];
+    }
+    
+    if([[SimpleAudioEngine sharedEngine]enabled])
+    {
+        menuItem1 = [CCMenuItemImage itemFromNormalImage:@"ButtonEnableSound.png" selectedImage:@"ButtonEnableSoundSelected.png" target:self selector:@selector(toggleSound)];
+    }
+    else
+    {
+        menuItem1 = [CCMenuItemImage itemFromNormalImage:@"ButtonDisableSound.png" selectedImage:@"ButtonDisableSoundSelected.png" target:self selector:@selector(toggleSound)];
+        
+    }
+    menuItem1.tag = SoundMenuItemTag;
+    
+    CCMenuItem* menuItem2 = [CCMenuItemImage itemFromNormalImage:@"ButtonReset.png" selectedImage:@"ButtonResetSelected.png" target:self selector:@selector(resetGame)];
+    CCMenuItem* menuItem3 = [CCMenuItemImage itemFromNormalImage:@"ButtonMainMenu.png" selectedImage:@"ButtonMainMenuSelected.png" target:self selector:@selector(resetGame)];
+    
+    menu = [CCMenu menuWithItems:menuItem1,menuItem2,menuItem3, nil];
+    [menu alignItemsVerticallyWithPadding:5];
+    
+    [self addChild:menu];
 }
 - (id)init {
     self = [super init];
@@ -68,25 +94,9 @@
         [self addChild:bg];
         
     
-        if([[SimpleAudioEngine sharedEngine]enabled])
-        {
-            menuItem1 = [CCMenuItemFont itemWithLabel:[CCLabelBMFont labelWithString:@"Disable Sound" fntFile:@"menue.fnt"] target:self selector:@selector(toggleSound)];  
-        }
-        else
-        {
-           menuItem1 = [CCMenuItemFont itemWithLabel:[CCLabelBMFont labelWithString:@"Enable Sound" fntFile:@"menue.fnt"] target:self selector:@selector(toggleSound)]; 
-        }
-        menuItem1.tag = SoundMenuItemTag;
 
-            CCMenuItem* menuItem2 = [CCMenuItemFont itemWithLabel:[CCLabelBMFont labelWithString:@"Reset Game" fntFile:@"menue.fnt"] target:self selector:@selector(resetGame)]; 
-            CCMenuItem* menuItem3 = [CCMenuItemFont itemWithLabel:[CCLabelBMFont labelWithString:@"Main Menu" fntFile:@"menue.fnt"] target:self selector:@selector(goToMainMenu)]; 
-
-        menu = [CCMenu menuWithItems:menuItem1,menuItem2,menuItem3, nil];
-        [menu alignItemsVerticallyWithPadding:5];
-        
-        [self addChild:menu];
      
-        
+        [self drawMenu];
         
     }
     return self;
