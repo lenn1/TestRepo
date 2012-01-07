@@ -37,6 +37,7 @@
         [self addChild:fade];
         
         [self repeater];
+        NSLog(@"Musab soll mal mithelfen!");
                 
     }
     return self;
