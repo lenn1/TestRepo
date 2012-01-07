@@ -30,19 +30,22 @@
 {
     if([[SimpleAudioEngine sharedEngine]enabled])
     {
+        /*
         [[SimpleAudioEngine sharedEngine]setEnabled:NO];
         [[NSUserDefaults standardUserDefaults]setObject:[NSNumber numberWithInt:0] forKey:@"SoundEnabled"];
         [[NSUserDefaults standardUserDefaults]synchronize];
-        [menuItem1 setString:@"Enable Sound"];
+        [menuItem1 setString:@"Enable Sound"];*/
+        
     }
     else
     {
+        /*
         [[SimpleAudioEngine sharedEngine]setEnabled:YES];
         [[NSUserDefaults standardUserDefaults]setObject:[NSNumber numberWithInt:1] forKey:@"SoundEnabled"];
         [[NSUserDefaults standardUserDefaults]synchronize];
         [[SimpleAudioEngine sharedEngine]playBackgroundMusic:@"soundtrack.mp3" loop:YES];
-        [menuItem1 setString:@"Disable Sound"];
-
+        [menuItem1 setString:@"Disable Sound"];*/
+        
     }
     
 }
