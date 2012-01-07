@@ -10,9 +10,10 @@
 #import "cocos2d.h"
 @interface HUDLayer : CCLayer 
 {
-    CCSprite* Einer;
-    CCSprite* Zehner;
     NSInteger _remainingTime;
+    CCLabelTTF* zeit;
+    CCRenderTexture* stroke;
+
 }
 -(void)decreaseTime;
 @property NSInteger remainingTime;
