@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		75C8C1BE14B8910C00F73ABA /* Grass_Snake.png in Resources */ = {isa = PBXBuildFile; fileRef = 75C8C1BD14B8910B00F73ABA /* Grass_Snake.png */; };
 		88054369149FA1C200D96AEB /* VerschiebenErklaerung-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 88054368149FA1C200D96AEB /* VerschiebenErklaerung-hd.png */; };
 		8805436C149FA1E200D96AEB /* VerschiebenErklaerung.png in Resources */ = {isa = PBXBuildFile; fileRef = 8805436B149FA1E200D96AEB /* VerschiebenErklaerung.png */; };
 		88054371149FAAEA00D96AEB /* sanduhr-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8805436D149FAAEA00D96AEB /* sanduhr-hd.plist */; };
@@ -381,6 +382,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		75C8C1BD14B8910B00F73ABA /* Grass_Snake.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Grass_Snake.png; sourceTree = "<group>"; };
 		88054368149FA1C200D96AEB /* VerschiebenErklaerung-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VerschiebenErklaerung-hd.png"; sourceTree = "<group>"; };
 		8805436B149FA1E200D96AEB /* VerschiebenErklaerung.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VerschiebenErklaerung.png; sourceTree = "<group>"; };
 		8805436D149FAAEA00D96AEB /* sanduhr-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "sanduhr-hd.plist"; sourceTree = "<group>"; };
@@ -1154,6 +1156,7 @@
 		885F01A4147C750100EA546F /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				75C8C1BD14B8910B00F73ABA /* Grass_Snake.png */,
 				75728B6E14B7E024008E0F1F /* Menu */,
 				88705CF014A014170036F87E /* LevelIcons */,
 				8828665214A25621003EE01E /* PauseMenuIcons */,
@@ -2116,6 +2119,7 @@
 				888B1D5914B862680095DDF0 /* ButtonReset.png in Resources */,
 				888B1D5A14B862680095DDF0 /* ButtonResetSelected-hd.png in Resources */,
 				888B1D5B14B862680095DDF0 /* ButtonResetSelected.png in Resources */,
+				75C8C1BE14B8910C00F73ABA /* Grass_Snake.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
