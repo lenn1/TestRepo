@@ -160,8 +160,6 @@
 		88A9723E148D05C800192D55 /* PauseLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 88A9723D148D05C800192D55 /* PauseLayer.m */; };
 		88A97242148D0A8000192D55 /* pauseScreen-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 88A97240148D0A8000192D55 /* pauseScreen-hd.png */; };
 		88A97243148D0A8000192D55 /* pauseScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 88A97241148D0A8000192D55 /* pauseScreen.png */; };
-		88A97246148D0CF000192D55 /* pause-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 88A97244148D0CF000192D55 /* pause-hd.png */; };
-		88A97247148D0CF000192D55 /* pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 88A97245148D0CF000192D55 /* pause.png */; };
 		88A9724A148D18D100192D55 /* HUDLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 88A97249148D18D100192D55 /* HUDLayer.m */; };
 		88A97255148D3F2B00192D55 /* AstSchalter-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = 88A97250148D3F2B00192D55 /* AstSchalter-hd.plist */; };
 		88A97256148D3F2B00192D55 /* AstSchalter-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 88A97251148D3F2B00192D55 /* AstSchalter-hd.png */; };
@@ -532,8 +530,6 @@
 		88A9723D148D05C800192D55 /* PauseLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PauseLayer.m; sourceTree = "<group>"; };
 		88A97240148D0A8000192D55 /* pauseScreen-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pauseScreen-hd.png"; sourceTree = "<group>"; };
 		88A97241148D0A8000192D55 /* pauseScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pauseScreen.png; sourceTree = "<group>"; };
-		88A97244148D0CF000192D55 /* pause-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pause-hd.png"; sourceTree = "<group>"; };
-		88A97245148D0CF000192D55 /* pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause.png; sourceTree = "<group>"; };
 		88A97248148D18D100192D55 /* HUDLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HUDLayer.h; sourceTree = "<group>"; };
 		88A97249148D18D100192D55 /* HUDLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HUDLayer.m; sourceTree = "<group>"; };
 		88A97250148D3F2B00192D55 /* AstSchalter-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "AstSchalter-hd.plist"; sourceTree = "<group>"; };
@@ -1124,8 +1120,6 @@
 				88072D80149A396C00E77D0E /* number.png */,
 				88072D7A149A38B000E77D0E /* number-hd.png */,
 				88072D7B149A38B000E77D0E /* number-hd.plist */,
-				88A97244148D0CF000192D55 /* pause-hd.png */,
-				88A97245148D0CF000192D55 /* pause.png */,
 				885F01A5147C750100EA546F /* Äste */,
 				885F01EF147C750100EA546F /* schlangeLangZiehen */,
 			);
@@ -1861,8 +1855,6 @@
 				88B2227D148C426B0022412A /* astHindernis.png in Resources */,
 				88A97242148D0A8000192D55 /* pauseScreen-hd.png in Resources */,
 				88A97243148D0A8000192D55 /* pauseScreen.png in Resources */,
-				88A97246148D0CF000192D55 /* pause-hd.png in Resources */,
-				88A97247148D0CF000192D55 /* pause.png in Resources */,
 				88A97255148D3F2B00192D55 /* AstSchalter-hd.plist in Resources */,
 				88A97256148D3F2B00192D55 /* AstSchalter-hd.png in Resources */,
 				88A97257148D3F2B00192D55 /* AstSchalter.plist in Resources */,
