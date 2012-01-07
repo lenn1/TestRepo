@@ -12,7 +12,7 @@
 @interface Options : CCLayer 
 {
     CCMenu *menu;
-    CCMenuItemFont *menuItem1;
+    CCMenuItemImage *menuItem1;
 }
 +(CCScene*) scene;
 -(void)goToMainMenu;

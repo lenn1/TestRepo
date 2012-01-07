@@ -35,7 +35,7 @@
         [[NSUserDefaults standardUserDefaults]setObject:[NSNumber numberWithInt:0] forKey:@"SoundEnabled"];
         [[NSUserDefaults standardUserDefaults]synchronize];
         //[menuItem1 setString:@"Enable Sound"];
-        
+        // jojo hier wird was geändert
     }
     else
     {
@@ -47,6 +47,7 @@
     }
     
 }
+
 -(void)resetGame
 {
     NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
