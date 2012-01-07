@@ -30,6 +30,7 @@
 {
     if([[SimpleAudioEngine sharedEngine]enabled])
     {
+        //Das Spiel wird derbe geil!"
         
         [[SimpleAudioEngine sharedEngine]setEnabled:NO];
         [[NSUserDefaults standardUserDefaults]setObject:[NSNumber numberWithInt:0] forKey:@"SoundEnabled"];
