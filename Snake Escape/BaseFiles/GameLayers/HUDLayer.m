@@ -32,6 +32,11 @@
         stroke = [UsefulStuff createStrokeTTF:zeit size:3 color:ccBLACK];
         [self addChild:stroke];
         [self addChild:zeit];
+        
+        CCParticleSystemQuad* firewall = [CCParticleSystemQuad particleWithFile:@"firewall.plist"];
+        firewall.position = ccpAdd(firewall.position, ccp(240,0));
+        [self addChild:firewall];
+        
     }
     return self;
     
