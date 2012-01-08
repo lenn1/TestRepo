@@ -70,7 +70,7 @@
     else if(currentScore >= neededHighScore3)
     {
         star = [CCSprite spriteWithFile:@"LevelClear3Stars.png"];
-        title = [CCSprite spriteWithFile:@"TitleEcellent.png"];
+        title = [CCSprite spriteWithFile:@"TitleExcellent.png"];
 
     }
     else
