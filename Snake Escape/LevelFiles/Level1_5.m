@@ -40,7 +40,7 @@
     ast2.position = ccp(200,50);
     ast2.rotation = 180;
     
-    AstSchalter* ast3 = [[AstSchalter alloc]initWithTarget:ast2 AndRotation:-180 AndPosition:ccp(0, 0)];
+    AstSchalter* ast3 = [[AstSchalter alloc]initWithTarget:ast2 AndRotation:180 AndPosition:ccp(0, 0)];
                                                                                            
     ast3.position = ccp(100,250);
     
@@ -48,7 +48,7 @@
     portal.position = ccp(400,50);
     
     [astLayer addAeste:ast1,ast2,ast3,ast4,portal,nil];
-
+    [astLayer reorderChild:ast2 z:ast4.zOrder+1]; // damit das asthindernis sich über den Ast und nicht unter durch dreht  
 }
 
 -(void)nextLevel
