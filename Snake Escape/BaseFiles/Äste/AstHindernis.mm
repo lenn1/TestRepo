@@ -25,6 +25,7 @@
         [self setTexture:texture];
         [self setTextureRect:rect];
         
+        /*
         space = [CPSpace sharedSpace];
         body  = [CPBody bodyWithMass:INFINITY andMoment:INFINITY];
         
@@ -43,6 +44,7 @@
         shape4 = [CPShape shapeSegmentWithBody:body Endpoints:ccp(69-111,100-148) :ccp(41-111,100-154) andRadius:0];
         [space addShape:shape4];
         shape4.friction = 0.8;
+        */
 
     }
     return self;
@@ -55,23 +57,22 @@
 
 -(void)onExit
 {
-    [space removeShape:shape];
-    [space removeShape:shape2];
-    [space removeShape:shape3];
-    [space removeShape:shape4];
     [super onExit];
 }
 - (void)setPosition:(CGPoint)position
 {
     [super setPosition:position];
+    /*
     shape.body.position = self.position;
-
+*/
 }
 
 - (void)setRotation:(float)rotation
 {
     [super setRotation:rotation];
+    /*
     shape.body.degAngle = -self.rotation;
+     */
 }
 
 @end

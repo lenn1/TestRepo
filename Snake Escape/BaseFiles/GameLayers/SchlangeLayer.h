@@ -8,9 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
-#import "CocoChips.h"
 #import "AstNormal.h"
 #import "SimpleAudioEngine.h"
+#import "Box2D.h"
+#define PTM_RATIO 32
+
 @protocol SchlangeLayerDelegate<NSObject>
 @optional
 -(void)touchStartedOnSchlange;
@@ -19,15 +21,12 @@
 -(void)schlangeTot;
 @required
 -(BOOL)IsPhysicsEnabled;
-
 @end
 
 
 @interface SchlangeLayer : CCLayer<CCTargetedTouchDelegate>
 {
-    CPSpace* space;
-    CPShape* shape;
-    CPBody* body;
+
     CGFloat levelWidth;
     CCSprite* schlange;
     BOOL touchStartedOnSchlange;
@@ -35,11 +34,14 @@
     CGFloat abschussradius;
     BOOL schlangeInAir;
     ALuint aufziehsound;
-
+    
+    
+    b2World* world;
+    b2Body* _body;
 }
 -(void)setSchlangePosition:(CGPoint)position;
 -(void)FrameUpdate:(ccTime)delta;
--(id)initWithLevelWidth:(CGFloat)Width;
+-(id)initWithLevelWidth:(CGFloat)Width AndWorld:(b2World*)worldptr;
 -(void)moveSchlangeTo:(CGPoint)position;
 -(void)moveSchlangeTo:(CGPoint)position WithDelay:(CGFloat)delay AndDuration:(CGFloat)duration;
 -(void)runSchlangMovesToAstAnimationWithAst:(AstNormal*)ast;
@@ -47,7 +49,6 @@
 @property(readwrite,assign)CCSprite* schlange;
 @property(readwrite,assign)id<SchlangeLayerDelegate> delegate;
 @property(readwrite)BOOL schlangeInAir;
-@property(assign)CPBody* body;
-@property(assign)CPShape* shape;
+@property(assign)b2Body* _body;
 @property (readonly)ALuint aufziehsound;
 @end

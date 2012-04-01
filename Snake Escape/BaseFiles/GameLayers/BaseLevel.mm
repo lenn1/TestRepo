@@ -8,7 +8,6 @@
 
 
 #define CCFollowID 5
-
 #import "BaseLevel.h"
 #import "SimpleAudioEngine.h"
 #define GAMESHOULDPAUSENOTIFICATION @"GAMESHOULDPAUSENOTIFICATION"
@@ -32,8 +31,36 @@
         
         levelWidth = Width;
         physicsEnabled = YES;
-        space = [CPSpace sharedSpace];
-        [space setGravity:ccp(0,-550)];
+        
+        // <Box2D>
+        
+            
+            b2Vec2 gravity = b2Vec2(0.0f, -510.0f/PTM_RATIO);
+            world = new b2World(gravity);
+            
+            
+            b2BodyDef groundBodyDef;
+            groundBodyDef.position.Set(levelWidth/2.0/PTM_RATIO, (deviceHeight+2)/PTM_RATIO);
+            b2Body* groundBody = world->CreateBody(&groundBodyDef);
+            b2PolygonShape groundBox;
+            b2FixtureDef groundFixture;
+            groundFixture.shape = &groundBox;
+            groundFixture.friction = 0.01;
+
+            groundBox.SetAsBox(levelWidth/2/PTM_RATIO, 1.0f/PTM_RATIO);
+            groundBody->CreateFixture(&groundFixture);
+            
+            groundBodyDef.position.Set(-2/PTM_RATIO,deviceHeight/2/PTM_RATIO);
+            groundBody = world->CreateBody(&groundBodyDef);
+            groundBox.SetAsBox(1.0/PTM_RATIO, deviceHeight/2/PTM_RATIO);
+            groundBody->CreateFixture(&groundFixture);
+
+            groundBodyDef.position.Set((levelWidth+2)/PTM_RATIO,deviceHeight/2/PTM_RATIO);
+            groundBody = world->CreateBody(&groundBodyDef);
+            groundBox.SetAsBox(1.0/PTM_RATIO, deviceHeight/2/PTM_RATIO);
+            groundBody->CreateFixture(&groundFixture);
+ 
+        // </Box2D>
         
         touchStartedOnSchlange = NO;
         backgroundLayer = [[BackgroundLayer alloc]initWithLevelWidth:Width AndHeight:deviceHeight AndImageFile:imageName];
@@ -43,28 +70,11 @@
         astLayer.delegate = self;
         [self addChild:astLayer];
         
-        schlangeLayer = [[SchlangeLayer alloc]initWithLevelWidth:levelWidth];
+        schlangeLayer = [[SchlangeLayer alloc]initWithLevelWidth:levelWidth AndWorld:world];
         schlangeLayer.delegate = self;
         [self addChild:schlangeLayer];
         
-        // Wände, Decke
-        CPBody* borderBody = [CPBody bodyWithMass:INFINITY andMoment:INFINITY];
-        
-        rightBorder = [CPShape shapeSegmentWithBody:borderBody Endpoints:ccp(levelWidth, 0) :ccp(levelWidth, deviceHeight) andRadius:0];
-        rightBorder.elasticity = 1; 
-        rightBorder.friction = 0;
-        [space addStaticShape:rightBorder];
-        
-        topBorder = [CPShape shapeSegmentWithBody:borderBody Endpoints:ccp(levelWidth, deviceHeight) :ccp(0, deviceHeight) andRadius:0];
-        topBorder.elasticity = 1; 
-        topBorder.friction = 0;
-        [space addStaticShape:topBorder];
-        
-        leftBorder = [CPShape shapeSegmentWithBody:borderBody Endpoints:ccp(0, deviceHeight) :ccp(0, 0) andRadius:0];
-        leftBorder.elasticity = 1; 
-        leftBorder.friction = 0;
-        [space addStaticShape:leftBorder];
-        
+ 
         hudLayer = [[HUDLayer alloc]init];
         [self addChild:hudLayer];
 
@@ -72,6 +82,7 @@
         
         [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(pauseGame) name:GAMESHOULDPAUSENOTIFICATION object:nil];
         [self setLevelSelectionPage];
+
     }
     return self;
 }
@@ -101,16 +112,9 @@
 {
     [[NSNotificationCenter defaultCenter]removeObserver:self];
     
-    // [space removeAllShapes];
-    // use instead: 
-    // --------------
+    // BOX2D
+    delete world;
     
-    [space removeBodyAndShape:schlangeLayer.shape];
-    [space removeStaticShape:rightBorder];
-    [space removeStaticShape:leftBorder];
-    [space removeStaticShape:topBorder];
-    
-    // --------------
     
     [self unscheduleAllSelectors];
     
@@ -132,6 +136,23 @@
 
 -(void)FrameUpdate:(ccTime)delta
 {   
+
+    /* BOX2D KRAM */
+    if(world != NULL)
+    {
+        if(physicsEnabled)
+            world->Step(delta, 10, 10);
+        for(b2Body *b = world->GetBodyList(); b; b=b->GetNext()) 
+        {    
+
+        }
+    }
+    
+    // BOX2D KRAM ENDE
+    
+    
+    
+    
         [schlangeLayer FrameUpdate:delta];
         [astLayer FrameUpdate:delta];
 
@@ -365,9 +386,12 @@
         {
             [[SimpleAudioEngine sharedEngine]playEffect:@"StachelAst.wav"];
             physicsEnabled = YES;
-            schlangeLayer.schlangeInAir = YES;
-            schlangeLayer.body.velocity = ccp(0, 100);
             [schlangeLayer.schlange setDisplayFrame:[[CCSpriteFrameCache sharedSpriteFrameCache]spriteFrameByName:@"schlange0"]];
+            schlangeLayer.schlangeInAir = YES;
+
+            //BOX2D
+            
+            schlangeLayer._body->SetLinearVelocity(b2Vec2(0.0/PTM_RATIO, 100.0/PTM_RATIO));
         }
     }
     
@@ -444,6 +468,7 @@
     // OVERRIDE ! 
 }
 
+
 -(void)VerkohlterAstTimeIsUp:(VerkohlterAst *)ast
 {
     if(schlangeLayer.schlange.position.x == ast.position.x && schlangeLayer.schlange.position.y == ast.position.y)
@@ -476,4 +501,7 @@
     touchStartedOnSchlange = NO;
     physicsEnabled = YES;
 }
+
+
+
 @end

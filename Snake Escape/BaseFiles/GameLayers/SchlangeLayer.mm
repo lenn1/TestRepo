@@ -10,9 +10,9 @@
 #import "MathHelper.h"
 
 @implementation SchlangeLayer
-@synthesize schlange,delegate,schlangeInAir,body,shape,aufziehsound;
+@synthesize schlange,delegate,schlangeInAir,_body,aufziehsound;
 #define schlangeScale 0.8
--(id)initWithLevelWidth:(CGFloat)Width
+-(id)initWithLevelWidth:(CGFloat)Width AndWorld:(b2World*)worldptr
 {
     if(self=[super init])
     {
@@ -28,17 +28,28 @@
         [self addChild:schlange];
     
 
+        //BOX2D
+        world = worldptr;
         
-        //PHYSIK
+        b2BodyDef ballBodyDef;
+        ballBodyDef.type = b2_dynamicBody;
+        ballBodyDef.position.Set(schlange.position.x/PTM_RATIO, schlange.position.y/PTM_RATIO);
+        _body = world->CreateBody(&ballBodyDef);
+        _body->SetUserData(self);
+        b2CircleShape circle;
+        circle.m_radius = 24.5/PTM_RATIO;
         
-        body = [[CPBody alloc] initWithMass:1.0 andMoment:cpMomentForCircle(1.0, 28.5*schlangeScale, 0, CGPointZero)];
-        body.position = ccp(schlange.position.x, schlange.position.y);
-        body.data = self;
-        
-        shape = [[CPShape alloc ]initCircleWithBody:body Radius:28.5*schlangeScale andOffset:CGPointZero];
-        shape.friction = 0.5;
-        shape.elasticity = 0.5;
-        
+        b2FixtureDef ballShapeDef;
+        ballShapeDef.shape = &circle;
+        ballShapeDef.density = 1.0f;
+        ballShapeDef.friction = 0.5f;
+        ballShapeDef.restitution = 0.5f;
+        b2MassData* mass = new b2MassData();
+        mass->mass = 1.0;
+        mass->center = b2Vec2(0.0,0.0);
+        _body->SetMassData(mass);
+        _body->CreateFixture(&ballShapeDef);
+               
 
     }
     return self;
@@ -73,9 +84,9 @@
 {
     if([delegate IsPhysicsEnabled])
     {
-        [space step:delta];
-        [schlange setPosition: body.position];
-        [schlange setRotation: -body.degAngle];
+        // BOX2D
+        [schlange setPosition: ccp(_body->GetPosition().x*PTM_RATIO,_body->GetPosition().y*PTM_RATIO)];
+        [schlange setRotation: -_body->GetAngle()*PTM_RATIO];
     }
     
     if(schlange.position.y < -30 && [delegate respondsToSelector:@selector(schlangeTot)])
@@ -83,11 +94,16 @@
 }
 -(void)moveSchlangeTo:(CGPoint)position
 {
-    body.position = position;
-    body.angularVelocity = 0;
-    body.velocity = ccp(0, 0);
+    
+    //BOX2D
+    _body->SetTransform(b2Vec2(position.x/PTM_RATIO, position.y/PTM_RATIO), 0.0f);
+    _body->SetAngularVelocity(0.0);
+    _body->SetLinearVelocity(b2Vec2_zero);
+    
     schlangeInAir = NO;
     [schlange runAction:[CCMoveTo actionWithDuration:0.1 position:position]];
+    
+
 
 }
 -(void)moveSchlangeTo:(CGPoint)position WithDelay:(CGFloat)delay AndDuration:(CGFloat)duration
@@ -96,30 +112,41 @@
     CCMoveTo* moveAction = [CCMoveTo actionWithDuration:duration position:position];
     CCSequence* seq = [CCSequence actions:delayAction,moveAction, nil];
     [schlange runAction:seq];
-    
-    body.position = position;
-    body.angularVelocity = 0;
-    body.velocity = ccp(0, 0);
     schlangeInAir = NO;
+    
+
+    //BOX2D
+    _body->SetTransform(b2Vec2(position.x/PTM_RATIO, position.y/PTM_RATIO), 0.0f);
+    _body->SetAngularVelocity(0.0);
+    _body->SetLinearVelocity(b2Vec2_zero);
+    
+    
+    
 }
 -(void)setSchlangePosition:(CGPoint)position
 {
     schlange.position = position;
-    body.position = position;
-    body.angularVelocity = 0;
-    body.velocity = ccp(0, 0);
+
+    
+    //BOX2D
+    _body->SetTransform(b2Vec2(position.x/PTM_RATIO,position.y/PTM_RATIO), 0.0);
+    _body->SetAngularVelocity(0);
+    _body->SetLinearVelocity(b2Vec2_zero);
 }
 
 -(void)onEnter
 {
         schlangeInAir = NO;
         [[CCTouchDispatcher sharedDispatcher] addTargetedDelegate:self priority:0 swallowsTouches:NO];
-        space = [CPSpace sharedSpace];
-        [space addBodyAndShape:shape];
         CCFiniteTimeAction* scaleAction = [CCScaleTo actionWithDuration:0.5 scale:schlangeScale];
         CCSequence* spawnSequence = [CCSequence actions:scaleAction,nil];
+
         [schlange runAction:spawnSequence];
-        body.angularVelocity = -20;
+    
+    
+        //BOX2D
+        _body->SetAngularVelocity(-40.0);
+    
         [super onEnter];
     
 
@@ -128,8 +155,9 @@
 -(void)onExit
 {
     [[CCTouchDispatcher sharedDispatcher] removeDelegate:self];
-    [space removeBodyAndShape:shape];
+
     [super onExit];
+    
 
 }
 -(BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event
@@ -238,8 +266,10 @@
         
         if(entfernung > 20)
         {
-            body.velocity = cpv(-vx*5,-vy*5);
-            body.angularVelocity = 10.0;
+            // BOX2D
+            _body->SetLinearVelocity(b2Vec2(-vx*5/PTM_RATIO,-vy*5/PTM_RATIO));
+            _body->SetAngularVelocity(20);
+            
             schlangeInAir = YES;
             [[SimpleAudioEngine sharedEngine]playEffect:@"Flitsch.wav"];
             if(touchStartedOnSchlange  && [self.delegate respondsToSelector:@selector(touchEndedOnSchlange)])
@@ -259,7 +289,10 @@
         {
             if([self.delegate respondsToSelector:@selector(touchEndedOnSchlange)])
             [[self delegate]touchEndedOnSchlange];
-            body.angularVelocity = 10.0;
+            
+            //BOX2D
+            _body->SetAngularVelocity(20);
+            
             schlangeInAir = YES;
         }
 

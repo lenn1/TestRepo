@@ -26,22 +26,19 @@
 #import "CCNodeExt.h"
 #import "LevelClearLayer.h"
 #import "LevelClearLayerDelegate.h"
+#define PTM_RATIO 32
 @class PauseLayer;
 
 @interface BaseLevel : CCScene<PauseLayerDelegate,SchlangeLayerDelegate,AstLayerDelegate,CCTargetedTouchDelegate,LevelClearLayerDelegate>
 {
     CGFloat deviceHeight;
     CGFloat deviceWidth;
-    CPSpace* space;
     CGFloat levelWidth;
     AstLayer* astLayer;
     SchlangeLayer* schlangeLayer;
     BOOL touchStartedOnSchlange;
     BOOL physicsEnabled;
     CGFloat lastTouch;
-    CPShape* rightBorder;
-    CPShape* topBorder;
-    CPShape* leftBorder;
     BOOL alreadyMoved;
     PauseLayer* pauseLayer;
     HUDLayer* hudLayer;
@@ -53,6 +50,10 @@
     NSString* LevelName;
     ALuint fireSound;
     
+    // <BOX2D>
+    b2World* world;
+    // </BOX2D>
+    
 }
 -(id)initWithBackGroundImageFile:(NSString*)imageName AndLevelWidth:(CGFloat)Width;
 -(void)restartLevel;
@@ -62,6 +63,7 @@
 +(CCScene*)scene;
 -(void)setLevelSelectionPage;
 +(NSArray*)getNeededHighScores;
+
 @property NSInteger levelTimeout;
 @property(assign,readonly)NSString* LevelName;
 @end

@@ -9,16 +9,9 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 #import "AstNormal.h"
-#import "CocoChips.h"
 
 @interface AstHindernis : AstNormal 
 {
-    CPSpace* space;
-    CPShape* shape;
-    CPShape* shape2;
-    CPShape* shape3;
-    CPShape* shape4;
-    CPBody* body;
 
 }
 @end
