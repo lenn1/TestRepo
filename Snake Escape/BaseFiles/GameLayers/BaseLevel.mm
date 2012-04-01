@@ -46,6 +46,7 @@
             b2FixtureDef groundFixture;
             groundFixture.shape = &groundBox;
             groundFixture.friction = 0.01;
+            groundFixture.restitution = 0.3;
 
             groundBox.SetAsBox(levelWidth/2/PTM_RATIO, 1.0f/PTM_RATIO);
             groundBody->CreateFixture(&groundFixture);
@@ -66,7 +67,7 @@
         backgroundLayer = [[BackgroundLayer alloc]initWithLevelWidth:Width AndHeight:deviceHeight AndImageFile:imageName];
 
         [self addChild:backgroundLayer];
-        astLayer = [[AstLayer alloc]init ];
+        astLayer = [[AstLayer alloc]init];
         astLayer.delegate = self;
         [self addChild:astLayer];
         

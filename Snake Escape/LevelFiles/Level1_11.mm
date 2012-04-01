@@ -33,7 +33,7 @@
     AstNormal* ast1 = [[AstNormal alloc]init];
     ast1.position = ccp(80,150);
 
-    AstHindernis* ast2 = [[AstHindernis alloc]init];
+    AstHindernis* ast2 = [[AstHindernis alloc]initWithWorld:world];
     ast2.rotation = 0;
     ast2.position = ccp(260, -100);
 
@@ -44,7 +44,7 @@
     ast4.position = ccp(400,240);
     ast4.astAktiv = NO;
     
-    AstHindernis* ast5 = [[AstHindernis alloc]init];
+    AstHindernis* ast5 = [[AstHindernis alloc]initWithWorld:world];
     ast5.position = ccp(490, 200);
                         
     PortalExit* portalExit = [[PortalExit alloc]init];

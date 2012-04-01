@@ -14,7 +14,7 @@
 #import "StachelAst.h"
 #import "SchlangeLayer.h"
 #import "AstSchalter.h"
-
+#import "AstHindernis.h"
 @protocol AstLayerDelegate <NSObject>
 @required
 -(CGPoint)getSchlangePosition;

@@ -43,7 +43,7 @@
 	ast4.position = ccp(221.808594, 169.011719);
 	ast4.rotation = 0.000000;
 
-	AstHindernis* ast5 = [[AstHindernis alloc]init];
+	AstHindernis* ast5 = [[AstHindernis alloc]initWithWorld:world];
 	ast5.position = ccp(306.222656, 373.371094);
 	ast5.rotation = 341.000000;
 
@@ -51,7 +51,7 @@
 	ast6.position = ccp(244.343750, 89.097656);
 	ast6.rotation = 0.000000;
 
-	AstHindernis* ast7 = [[AstHindernis alloc]init];
+	AstHindernis* ast7 = [[AstHindernis alloc]initWithWorld:world];
 	ast7.position = ccp(374.894531, 194.648438);
 	ast7.rotation = 17.000000;
 

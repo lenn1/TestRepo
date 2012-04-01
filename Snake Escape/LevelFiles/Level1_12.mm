@@ -67,7 +67,7 @@
 	ast10.position = ccp(100.835938, 201.710938);
 	ast10.rotation = 0.000000;
 
-	AstHindernis* ast11 = [[AstHindernis alloc]init];
+	AstHindernis* ast11 = [[AstHindernis alloc]initWithWorld:world];
 	ast11.position = ccp(429.984375, 272.699219);
 	ast11.rotation = 0.000000;
 

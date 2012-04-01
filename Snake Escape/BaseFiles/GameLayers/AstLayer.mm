@@ -14,7 +14,6 @@
 
 @end
 @implementation AstLayer
-
 @synthesize delegate;
 -(id)init
 {
@@ -24,6 +23,7 @@
     }
     return self;
 }
+
 -(void)moveSchlangeTo:(CGPoint)position;
 {
     if([delegate respondsToSelector:@selector(moveSchlangeTo:)])

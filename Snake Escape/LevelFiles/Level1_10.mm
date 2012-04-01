@@ -41,7 +41,7 @@
     VerkohlterAst* ast3 = [[VerkohlterAst alloc]init];
     ast3.position = ccp(350,130);
     
-    AstHindernis* ast4 = [[AstHindernis alloc]init];
+    AstHindernis* ast4 = [[AstHindernis alloc]initWithWorld:world];
     ast4.position = ccp(400,320);
     ast4.rotation = -10;
     
@@ -55,7 +55,7 @@
     AstNormal* ast7 = [[AstNormal alloc]init];
     ast7.position = ccp(880,220);
     
-    AstHindernis* ast8 = [[AstHindernis alloc]init];
+    AstHindernis* ast8 = [[AstHindernis alloc]initWithWorld:world];
     ast8.position = ccp(920,182);
     ast8.rotation = 5;
     

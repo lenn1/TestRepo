@@ -40,7 +40,7 @@
     StachelAst* ast3 = [[StachelAst alloc]init];
     ast3.position = ccp(130,230);
 
-    AstHindernis* ast4 = [[AstHindernis alloc]init];
+    AstHindernis* ast4 = [[AstHindernis alloc]initWithWorld:world];
     ast4.position = ccp(140,40);
     ast4.rotation = 120;
     

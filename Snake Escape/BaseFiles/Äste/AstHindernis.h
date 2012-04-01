@@ -9,9 +9,12 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 #import "AstNormal.h"
-
+#import "Box2D.h"
+#define PTM_RATIO 32
 @interface AstHindernis : AstNormal 
 {
-
+    b2World* world;
+    b2Body* astBody;
 }
+- (id)initWithWorld:(b2World*)worldPtr;
 @end
