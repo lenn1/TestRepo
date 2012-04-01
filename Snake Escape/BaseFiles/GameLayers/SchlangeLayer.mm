@@ -42,14 +42,14 @@
         b2FixtureDef ballShapeDef;
         ballShapeDef.shape = &circle;
         ballShapeDef.density = 1.0f;
-        ballShapeDef.friction = 0.5f;
-        ballShapeDef.restitution = 0.5f;
+        ballShapeDef.friction = 0.6f;
+        ballShapeDef.restitution = 0.1f;
         b2MassData* mass = new b2MassData();
         mass->mass = 1.0;
         mass->center = b2Vec2(0.0,0.0);
         _body->SetMassData(mass);
         _body->CreateFixture(&ballShapeDef);
-               
+        
 
     }
     return self;

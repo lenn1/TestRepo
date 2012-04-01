@@ -48,7 +48,7 @@
         b2FixtureDef astShapeDef;
         astShapeDef.shape = &astShape;
         astShapeDef.density = 1.0f;
-        astShapeDef.friction = 0.8f;
+        astShapeDef.friction = 1.0f;
         astShapeDef.restitution = 0.0;
         astBody->CreateFixture(&astShapeDef);
         
