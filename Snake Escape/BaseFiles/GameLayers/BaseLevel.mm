@@ -389,6 +389,8 @@
             physicsEnabled = YES;
             [schlangeLayer.schlange setDisplayFrame:[[CCSpriteFrameCache sharedSpriteFrameCache]spriteFrameByName:@"schlange0"]];
             schlangeLayer.schlangeInAir = YES;
+            AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
+
 
             //BOX2D
             

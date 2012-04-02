@@ -68,13 +68,13 @@
 	ast10.rotation = 0.000000;
 
 	AstHindernis* ast11 = [[AstHindernis alloc]initWithWorld:world];
-	ast11.position = ccp(429.984375, 272.699219);
+	ast11.position = ccp(429.984375, 265.0);
 	ast11.rotation = 0.000000;
 
 	VerkohlterAst* ast12 = [[VerkohlterAst alloc]init];
 	ast12.position = ccp(668.824219, 245.613281);
-	ast12.rotation = 0.000000;
-
+	ast12.rotation = 0.000000;   
+    
 	[astLayer addAeste:ast1,ast2,ast3,ast4,ast5,ast6,ast7,ast8,ast9,ast10,ast11,ast12,nil];
     [self schedule:@selector(astvisitedCheck) interval:0.1];
 

@@ -26,6 +26,7 @@
 #import "CCNodeExt.h"
 #import "LevelClearLayer.h"
 #import "LevelClearLayerDelegate.h"
+#import <AudioToolbox/AudioToolbox.h>
 #define PTM_RATIO 32
 @class PauseLayer;
 
