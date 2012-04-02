@@ -70,6 +70,7 @@
 {
     CCParticleSystemQuad* staub = [CCParticleSystemQuad particleWithFile:@"VerkohlterAstZuStaub.plist"];
     staub.position = self.position;
+    staub.positionType = kCCPositionTypeRelative;
     [self.parent addChild:staub];
     
     [self unschedule:@selector(TimelimitIsUp)];
