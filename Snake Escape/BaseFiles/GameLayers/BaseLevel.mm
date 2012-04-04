@@ -24,19 +24,20 @@
 
     if(self=[super init])
     {   
+        FrameUpdateAbles = [[NSMutableSet alloc]init];
         schlangeTot = NO;
         CGSize size = [[CCDirector sharedDirector] winSize];
         deviceWidth = size.width;
         deviceHeight = size.height;
         
         levelWidth = Width;
-        physicsEnabled = YES;
         
         // <Box2D>
         
             
             b2Vec2 gravity = b2Vec2(0.0f, -510.0f/PTM_RATIO);
             world = new b2World(gravity);
+            world->SetAllowSleeping(true);
             
             
             b2BodyDef groundBodyDef;
@@ -75,6 +76,7 @@
         schlangeLayer.delegate = self;
         [self addChild:schlangeLayer];
         
+        [self addToFrameUpdate:astLayer,schlangeLayer,nil];
  
         hudLayer = [[HUDLayer alloc]init];
         [self addChild:hudLayer];
@@ -134,28 +136,39 @@
     return [NSArray arrayWithObjects:oneStar,twoStars,threeStars, nil];
     
 }
+-(void)addToFrameUpdate:(id)CCNode1 , ...
+{
+    {
+        va_list args;
+        va_start(args, CCNode1);
+        id node;
+        for (node = CCNode1; node != nil;node = va_arg(args, id))
+        {
+            [FrameUpdateAbles addObject:node];
+        }
+        va_end(args);
+    }
 
+}
 -(void)FrameUpdate:(ccTime)delta
 {   
 
-    /* BOX2D KRAM */
-    if(world != NULL)
-    {
-        if(physicsEnabled)
-            world->Step(delta, 10, 10);
+        world->Step(delta, 10, 10);
         for(b2Body *b = world->GetBodyList(); b; b=b->GetNext()) 
         {    
-
+            
         }
-    }
     
     // BOX2D KRAM ENDE
     
     
+        
+    for(id node in FrameUpdateAbles)
+    {
+        if([node respondsToSelector:@selector(FrameUpdate:)])
+            [node FrameUpdate:delta];
+    }
     
-    
-        [schlangeLayer FrameUpdate:delta];
-        [astLayer FrameUpdate:delta];
 
     //  HUD an der richtigen Position halten   
     hudLayer.position = ccp(-self.position.x, hudLayer.position.y);
@@ -366,7 +379,7 @@
     [self stopActionByTag:CCFollowID];
     alreadyMoved = NO; // FÜR KAMERAVERFOLGUNG
 
-    physicsEnabled = NO;
+    schlangeLayer._body->SetActive(false);
     [schlangeLayer moveSchlangeTo:ast.position];
     
     
@@ -386,7 +399,8 @@
         if([(StachelAst*)ast stachelAusgefahren])
         {
             [[SimpleAudioEngine sharedEngine]playEffect:@"StachelAst.wav"];
-            physicsEnabled = YES;
+            schlangeLayer._body->SetActive(true);
+
             [schlangeLayer.schlange setDisplayFrame:[[CCSpriteFrameCache sharedSpriteFrameCache]spriteFrameByName:@"schlange0"]];
             schlangeLayer.schlangeInAir = YES;
             AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
@@ -477,16 +491,12 @@
     if(schlangeLayer.schlange.position.x == ast.position.x && schlangeLayer.schlange.position.y == ast.position.y)
     {
         [[SimpleAudioEngine sharedEngine]stopEffect:schlangeLayer.aufziehsound];
-        physicsEnabled = YES;
+        schlangeLayer._body->SetActive(true);
         schlangeLayer.schlangeInAir = YES;
         [schlangeLayer.schlange setDisplayFrame:[[CCSpriteFrameCache sharedSpriteFrameCache]spriteFrameByName:@"schlange0"]];
     }
 }
 
--(BOOL)IsPhysicsEnabled
-{
-    return physicsEnabled;
-}
 -(CGPoint)getSchlangePosition
 {
     return schlangeLayer.schlange.position;
@@ -502,7 +512,7 @@
 -(void)touchEndedOnSchlange
 {
     touchStartedOnSchlange = NO;
-    physicsEnabled = YES;
+    schlangeLayer._body->SetActive(true);
 }
 
 

@@ -20,7 +20,6 @@
 -(void)schlangeAbschiessenCancel;
 -(void)schlangeTot;
 @required
--(BOOL)IsPhysicsEnabled;
 @end
 
 

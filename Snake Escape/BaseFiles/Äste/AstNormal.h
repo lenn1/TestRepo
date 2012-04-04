@@ -13,12 +13,12 @@ typedef struct
     CGFloat radius;
     CGPoint position;
     
-} FangRadius;
+} Radius;
 
 @interface AstNormal : CCSprite 
 {
     NSString* name;
-    FangRadius fangRadius;
+    Radius fangRadius;
     BOOL astAktiv;
     BOOL visitable;
 }
@@ -26,7 +26,7 @@ typedef struct
 -(void)setDelegate:(id)delegate;
 -(void)changeImageToActive;
 @property(readonly,assign)NSString* name;
-@property(readonly)FangRadius fangRadius;
+@property(readonly)Radius fangRadius;
 @property(readwrite)BOOL astAktiv;
 @property(readonly)BOOL visitable;
 @end

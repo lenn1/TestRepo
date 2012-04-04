@@ -82,13 +82,12 @@
 
 -(void)FrameUpdate:(ccTime)delta
 {
-    if([delegate IsPhysicsEnabled])
-    {
         // BOX2D
-        [schlange setPosition: ccp(_body->GetPosition().x*PTM_RATIO,_body->GetPosition().y*PTM_RATIO)];
-        [schlange setRotation: -_body->GetAngle()*PTM_RATIO];
-    }
-    
+        if(_body->IsActive())
+        {
+            [schlange setPosition: ccp(_body->GetPosition().x*PTM_RATIO,_body->GetPosition().y*PTM_RATIO)];
+            [schlange setRotation: -_body->GetAngle()*PTM_RATIO];
+        }
     if(schlange.position.y < -30 && [delegate respondsToSelector:@selector(schlangeTot)])
         [delegate schlangeTot];
 }

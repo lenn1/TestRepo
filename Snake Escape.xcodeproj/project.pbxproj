@@ -205,6 +205,7 @@
 		888B1D5B14B862680095DDF0 /* ButtonResetSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 888B1D3F14B862680095DDF0 /* ButtonResetSelected.png */; };
 		8899746E149CB56700E218D8 /* Flitsch.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8899746D149CB56700E218D8 /* Flitsch.wav */; };
 		88997471149CB66A00E218D8 /* fallen.wav in Resources */ = {isa = PBXBuildFile; fileRef = 88997470149CB66A00E218D8 /* fallen.wav */; };
+		889B3943152C8AE7009ED6A4 /* Vogel.mm in Sources */ = {isa = PBXBuildFile; fileRef = 889B3942152C8AE7009ED6A4 /* Vogel.mm */; };
 		88A9723E148D05C800192D55 /* PauseLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 88A9723D148D05C800192D55 /* PauseLayer.mm */; };
 		88A97242148D0A8000192D55 /* pauseScreen-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 88A97240148D0A8000192D55 /* pauseScreen-hd.png */; };
 		88A97243148D0A8000192D55 /* pauseScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 88A97241148D0A8000192D55 /* pauseScreen.png */; };
@@ -654,6 +655,8 @@
 		888B1D3F14B862680095DDF0 /* ButtonResetSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ButtonResetSelected.png; path = Menu/ButtonResetSelected.png; sourceTree = "<group>"; };
 		8899746D149CB56700E218D8 /* Flitsch.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Flitsch.wav; sourceTree = "<group>"; };
 		88997470149CB66A00E218D8 /* fallen.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = fallen.wav; sourceTree = "<group>"; };
+		889B3941152C8AE7009ED6A4 /* Vogel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Vogel.h; path = Tiere/Vogel.h; sourceTree = "<group>"; };
+		889B3942152C8AE7009ED6A4 /* Vogel.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = Vogel.mm; path = Tiere/Vogel.mm; sourceTree = "<group>"; };
 		88A9723C148D05C800192D55 /* PauseLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PauseLayer.h; sourceTree = "<group>"; };
 		88A9723D148D05C800192D55 /* PauseLayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PauseLayer.mm; sourceTree = "<group>"; };
 		88A97240148D0A8000192D55 /* pauseScreen-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pauseScreen-hd.png"; sourceTree = "<group>"; };
@@ -1403,6 +1406,7 @@
 		885F0268147C751400EA546F /* BaseFiles */ = {
 			isa = PBXGroup;
 			children = (
+				889B393F152C8AAB009ED6A4 /* Tiere */,
 				885F0269147C751400EA546F /* Äste */,
 				885F0270147C751400EA546F /* GameLayers */,
 			);
@@ -1476,6 +1480,15 @@
 				88705D6914A02A590036F87E /* IconSelectedLevel_back.png */,
 			);
 			path = LevelIcons;
+			sourceTree = "<group>";
+		};
+		889B393F152C8AAB009ED6A4 /* Tiere */ = {
+			isa = PBXGroup;
+			children = (
+				889B3941152C8AE7009ED6A4 /* Vogel.h */,
+				889B3942152C8AE7009ED6A4 /* Vogel.mm */,
+			);
+			name = Tiere;
 			sourceTree = "<group>";
 		};
 		88A9724F148D3F2B00192D55 /* AstSchalterAnimation */ = {
@@ -2341,6 +2354,7 @@
 				8833F50E152864DD00D8E6D1 /* b2Rope.cpp in Sources */,
 				8833F5131528670500D8E6D1 /* AstSchalter.mm in Sources */,
 				8833F5151528675800D8E6D1 /* BackgroundLayer.mm in Sources */,
+				889B3943152C8AE7009ED6A4 /* Vogel.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2350,7 +2364,10 @@
 		88FCA8F11476D1D000D5AF2E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = (
+					"$(ARCHS_STANDARD_32_BIT)",
+					armv6,
+				);
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -2372,7 +2389,10 @@
 		88FCA8F21476D1D000D5AF2E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = (
+					"$(ARCHS_STANDARD_32_BIT)",
+					armv6,
+				);
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PREPROCESSOR_DEFINITIONS = NDEBUG;
@@ -2399,8 +2419,9 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Snake Escape/Prefix.pch";
+				GCC_THUMB_SUPPORT = NO;
 				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
-				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "Snake Escape/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
@@ -2425,8 +2446,9 @@
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Snake Escape/Prefix.pch";
+				GCC_THUMB_SUPPORT = NO;
 				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
-				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "Snake Escape/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.2;

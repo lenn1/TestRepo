@@ -8,6 +8,8 @@
 
 #import "Level1_1.h"
 #import "Level1_2.h"
+#import "Vogel.h"
+
 
 @implementation Level1_1
 +(CCScene*)scene
@@ -24,6 +26,16 @@
 }
 -(void)LevelSetup
 {
+    
+    /* VOGEL DEBUG */
+    
+    Vogel *vogel = [[Vogel alloc]init];
+    [self addChild:vogel];
+    vogel.position = ccp(100,300);
+    [self addToFrameUpdate:vogel,nil];
+    
+    /* VOGEL DEBUG */
+    
     [schlangeLayer setSchlangePosition:ccp(120, 230)];
 
     levelPack = 1;

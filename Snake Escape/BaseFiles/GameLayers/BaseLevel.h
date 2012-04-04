@@ -38,7 +38,6 @@
     AstLayer* astLayer;
     SchlangeLayer* schlangeLayer;
     BOOL touchStartedOnSchlange;
-    BOOL physicsEnabled;
     CGFloat lastTouch;
     BOOL alreadyMoved;
     PauseLayer* pauseLayer;
@@ -50,6 +49,7 @@
     BOOL paused;
     NSString* LevelName;
     ALuint fireSound;
+    NSMutableSet* FrameUpdateAbles;
     
     // <BOX2D>
     b2World* world;
@@ -64,6 +64,7 @@
 +(CCScene*)scene;
 -(void)setLevelSelectionPage;
 +(NSArray*)getNeededHighScores;
+-(void)addToFrameUpdate:(id)CCNode1 , ...;
 
 @property NSInteger levelTimeout;
 @property(assign,readonly)NSString* LevelName;
