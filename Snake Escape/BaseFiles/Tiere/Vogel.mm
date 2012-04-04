@@ -72,9 +72,9 @@
             schlangeVerlaesst = YES;
             
             if(directionRight)
-                [delegate getSchlangeLayer]._body->SetLinearVelocity(b2Vec2(100/PTM_RATIO,0.0));
+                [delegate getSchlangeLayer]._body->SetLinearVelocity(b2Vec2(speed/PTM_RATIO,0.0));
             else
-                [delegate getSchlangeLayer]._body->SetLinearVelocity(b2Vec2(-100/PTM_RATIO,0.0));
+                [delegate getSchlangeLayer]._body->SetLinearVelocity(b2Vec2(-speed/PTM_RATIO,0.0));
 
             
         }
