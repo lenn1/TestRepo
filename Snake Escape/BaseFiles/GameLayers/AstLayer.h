@@ -18,6 +18,7 @@
 @protocol AstLayerDelegate <NSObject>
 @required
 -(CGPoint)getSchlangePosition;
+-(void)setSchlangeInAir:(BOOL)schlangeInAir;
 @optional
 -(void)PortalErreicht;
 -(void)VerkohlterAstTimeIsUp:(VerkohlterAst*)ast;

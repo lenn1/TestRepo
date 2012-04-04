@@ -501,6 +501,10 @@
 {
     return schlangeLayer.schlange.position;
 }
+-(void)setSchlangeInAir:(BOOL)schlangeInAir
+{
+    schlangeLayer.schlangeInAir = schlangeInAir;
+}
 -(void)schlangeAbschiessenCancel
 {
     touchStartedOnSchlange = NO;

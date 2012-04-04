@@ -100,7 +100,6 @@
     _body->SetAngularVelocity(0.0);
     _body->SetLinearVelocity(b2Vec2_zero);
     
-    schlangeInAir = NO;
     CCMoveTo* move = [CCMoveTo actionWithDuration:0.1 position:position];
     move.tag = moveSchlangeToActionTag;
     [schlange runAction:move];
@@ -111,7 +110,6 @@
     CCMoveTo* moveAction = [CCMoveTo actionWithDuration:duration position:position];
     CCSequence* seq = [CCSequence actions:delayAction,moveAction, nil];
     [schlange runAction:seq];
-    schlangeInAir = NO;
     
 
     //BOX2D

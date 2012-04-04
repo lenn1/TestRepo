@@ -49,6 +49,7 @@
                 {
                    [delegate collisionDetectedWithAst:ast];
                    lastAst = ast;
+                    [delegate setSchlangeInAir:NO];
                 }
             }
         }

@@ -37,7 +37,7 @@
         {
             if(self.position.x+100*delta <= maxRight)
                 self.position = ccp(self.position.x+100*delta,self.position.y);
-            else 
+            else
                 directionRight = NO;
         }
         else
