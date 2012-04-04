@@ -515,6 +515,9 @@
     schlangeLayer._body->SetActive(true);
 }
 
-
+-(SchlangeLayer *)getSchlangeLayer
+{
+    return schlangeLayer;
+}
 
 @end

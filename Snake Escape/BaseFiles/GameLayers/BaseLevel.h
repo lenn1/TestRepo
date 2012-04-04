@@ -27,10 +27,11 @@
 #import "LevelClearLayer.h"
 #import "LevelClearLayerDelegate.h"
 #import <AudioToolbox/AudioToolbox.h>
+#import "Vogel.h"
 #define PTM_RATIO 32
 @class PauseLayer;
 
-@interface BaseLevel : CCScene<PauseLayerDelegate,SchlangeLayerDelegate,AstLayerDelegate,CCTargetedTouchDelegate,LevelClearLayerDelegate>
+@interface BaseLevel : CCScene<PauseLayerDelegate,SchlangeLayerDelegate,AstLayerDelegate,CCTargetedTouchDelegate,LevelClearLayerDelegate,VogelDelegate>
 {
     CGFloat deviceHeight;
     CGFloat deviceWidth;

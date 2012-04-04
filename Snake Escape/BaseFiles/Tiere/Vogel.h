@@ -9,13 +9,20 @@
 #import "CCSprite.h"
 #import "cocos2d.h"
 #import "Box2D.h"
-
+#import "SchlangeLayer.h"
+#import "MathHelper.h"
 typedef struct 
 {
     CGFloat radius;
     CGPoint position;
     
 } FangRadius;
+
+
+@protocol VogelDelegate <NSObject>
+@required
+-(SchlangeLayer*)getSchlangeLayer;
+@end
 
 @interface Vogel : CCSprite
 {
@@ -25,10 +32,18 @@ typedef struct
     CGFloat maxLeft;
     CGFloat maxRight;
     BOOL directionRight;
+    BOOL schlangeGefangen;
+    BOOL schlangeVerlaesst;
+    id<VogelDelegate> delegate;
+    CGFloat abwurfPosition;
+    
+    
+    
 }
 @property CGFloat maxRight;
 @property CGFloat maxLeft;
+@property CGFloat abwurfPosition;
 @property BOOL directionRight;
-
+@property(assign,nonatomic)id<VogelDelegate>delegate;
 -(void)FrameUpdate:(ccTime)delta;
 @end

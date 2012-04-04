@@ -12,6 +12,7 @@
 @implementation SchlangeLayer
 @synthesize schlange,delegate,schlangeInAir,_body,aufziehsound;
 #define schlangeScale 0.8
+#define moveSchlangeToActionTag 998877
 -(id)initWithLevelWidth:(CGFloat)Width AndWorld:(b2World*)worldptr
 {
     if(self=[super init])
@@ -100,10 +101,9 @@
     _body->SetLinearVelocity(b2Vec2_zero);
     
     schlangeInAir = NO;
-    [schlange runAction:[CCMoveTo actionWithDuration:0.1 position:position]];
-    
-
-
+    CCMoveTo* move = [CCMoveTo actionWithDuration:0.1 position:position];
+    move.tag = moveSchlangeToActionTag;
+    [schlange runAction:move];
 }
 -(void)moveSchlangeTo:(CGPoint)position WithDelay:(CGFloat)delay AndDuration:(CGFloat)duration
 {
@@ -124,9 +124,10 @@
 }
 -(void)setSchlangePosition:(CGPoint)position
 {
+    // falls es die action gerade gibt wird die schlange nicht fix positioniert
+    if(![schlange getActionByTag:moveSchlangeToActionTag])
     schlange.position = position;
 
-    
     //BOX2D
     _body->SetTransform(b2Vec2(position.x/PTM_RATIO,position.y/PTM_RATIO), 0.0);
     _body->SetAngularVelocity(0);

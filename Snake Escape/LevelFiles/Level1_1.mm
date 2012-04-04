@@ -31,8 +31,12 @@
     
     Vogel *vogel = [[Vogel alloc]init];
     [self addChild:vogel];
-    vogel.position = ccp(100,300);
+    vogel.position = ccp(-200,300);
+    vogel.maxLeft = 40;
+    vogel.maxRight = 400;
+    vogel.abwurfPosition = 120;
     [self addToFrameUpdate:vogel,nil];
+    vogel.delegate = self;
     
     /* VOGEL DEBUG */
     

@@ -89,7 +89,7 @@
         CCDirector* director = [CCDirector sharedDirector];
         CGSize size = [director winSize];
         
-        CCSprite* bg = [CCSprite spriteWithFile:@"bg.png"];
+        CCSprite* bg = [CCSprite spriteWithFile:@"hintergrund.png"];
         bg.position = ccp(size.width/2,size.height/2);
         [self addChild:bg];
         
