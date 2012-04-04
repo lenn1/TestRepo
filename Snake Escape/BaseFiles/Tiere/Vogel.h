@@ -36,14 +36,16 @@ typedef struct
     BOOL schlangeVerlaesst;
     id<VogelDelegate> delegate;
     CGFloat abwurfPosition;
-    
+    CGFloat speed;
     
     
 }
 @property CGFloat maxRight;
 @property CGFloat maxLeft;
 @property CGFloat abwurfPosition;
+@property CGFloat speed;
 @property BOOL directionRight;
 @property(assign,nonatomic)id<VogelDelegate>delegate;
 -(void)FrameUpdate:(ccTime)delta;
+-(CGFloat)XPositionInSeconds:(CGFloat)seconds;
 @end
