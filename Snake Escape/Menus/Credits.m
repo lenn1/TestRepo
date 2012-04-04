@@ -25,7 +25,7 @@
     {
         [[CCTouchDispatcher sharedDispatcher]addTargetedDelegate:self priority:0 swallowsTouches:YES];
         size = [[CCDirector sharedDirector] winSize];
-        CCSprite* bg = [CCSprite spriteWithFile:@"hintergrund.png"];
+        CCSprite* bg = [CCSprite spriteWithFile:@"bg.png"];
         bg.position = ccp(size.width/2,size.height/2);
         [self addChild:bg];
         
