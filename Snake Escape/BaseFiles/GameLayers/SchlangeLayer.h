@@ -14,12 +14,12 @@
 #define PTM_RATIO 32
 
 @protocol SchlangeLayerDelegate<NSObject>
-@optional
+@required
 -(void)touchStartedOnSchlange;
 -(void)touchEndedOnSchlange;
 -(void)schlangeAbschiessenCancel;
 -(void)schlangeTot;
-@required
+-(BOOL)getTouchStartedOnSchlange;
 @end
 
 
@@ -28,7 +28,6 @@
 
     CGFloat levelWidth;
     CCSprite* schlange;
-    BOOL touchStartedOnSchlange;
     id<SchlangeLayerDelegate> delegate;
     CGFloat abschussradius;
     BOOL schlangeInAir;

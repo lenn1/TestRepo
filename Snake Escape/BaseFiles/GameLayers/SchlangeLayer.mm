@@ -22,7 +22,6 @@
         [schlange addChild:spriteSheet];
         
         abschussradius = 80;
-        touchStartedOnSchlange = NO;
         levelWidth = Width;
         schlange = [CCSprite spriteWithSpriteFrameName:@"schlange0"];
         schlange.scale = 0.01;
@@ -168,7 +167,6 @@
     {
         if([delegate respondsToSelector:@selector(touchStartedOnSchlange)])
             [delegate touchStartedOnSchlange];
-        touchStartedOnSchlange = YES;
         if(!schlangeInAir)
             aufziehsound = [[SimpleAudioEngine sharedEngine]playEffect:@"aufziehen.wav"];
     }
@@ -178,8 +176,8 @@
 }
 -(void)ccTouchMoved:(UITouch *)touch withEvent:(UIEvent *)event
 {
-    if(touchStartedOnSchlange && !schlangeInAir)
-    {    
+    if([delegate getTouchStartedOnSchlange] && !schlangeInAir)
+    {
         // FÜR DEN KOPF BEIM LANGZIEHEN
         CGPoint location = [touch locationInView: [touch view]];
         location = [[CCDirector sharedDirector] convertToGL: location];
@@ -236,7 +234,7 @@
 {
 
     
-    if(touchStartedOnSchlange && !schlangeInAir)
+    if([delegate getTouchStartedOnSchlange] && !schlangeInAir)
     {
         CGPoint location = [touch locationInView: [touch view]];
         location = [[CCDirector sharedDirector] convertToGL: location];
@@ -269,8 +267,9 @@
             _body->SetAngularVelocity(20);
             
             schlangeInAir = YES;
+            _body->SetActive(true);
             [[SimpleAudioEngine sharedEngine]playEffect:@"Flitsch.wav"];
-            if(touchStartedOnSchlange  && [self.delegate respondsToSelector:@selector(touchEndedOnSchlange)])
+            if([delegate getTouchStartedOnSchlange]  && [self.delegate respondsToSelector:@selector(touchEndedOnSchlange)])
                 [self.delegate touchEndedOnSchlange];
 
         }
@@ -292,10 +291,12 @@
             _body->SetAngularVelocity(20);
             
             schlangeInAir = YES;
+            _body->SetActive(true);
+
         }
 
     }
-    touchStartedOnSchlange = NO;
+    [delegate touchEndedOnSchlange];
     
 
     

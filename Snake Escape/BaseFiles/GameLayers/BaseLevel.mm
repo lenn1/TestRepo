@@ -224,7 +224,6 @@
     // </KAMERA VERFOLGUNG>  
     
     
-    
 }
 -(void)restartLevel
 {
@@ -353,6 +352,7 @@
     CGSize winSize = [[CCDirector sharedDirector]winSize];
     if(!touchStartedOnSchlange &&  CGRectContainsPoint(CGRectMake(winSize.width-40, winSize.height-40, 40, 40), locationOnScreen))
     {
+
         [self pauseGame];
     }
     
@@ -516,7 +516,10 @@
 -(void)touchEndedOnSchlange
 {
     touchStartedOnSchlange = NO;
-    schlangeLayer._body->SetActive(true);
+}
+-(BOOL)getTouchStartedOnSchlange
+{
+    return touchStartedOnSchlange;
 }
 
 -(SchlangeLayer *)getSchlangeLayer
