@@ -118,6 +118,7 @@
 		8835147A149AAFCF00978285 /* AstSchalter.wav in Resources */ = {isa = PBXBuildFile; fileRef = 88351478149AAFCF00978285 /* AstSchalter.wav */; };
 		8835147C149AB19600978285 /* HintergrundVoegel.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8835147B149AB19600978285 /* HintergrundVoegel.mp3 */; };
 		883C010214A913D2000C342E /* star1.png in Resources */ = {isa = PBXBuildFile; fileRef = 883C010114A913D2000C342E /* star1.png */; };
+		88419FF815581CE100219BE2 /* vogel.png in Resources */ = {isa = PBXBuildFile; fileRef = 88419FF715581CE100219BE2 /* vogel.png */; };
 		884477F7149F812C004CAC10 /* Level1_8.mm in Sources */ = {isa = PBXBuildFile; fileRef = 884477F6149F812C004CAC10 /* Level1_8.mm */; };
 		884477FB149F8320004CAC10 /* AstHindernisSchalter-Erklaerung-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 884477F9149F8320004CAC10 /* AstHindernisSchalter-Erklaerung-hd.png */; };
 		884477FC149F8320004CAC10 /* AstHindernisSchalter-Erklaerung.png in Resources */ = {isa = PBXBuildFile; fileRef = 884477FA149F8320004CAC10 /* AstHindernisSchalter-Erklaerung.png */; };
@@ -551,6 +552,7 @@
 		88351478149AAFCF00978285 /* AstSchalter.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = AstSchalter.wav; sourceTree = "<group>"; };
 		8835147B149AB19600978285 /* HintergrundVoegel.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = HintergrundVoegel.mp3; sourceTree = "<group>"; };
 		883C010114A913D2000C342E /* star1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star1.png; sourceTree = "<group>"; };
+		88419FF715581CE100219BE2 /* vogel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vogel.png; sourceTree = "<group>"; };
 		884477F5149F812C004CAC10 /* Level1_8.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Level1_8.h; sourceTree = "<group>"; };
 		884477F6149F812C004CAC10 /* Level1_8.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Level1_8.mm; sourceTree = "<group>"; };
 		884477F9149F8320004CAC10 /* AstHindernisSchalter-Erklaerung-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AstHindernisSchalter-Erklaerung-hd.png"; sourceTree = "<group>"; };
@@ -1241,6 +1243,14 @@
 			path = Sound;
 			sourceTree = "<group>";
 		};
+		88419FF615581CE100219BE2 /* Tiere */ = {
+			isa = PBXGroup;
+			children = (
+				88419FF715581CE100219BE2 /* vogel.png */,
+			);
+			path = Tiere;
+			sourceTree = "<group>";
+		};
 		88447804149F8ECC004CAC10 /* Menus */ = {
 			isa = PBXGroup;
 			children = (
@@ -1334,6 +1344,7 @@
 		885F01A4147C750100EA546F /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				88419FF615581CE100219BE2 /* Tiere */,
 				75728B6E14B7E024008E0F1F /* Menu */,
 				88705CF014A014170036F87E /* LevelIcons */,
 				8828665214A25621003EE01E /* PauseMenuIcons */,
@@ -2166,6 +2177,7 @@
 				7552953E14B9C67500601679 /* TitleExcellent-hd.png in Resources */,
 				7552953F14B9C67500601679 /* TitleExcellent.png in Resources */,
 				88EA8C651529C2AD0081E75B /* fire.plist in Resources */,
+				88419FF815581CE100219BE2 /* vogel.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

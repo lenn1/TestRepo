@@ -14,10 +14,9 @@
 {
     if(self = [super init])
     {
-        [[CCTextureCache sharedTextureCache] addImage: @"AstNormalAktiv.png"];
         self.scale = 1.0;
         fangRadius.radius = 30.0f;
-        CCTexture2D *texture = [[CCTextureCache sharedTextureCache] addImage: @"AstNormalInaktiv.png"];
+        CCTexture2D *texture = [[CCTextureCache sharedTextureCache] addImage: @"vogel.png"];
         CGRect rect = CGRectZero;
         rect.size = texture.contentSize;
         [self setTexture:texture];
@@ -28,6 +27,8 @@
         schlangeGefangen = NO;
         abwurfPosition = maxRight-20;
         speed = 100;
+        self.scale = 0.1;
+
     }
     return self;
 }
@@ -52,6 +53,8 @@
                 self.position = ccp(self.position.x+speed*delta,self.position.y);
             else
                 directionRight = NO;
+            self.flipX = YES;
+
         }
         else
         {
@@ -59,12 +62,14 @@
                 self.position = ccp(self.position.x-speed*delta,self.position.y);
             else 
                 directionRight = YES;
+            self.flipX = NO;
+
         }
     }
     
     if(schlangeGefangen)
     {
-        [[delegate getSchlangeLayer]setSchlangePosition:self.position];
+        [[delegate getSchlangeLayer]setSchlangePosition:ccp(self.position.x,self.position.y-20.0)];
         if([delegate getSchlangeLayer].schlange.position.x < abwurfPosition+5 && [delegate getSchlangeLayer].schlange.position.x > abwurfPosition-5)
         {
             [delegate getSchlangeLayer]._body->SetActive(true);
@@ -72,9 +77,13 @@
             schlangeVerlaesst = YES;
             
             if(directionRight)
+            {
                 [delegate getSchlangeLayer]._body->SetLinearVelocity(b2Vec2(speed/PTM_RATIO,0.0));
+            }
             else
+            {
                 [delegate getSchlangeLayer]._body->SetLinearVelocity(b2Vec2(-speed/PTM_RATIO,0.0));
+            }
 
             
         }
@@ -90,7 +99,7 @@
                 {
                     schlangeGefangen = YES;
                     [delegate getSchlangeLayer]._body->SetActive(false);
-                    [[delegate getSchlangeLayer] moveSchlangeTo:ccp([self XPositionInSeconds:0.1],self.position.y)];
+                    [[delegate getSchlangeLayer] moveSchlangeTo:ccp([self XPositionInSeconds:0.1],self.position.y-20.0)];
                 }
             }
             else 
