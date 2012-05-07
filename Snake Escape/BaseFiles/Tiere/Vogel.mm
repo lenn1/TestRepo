@@ -27,8 +27,6 @@
         schlangeGefangen = NO;
         abwurfPosition = maxRight-20;
         speed = 100;
-        self.scale = 0.1;
-
     }
     return self;
 }
@@ -69,7 +67,7 @@
     
     if(schlangeGefangen)
     {
-        [[delegate getSchlangeLayer]setSchlangePosition:ccp(self.position.x,self.position.y-20.0)];
+        [[delegate getSchlangeLayer]setSchlangePosition:ccp(self.position.x,self.position.y-30.0)];
         if([delegate getSchlangeLayer].schlange.position.x < abwurfPosition+5 && [delegate getSchlangeLayer].schlange.position.x > abwurfPosition-5)
         {
             [delegate getSchlangeLayer]._body->SetActive(true);
@@ -99,7 +97,7 @@
                 {
                     schlangeGefangen = YES;
                     [delegate getSchlangeLayer]._body->SetActive(false);
-                    [[delegate getSchlangeLayer] moveSchlangeTo:ccp([self XPositionInSeconds:0.1],self.position.y-20.0)];
+                    [[delegate getSchlangeLayer] moveSchlangeTo:ccp([self XPositionInSeconds:0.1],self.position.y-30.0)];
                 }
             }
             else 
