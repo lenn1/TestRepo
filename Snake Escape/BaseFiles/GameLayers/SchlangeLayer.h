@@ -32,7 +32,7 @@
     CGFloat abschussradius;
     BOOL schlangeInAir;
     ALuint aufziehsound;
-    
+    BOOL schlangetot;
     
     b2World* world;
     b2Body* _body;
@@ -44,6 +44,7 @@
 -(void)moveSchlangeTo:(CGPoint)position WithDelay:(CGFloat)delay AndDuration:(CGFloat)duration;
 -(void)runSchlangMovesToAstAnimationWithAst:(AstNormal*)ast;
 -(void)setSchlangeLangGezogen:(CGPoint)location;
+-(void)schlangeVerkohlt;
 @property(readwrite,assign)CCSprite* schlange;
 @property(readwrite,assign)id<SchlangeLayerDelegate> delegate;
 @property(readwrite)BOOL schlangeInAir;

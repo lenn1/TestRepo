@@ -8,8 +8,6 @@
 
 #import "Level1_1.h"
 #import "Level1_2.h"
-#import "Vogel.h"
-#import "Feuer.h"
 
 @implementation Level1_1
 +(CCScene*)scene
@@ -42,7 +40,11 @@
     /* VOGEL DEBUG */
     
     
-
+    /*FEUER DEBUG*/
+    Feuer* feuer = [[Feuer alloc]initWithWorld:world];
+    [self addChild:feuer];
+    feuer.position = ccp(310,150);
+    /*FEUER DEBUG*/
     
     [schlangeLayer setSchlangePosition:ccp(120, 230)];
 
@@ -67,11 +69,7 @@
     
     [astLayer addAeste:ast1,ast2,portalExit,nil];
     
-    /*FEUER DEBUG*/
-    Feuer* feuer = [[Feuer alloc]initWithWorld:world];
-    [self addChild:feuer];
-    feuer.position = ccp(120,150);
-    /*FEUER DEBUG*/
+
 }
 -(void)nextLevel
 {

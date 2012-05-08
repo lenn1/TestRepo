@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 #import "Box2D.h"
-@interface Feuer : CCSprite 
+@interface Feuer : CCNode 
 {
     b2World* world;
     b2Body* _body;

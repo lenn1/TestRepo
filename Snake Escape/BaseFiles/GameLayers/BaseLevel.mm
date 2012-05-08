@@ -21,10 +21,27 @@
 class ContactListener : public b2ContactListener
 {
 public:
-    
+    BaseLevel* levelPtr;
     void BeginContact(b2Contact* contact)
     {
-        NSLog(@"contact with fire");
+        for (b2Contact* c = contact; c; c = c->GetNext())
+        {
+            id fixA = (id)c->GetFixtureA()->GetUserData();
+            id fixB = (id)c->GetFixtureB()->GetUserData();
+            
+            // Schlange im Feuer Check.
+                if(([fixA isKindOfClass:[Feuer class]] && [fixB isKindOfClass:[SchlangeLayer class]]) || 
+                   ([fixB isKindOfClass:[Feuer class]] && [fixA isKindOfClass:[SchlangeLayer class]]))
+                {
+                    NSLog(@"Feuer an Schlange");
+                    [[levelPtr getSchlangeLayer]schlangeVerkohlt];
+                    [levelPtr schedule:@selector(schlangeTot) interval:2.0];
+                }
+                
+        }
+        
+
+        
     }
     
     
@@ -66,6 +83,7 @@ public:
         // <Box2D>
         
             ContactListener* contactListener = new ContactListener();
+            contactListener->levelPtr = self;
             b2Vec2 gravity = b2Vec2(0.0f, -510.0f/PTM_RATIO);
             world = new b2World(gravity);
             world->SetAllowSleeping(true);
@@ -185,10 +203,6 @@ public:
 {   
 
         world->Step(delta, 10, 10);
-        for(b2Body *b = world->GetBodyList(); b; b=b->GetNext()) 
-        {    
-            
-        }
     
     // BOX2D KRAM ENDE
     
@@ -411,6 +425,7 @@ public:
     alreadyMoved = NO; // FÜR KAMERAVERFOLGUNG
 
     schlangeLayer._body->SetActive(false);
+
     [schlangeLayer moveSchlangeTo:ast.position];
     
     
@@ -474,7 +489,6 @@ public:
         schlangeTot = YES;
         [self unschedule:@selector(restartLevel)];
         [self schedule:@selector(restartLevel) interval:1.5];
-        [[SimpleAudioEngine sharedEngine]playEffect:@"fallen.wav"];
         [self stopActionByTag:CCFollowID];
     }
 }
@@ -523,6 +537,7 @@ public:
     {
         [[SimpleAudioEngine sharedEngine]stopEffect:schlangeLayer.aufziehsound];
         schlangeLayer._body->SetActive(true);
+        
         schlangeLayer.schlangeInAir = YES;
         [schlangeLayer.schlange setDisplayFrame:[[CCSpriteFrameCache sharedSpriteFrameCache]spriteFrameByName:@"schlange0"]];
     }

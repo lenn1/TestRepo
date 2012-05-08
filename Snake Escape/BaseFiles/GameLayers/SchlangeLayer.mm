@@ -26,7 +26,7 @@
         schlange = [CCSprite spriteWithSpriteFrameName:@"schlange0"];
         schlange.scale = 0.01;
         [self addChild:schlange];
-    
+        schlangetot = NO;
 
         //BOX2D
         world = worldptr;
@@ -35,7 +35,6 @@
         ballBodyDef.type = b2_dynamicBody;
         ballBodyDef.position.Set(schlange.position.x/PTM_RATIO, schlange.position.y/PTM_RATIO);
         _body = world->CreateBody(&ballBodyDef);
-        _body->SetUserData(self);
         b2CircleShape circle;
         circle.m_radius = 24.5/PTM_RATIO;
         
@@ -44,12 +43,14 @@
         ballShapeDef.density = 1.0f;
         ballShapeDef.friction = 0.6f;
         ballShapeDef.restitution = 0.1f;
+        ballShapeDef.userData = self;
+
         b2MassData* mass = new b2MassData();
         mass->mass = 1.0;
         mass->center = b2Vec2(0.0,0.0);
         _body->SetMassData(mass);
         _body->CreateFixture(&ballShapeDef);
-        
+
 
     }
     return self;
@@ -88,8 +89,13 @@
             [schlange setPosition: ccp(_body->GetPosition().x*PTM_RATIO,_body->GetPosition().y*PTM_RATIO)];
             [schlange setRotation: -_body->GetAngle()*PTM_RATIO];
         }
-    if(schlange.position.y < -30 && [delegate respondsToSelector:@selector(schlangeTot)])
+    if(!schlangetot && schlange.position.y < -30 && [delegate respondsToSelector:@selector(schlangeTot)])
+    {
+        schlangetot = YES;
         [delegate schlangeTot];
+        [[SimpleAudioEngine sharedEngine]playEffect:@"fallen.wav"];
+
+    }
 }
 -(void)moveSchlangeTo:(CGPoint)position
 {
@@ -230,6 +236,18 @@
     [schlange setDisplayFrame:texture];
 
 }
+-(void)schlangeVerkohlt
+{
+    CCFadeOut *fadeout = [CCFadeOut actionWithDuration:0.1];
+    [schlange runAction:fadeout];
+    CCParticleSystemQuad* staub = [CCParticleSystemQuad particleWithFile:@"VerkohlterAstZuStaub.plist"];
+    staub.position = schlange.position;
+    staub.positionType = kCCPositionTypeRelative;
+    [self addChild:staub];
+    [[CCTouchDispatcher sharedDispatcher]removeAllDelegates];
+    _body->SetAwake(false);
+    
+}
 -(void)ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event
 {
 
@@ -291,7 +309,7 @@
             _body->SetAngularVelocity(20);
             
             schlangeInAir = YES;
-            _body->SetActive(true);
+             _body->SetActive(true);
 
         }
 

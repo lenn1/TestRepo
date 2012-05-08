@@ -22,15 +22,17 @@
         ballBodyDef.position.Set(self.position.x/PTM_RATIO, self.position.y/PTM_RATIO);
         _body = world->CreateBody(&ballBodyDef);
         _body->SetUserData(self);
-        b2CircleShape circle;
-        circle.m_radius = 24.5/PTM_RATIO;
 
+        b2PolygonShape feuerShape;
+        feuerShape.SetAsBox(15.0/PTM_RATIO, 20.0/PTM_RATIO);
         b2FixtureDef ballShapeDef;
-        ballShapeDef.shape = &circle;
+        ballShapeDef.shape = &feuerShape;
         ballShapeDef.density = 1.0f;
         ballShapeDef.friction = 0.6f;
         ballShapeDef.restitution = 0.1f;
         ballShapeDef.isSensor = true;
+        ballShapeDef.userData = self;
+        
         
         b2MassData* mass = new b2MassData();
         mass->mass = 1.0;
@@ -38,13 +40,18 @@
         _body->SetMassData(mass);
         _body->CreateFixture(&ballShapeDef);
         
-        _body->SetUserData(self);
+        CCParticleSystemQuad* staub = [CCParticleSystemQuad particleWithFile:@"fire.plist"];
+        staub.position = self.position;
+        staub.positionType = kCCPositionTypeRelative;
+        [self addChild:staub];
+        
+        
     }
     return self;
 }
 -(void)setPosition:(CGPoint)position
 {
-    self.position = position;
-    _body->SetTransform(b2Vec2(position.x/PTM_RATIO, position.y/PTM_RATIO), _body->GetAngle());
+    [super setPosition:position];
+    _body->SetTransform(b2Vec2(position.x/PTM_RATIO, (position.y+15.0)/PTM_RATIO), _body->GetAngle());
 }
 @end
