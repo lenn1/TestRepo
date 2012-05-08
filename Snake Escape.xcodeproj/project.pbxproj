@@ -124,6 +124,7 @@
 		884477FB149F8320004CAC10 /* AstHindernisSchalter-Erklaerung-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 884477F9149F8320004CAC10 /* AstHindernisSchalter-Erklaerung-hd.png */; };
 		884477FC149F8320004CAC10 /* AstHindernisSchalter-Erklaerung.png in Resources */ = {isa = PBXBuildFile; fileRef = 884477FA149F8320004CAC10 /* AstHindernisSchalter-Erklaerung.png */; };
 		8845AF8E14A53A0C000B99E9 /* CCNodeExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 8845AF8D14A53A0C000B99E9 /* CCNodeExt.m */; };
+		8847D9C1155989B3004BA8F3 /* Feuer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8847D9C0155989B3004BA8F3 /* Feuer.mm */; };
 		88559EC714A02DE3000E31AE /* IconLevel_lock-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 88559EC514A02DE3000E31AE /* IconLevel_lock-hd.png */; };
 		88559EC814A02DE3000E31AE /* IconLevel_lock.png in Resources */ = {isa = PBXBuildFile; fileRef = 88559EC614A02DE3000E31AE /* IconLevel_lock.png */; };
 		8859B0C4147C7F7E009F08EE /* PortalEntry.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8859B0C3147C7F7E009F08EE /* PortalEntry.mm */; };
@@ -562,6 +563,8 @@
 		8845AF8714A536BD000B99E9 /* PauseLayerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PauseLayerDelegate.h; sourceTree = "<group>"; };
 		8845AF8C14A53A0C000B99E9 /* CCNodeExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCNodeExt.h; path = BaseFiles/GameLayers/CCNodeExt.h; sourceTree = "<group>"; };
 		8845AF8D14A53A0C000B99E9 /* CCNodeExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CCNodeExt.m; path = BaseFiles/GameLayers/CCNodeExt.m; sourceTree = "<group>"; };
+		8847D9BF155989B3004BA8F3 /* Feuer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Feuer.h; sourceTree = "<group>"; };
+		8847D9C0155989B3004BA8F3 /* Feuer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Feuer.mm; sourceTree = "<group>"; };
 		88559EC514A02DE3000E31AE /* IconLevel_lock-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "IconLevel_lock-hd.png"; sourceTree = "<group>"; };
 		88559EC614A02DE3000E31AE /* IconLevel_lock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IconLevel_lock.png; sourceTree = "<group>"; };
 		8859B0C2147C7F7E009F08EE /* PortalEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PortalEntry.h; sourceTree = "<group>"; };
@@ -1280,6 +1283,15 @@
 			path = Sound;
 			sourceTree = "<group>";
 		};
+		8847D9BD15598949004BA8F3 /* Elemente */ = {
+			isa = PBXGroup;
+			children = (
+				8847D9BF155989B3004BA8F3 /* Feuer.h */,
+				8847D9C0155989B3004BA8F3 /* Feuer.mm */,
+			);
+			name = Elemente;
+			sourceTree = "<group>";
+		};
 		885F0199147C74F700EA546F /* LevelFiles */ = {
 			isa = PBXGroup;
 			children = (
@@ -1420,6 +1432,7 @@
 		885F0268147C751400EA546F /* BaseFiles */ = {
 			isa = PBXGroup;
 			children = (
+				8847D9BD15598949004BA8F3 /* Elemente */,
 				889B393F152C8AAB009ED6A4 /* Tiere */,
 				885F0269147C751400EA546F /* Äste */,
 				885F0270147C751400EA546F /* GameLayers */,
@@ -2371,6 +2384,7 @@
 				8833F5131528670500D8E6D1 /* AstSchalter.mm in Sources */,
 				8833F5151528675800D8E6D1 /* BackgroundLayer.mm in Sources */,
 				889B3943152C8AE7009ED6A4 /* Vogel.mm in Sources */,
+				8847D9C1155989B3004BA8F3 /* Feuer.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

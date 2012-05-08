@@ -18,10 +18,41 @@
 @end
 
 @implementation BaseLevel
+class ContactListener : public b2ContactListener
+{
+public:
+    
+    void BeginContact(b2Contact* contact)
+    {
+        NSLog(@"contact with fire");
+    }
+    
+    
+    
+    void EndContact(b2Contact* contact)
+    
+    { /* handle end event */ }
+    
+    
+    
+    void PreSolve(b2Contact* contact, const b2Manifold* oldManifold)
+    
+    { /* handle pre-solve event */ }
+    
+    
+    
+    void PostSolve(b2Contact* contact, const b2ContactImpulse* impulse)
+    
+    { /* handle post-solve event */ }
+    
+};
+
+
+
 @synthesize LevelName;
 -(id)initWithBackGroundImageFile:(NSString*)imageName AndLevelWidth:(CGFloat)Width;
 {  
-
+    
     if(self=[super init])
     {   
         FrameUpdateAbles = [[NSMutableSet alloc]init];
@@ -34,11 +65,11 @@
         
         // <Box2D>
         
-            
+            ContactListener* contactListener = new ContactListener();
             b2Vec2 gravity = b2Vec2(0.0f, -510.0f/PTM_RATIO);
             world = new b2World(gravity);
             world->SetAllowSleeping(true);
-            
+            world->SetContactListener(contactListener);
             
             b2BodyDef groundBodyDef;
             groundBodyDef.position.Set(levelWidth/2.0/PTM_RATIO, (deviceHeight+2)/PTM_RATIO);
