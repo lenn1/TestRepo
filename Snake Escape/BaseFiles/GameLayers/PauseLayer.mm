@@ -32,17 +32,17 @@
         [self addChild:backGround];
         
         CCMenuItemImage* levelMenu = [CCMenuItemImage itemFromNormalImage:@"button_menu.png" selectedImage:@"button_menu_selected.png" target:self selector:@selector(MenuButton)];
-        levelMenu.position = ccp(-125, -85);
+        levelMenu.position = ccp(-125, -65);
         
         CCMenuItemImage* restart = [CCMenuItemImage itemFromNormalImage:@"button_restart.png" selectedImage:@"button_restart_selected.png" target:self selector:@selector(restartButton)];
-        restart.position = ccp(0, -85);
+        restart.position = ccp(0, -65);
         
         CCMenuItemImage* resume = [CCMenuItemImage itemFromNormalImage:@"button_resume.png" selectedImage:@"button_resume_selected.png" target:self selector:@selector(resumeButton)];
-        resume.position = ccp(125, -85);
+        resume.position = ccp(125, -65);
         
         
-        CCLabelTTF* levelName = [CCLabelTTF labelWithString:[_levelName substringFromIndex:7] fontName:@"eartmb.ttf" fontSize:fontsize];
-        levelName.position = ccp(240,179);
+        CCLabelTTF* levelName = [CCLabelTTF labelWithString:[_levelName substringFromIndex:7] fontName:@"UniversLTStd-Bold.otf" fontSize:fontsize];
+        levelName.position = ccp(180,200);
         CCRenderTexture* levelNameStroke = [UsefulStuff createStrokeTTF:levelName size:3 color:ccBLACK];
         [self addChild:levelNameStroke];
         [self addChild:levelName];
@@ -53,14 +53,14 @@
         CCLabelTTF* highscoreLabel;
         if(highscore != 0)
         {
-            highscoreLabel = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"%d",highscore] fontName:@"eartmb.ttf" fontSize:fontsize];
-            highscoreLabel.position = ccp(265,143);
+            highscoreLabel = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"%d",highscore] fontName:@"UniversLTStd-Bold.otf" fontSize:fontsize];
+            highscoreLabel.position = ccp(220,155);
 
         }
         else
         {
-            highscoreLabel = [CCLabelTTF labelWithString:@"" fontName:@"eartmb.ttf" fontSize:fontsize];
-            highscoreLabel.position = ccp(265,143);
+            highscoreLabel = [CCLabelTTF labelWithString:@"-" fontName:@"UniversLTStd-Bold.otf" fontSize:fontsize];
+            highscoreLabel.position = ccp(180,155);
         }
         CCRenderTexture* highScoreLabelStroke = [UsefulStuff createStrokeTTF:highscoreLabel size:3 color:ccBLACK];
         [self addChild:highScoreLabelStroke];

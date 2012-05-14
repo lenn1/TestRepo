@@ -92,12 +92,12 @@
                 star.position = ccpAdd(temp.position, ccp(240,200));
             }
 
-            CCLabelTTF *levelNo2 = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"%d",i+1] fontName:@"eartmbe" fontSize:36];
+            CCLabelTTF *levelNo2 = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"%d",i+1] fontName:@"UniversLTStd-Bold.otf" fontSize:36];
             levelNo2.position = ccpAdd(temp.position, ccp(240,200));
             levelNo2.color = ccc3(0, 0, 0);
             [self addChild:levelNo2];
             
-            CCLabelTTF *levelNo = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"%d",i+1] fontName:@"eartmbe" fontSize:32];
+            CCLabelTTF *levelNo = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"%d",i+1] fontName:@"UniversLTStd-Bold.otf" fontSize:32];
             levelNo.position = ccpAdd(temp.position, ccp(240,200));
             levelNo.color =ccc3(252, 252, 252);
             [self addChild:levelNo];

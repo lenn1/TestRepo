@@ -20,16 +20,16 @@
         _remainingTime = 0; // Just in case.. 
         CGSize winSize = [[CCDirector sharedDirector]winSize];
         
-        CCLabelTTF* pauseLabel = [CCLabelTTF labelWithString:@"II" fontName:@"eartmbe.ttf" fontSize:40];
-        pauseLabel.position = ccp(winSize.width-15,winSize.height-15);
-        CCRenderTexture* pauseStroke = [UsefulStuff createStrokeTTF:pauseLabel size:3 color:ccBLACK];
+        CCLabelTTF* pauseLabel = [CCLabelTTF labelWithString:@"II" fontName:@"UniversLTStd-Bold.otf" fontSize:35];
+        pauseLabel.position = ccp(winSize.width-15,winSize.height-25);
+        CCRenderTexture* pauseStroke = [UsefulStuff createStrokeTTF:pauseLabel size:2 color:ccBLACK];
         [self addChild:pauseStroke];
         [self addChild:pauseLabel];
 
 
-        zeit = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"%d",_remainingTime] fontName:@"eartmbe.ttf" fontSize:40];
-        zeit.position = ccp(30, deviceHeight-15);
-        stroke = [UsefulStuff createStrokeTTF:zeit size:3 color:ccBLACK];
+        zeit = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"%d",_remainingTime] fontName:@"UniversLTStd-Bold.otf" fontSize:35];
+        zeit.position = ccp(25, deviceHeight-25);
+        stroke = [UsefulStuff createStrokeTTF:zeit size:2 color:ccBLACK];
         [self addChild:stroke];
         [self addChild:zeit];
         

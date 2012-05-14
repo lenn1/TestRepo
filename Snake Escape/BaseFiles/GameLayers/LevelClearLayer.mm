@@ -25,21 +25,21 @@
         
         
         CCMenuItemImage* restart = [CCMenuItemImage itemFromNormalImage:@"button_restart.png" selectedImage:@"button_restart_selected.png" target:self selector:@selector(restartButton)];
-        restart.position = ccp(0, -85);
+        restart.position = ccp(0, -65);
         
         
         CCMenuItemImage* levelMenu = [CCMenuItemImage itemFromNormalImage:@"button_menu.png" selectedImage:@"button_menu_selected.png" target:self selector:@selector(menuButton)];
-        levelMenu.position = ccp(-125, -85);
+        levelMenu.position = ccp(-125, -65);
         
-        CCMenuItemImage* resume = [CCMenuItemImage itemFromNormalImage:@"LevelClearNext.png" selectedImage:@"LevelClearNextSelected.png" target:self selector:@selector(nextLevel)];
-        resume.position = ccp(125, -85);
+        CCMenuItemImage* resume = [CCMenuItemImage itemFromNormalImage:@"button_resume.png" selectedImage:@"button_resume_selected.png" target:self selector:@selector(nextLevel)];
+        resume.position = ccp(125, -65);
         
         self.scale = 0.01;
         
         menu = [CCMenu menuWithItems:restart,resume,levelMenu, nil];
         [self addChild:menu];
         
-        CCLabelTTF* scoreLabel = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"%d",score] fontName:@"eartmb" fontSize:45];
+        CCLabelTTF* scoreLabel = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"%d",score] fontName:@"UniversLTStd-Bold.otf" fontSize:45];
         scoreLabel.position = ccp(240, 145);
         CCRenderTexture* stroke = [UsefulStuff createStrokeTTF:scoreLabel  size:3  color:ccBLACK];
         [self addChild:stroke];
@@ -80,7 +80,7 @@
 
     }
     [self addChild:star];
-    star.position = ccp(240,180);
+    star.position = ccp(240,190);
     [self addChild:title];
     title.position = ccp(240, 240);
 }

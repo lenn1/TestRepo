@@ -25,11 +25,11 @@
     {
         [[CCTouchDispatcher sharedDispatcher]addTargetedDelegate:self priority:0 swallowsTouches:YES];
         size = [[CCDirector sharedDirector] winSize];
-        CCSprite* bg = [CCSprite spriteWithFile:@"bg.png"];
+        CCSprite* bg = [CCSprite spriteWithFile:@"hintergrund_basic.png"];
         bg.position = ccp(size.width/2,size.height/2);
         [self addChild:bg];
         
-        credits = [CCSprite spriteWithFile:@"credits.png"];
+        credits = [CCSprite spriteWithFile:@"credits_text.png"];
         credits.position = ccp(size.width/2,-500);
         [self addChild:credits];
         
