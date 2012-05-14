@@ -34,10 +34,6 @@
 		75908B7615602782000E9718 /* UniversLTStd-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 75908B7515602782000E9718 /* UniversLTStd-Bold.otf */; };
 		75908B7A15602BC6000E9718 /* hintergrund_basic.png in Resources */ = {isa = PBXBuildFile; fileRef = 75908B7815602BC6000E9718 /* hintergrund_basic.png */; };
 		75908B7B15602BC6000E9718 /* hintergrund_basic-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 75908B7915602BC6000E9718 /* hintergrund_basic-hd.png */; };
-		75908B8415602F03000E9718 /* IconLevel_lock.png in Resources */ = {isa = PBXBuildFile; fileRef = 75908B7E15602F00000E9718 /* IconLevel_lock.png */; };
-		75908B8515602F03000E9718 /* IconLevel_lock-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 75908B7F15602F01000E9718 /* IconLevel_lock-hd.png */; };
-		75908B8A15602F58000E9718 /* IconLevel.png in Resources */ = {isa = PBXBuildFile; fileRef = 75908B8815602F57000E9718 /* IconLevel.png */; };
-		75908B8B15602F58000E9718 /* IconLevel-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 75908B8915602F57000E9718 /* IconLevel-hd.png */; };
 		75908B901560305E000E9718 /* IconSelectedLevel-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 75908B8E1560305D000E9718 /* IconSelectedLevel-hd.png */; };
 		75908B911560305E000E9718 /* IconSelectedLevel.png in Resources */ = {isa = PBXBuildFile; fileRef = 75908B8F1560305D000E9718 /* IconSelectedLevel.png */; };
 		75908BA615603E82000E9718 /* IconSelectedLevel_back.png in Resources */ = {isa = PBXBuildFile; fileRef = 75908BA415603E82000E9718 /* IconSelectedLevel_back.png */; };
@@ -453,10 +449,6 @@
 		75908B7515602782000E9718 /* UniversLTStd-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "UniversLTStd-Bold.otf"; sourceTree = "<group>"; };
 		75908B7815602BC6000E9718 /* hintergrund_basic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hintergrund_basic.png; sourceTree = "<group>"; };
 		75908B7915602BC6000E9718 /* hintergrund_basic-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hintergrund_basic-hd.png"; sourceTree = "<group>"; };
-		75908B7E15602F00000E9718 /* IconLevel_lock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IconLevel_lock.png; sourceTree = "<group>"; };
-		75908B7F15602F01000E9718 /* IconLevel_lock-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "IconLevel_lock-hd.png"; sourceTree = "<group>"; };
-		75908B8815602F57000E9718 /* IconLevel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IconLevel.png; sourceTree = "<group>"; };
-		75908B8915602F57000E9718 /* IconLevel-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "IconLevel-hd.png"; sourceTree = "<group>"; };
 		75908B8E1560305D000E9718 /* IconSelectedLevel-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "IconSelectedLevel-hd.png"; sourceTree = "<group>"; };
 		75908B8F1560305D000E9718 /* IconSelectedLevel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IconSelectedLevel.png; sourceTree = "<group>"; };
 		75908BA415603E82000E9718 /* IconSelectedLevel_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IconSelectedLevel_back.png; sourceTree = "<group>"; };
@@ -1592,10 +1584,6 @@
 				75908BA515603E82000E9718 /* IconSelectedLevel_back-hd.png */,
 				75908B8E1560305D000E9718 /* IconSelectedLevel-hd.png */,
 				75908B8F1560305D000E9718 /* IconSelectedLevel.png */,
-				75908B8815602F57000E9718 /* IconLevel.png */,
-				75908B8915602F57000E9718 /* IconLevel-hd.png */,
-				75908B7E15602F00000E9718 /* IconLevel_lock.png */,
-				75908B7F15602F01000E9718 /* IconLevel_lock-hd.png */,
 				883C010114A913D2000C342E /* star1.png */,
 				882BF9E214A92D110076414E /* star0-hd.png */,
 				882BF9E314A92D110076414E /* star0.png */,
@@ -2269,10 +2257,6 @@
 				75908B7615602782000E9718 /* UniversLTStd-Bold.otf in Resources */,
 				75908B7A15602BC6000E9718 /* hintergrund_basic.png in Resources */,
 				75908B7B15602BC6000E9718 /* hintergrund_basic-hd.png in Resources */,
-				75908B8415602F03000E9718 /* IconLevel_lock.png in Resources */,
-				75908B8515602F03000E9718 /* IconLevel_lock-hd.png in Resources */,
-				75908B8A15602F58000E9718 /* IconLevel.png in Resources */,
-				75908B8B15602F58000E9718 /* IconLevel-hd.png in Resources */,
 				75908B901560305E000E9718 /* IconSelectedLevel-hd.png in Resources */,
 				75908B911560305E000E9718 /* IconSelectedLevel.png in Resources */,
 				75908BA615603E82000E9718 /* IconSelectedLevel_back.png in Resources */,
