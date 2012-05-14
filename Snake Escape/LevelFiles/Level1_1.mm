@@ -41,10 +41,15 @@
     
     
     /*FEUER DEBUG*/
-    /*Feuer* feuer = [[Feuer alloc]initWithWorld:world];
+    Feuer* feuer = [[Feuer alloc]initWithWorld:world];
     [self addChild:feuer];
-    feuer.position = ccp(310,150);*/
+    feuer.position = ccp(310,150);
     /*FEUER DEBUG*/
+    
+    Wasserfall* wasserfall = [[Wasserfall alloc]initWithWorld:world];
+    [self addChild:wasserfall];
+    wasserfall.position = ccp(40,480);
+    
     
     [schlangeLayer setSchlangePosition:ccp(120, 230)];
 

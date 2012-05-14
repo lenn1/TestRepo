@@ -11,6 +11,9 @@
 #import "BaseLevel.h"
 #import "SimpleAudioEngine.h"
 #define GAMESHOULDPAUSENOTIFICATION @"GAMESHOULDPAUSENOTIFICATION"
+#define SchlangeStateNormal 0
+#define SchlangeStateWater 1
+#define SchlangeStateHarz 2
 
 @interface BaseLevel()
 -(void)LevelSetup;
@@ -18,9 +21,11 @@
 @end
 
 @implementation BaseLevel
+
 class ContactListener : public b2ContactListener
 {
 public:
+    
     BaseLevel* levelPtr;
     void BeginContact(b2Contact* contact)
     {
@@ -34,9 +39,26 @@ public:
                    ([fixB isKindOfClass:[Feuer class]] && [fixA isKindOfClass:[SchlangeLayer class]]))
                 {
                     NSLog(@"Feuer an Schlange");
+                    if([[levelPtr getSchlangeLayer]schlangeState] != SchlangeStateWater)
+                    {
                     [[levelPtr getSchlangeLayer]schlangeVerkohlt];
                     [levelPtr schedule:@selector(schlangeTot) interval:2.0];
+                    }
+                    else 
+                    {
+                        [[levelPtr getSchlangeLayer]setSchlangeStateNormal];
+                    }
                 }
+       
+            
+            // Schlange im Wasser Check.
+            if(([fixA isKindOfClass:[Wasserfall class]] && [fixB isKindOfClass:[SchlangeLayer class]]) || 
+               ([fixB isKindOfClass:[Wasserfall class]] && [fixA isKindOfClass:[SchlangeLayer class]]))
+            {
+                NSLog(@"Wasser an Schlange");
+                [[levelPtr getSchlangeLayer]setSchlangeStateWater];
+            }
+            
                 
         }
         

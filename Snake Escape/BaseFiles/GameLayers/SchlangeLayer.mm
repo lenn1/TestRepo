@@ -10,13 +10,17 @@
 #import "MathHelper.h"
 
 @implementation SchlangeLayer
-@synthesize schlange,delegate,schlangeInAir,_body,aufziehsound;
+@synthesize schlange,delegate,schlangeInAir,_body,aufziehsound,schlangeState;
 #define schlangeScale 0.8
 #define moveSchlangeToActionTag 998877
+#define SchlangeStateNormal 0;
+#define SchlangeStateWater 1;
+#define SchlangeStateHarz 2;
 -(id)initWithLevelWidth:(CGFloat)Width AndWorld:(b2World*)worldptr
 {
     if(self=[super init])
     {
+        [self setSchlangeStateNormal];
         [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"schlangeLangZiehenSpriteSheet.plist"];
         CCSpriteBatchNode *spriteSheet = [CCSpriteBatchNode batchNodeWithFile:@"schlangeLangZiehenSpriteSheet.png"];
         [schlange addChild:spriteSheet];
@@ -58,9 +62,6 @@
 -(void)runSchlangMovesToAstAnimationWithAst:(AstNormal*)ast
 {
 
-
-
-
     NSMutableArray *frames = [NSMutableArray array];
     for(int i = 1; i <= 6 ; i++) 
     {
@@ -96,6 +97,18 @@
         [[SimpleAudioEngine sharedEngine]playEffect:@"fallen.wav"];
 
     }
+}
+-(void)setSchlangeStateWater
+{
+    schlangeState = SchlangeStateWater;
+}
+-(void)setSchlangeStateNormal;
+{
+    schlangeState = SchlangeStateNormal;
+}
+-(void)setSchlangeStateHarz
+{
+    schlangeState = SchlangeStateHarz;
 }
 -(void)moveSchlangeTo:(CGPoint)position
 {
@@ -315,8 +328,6 @@
 
     }
     [delegate touchEndedOnSchlange];
-    
-
     
     
 }

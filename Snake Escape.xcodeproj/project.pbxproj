@@ -169,7 +169,6 @@
 		884477FB149F8320004CAC10 /* AstHindernisSchalter-Erklaerung-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 884477F9149F8320004CAC10 /* AstHindernisSchalter-Erklaerung-hd.png */; };
 		884477FC149F8320004CAC10 /* AstHindernisSchalter-Erklaerung.png in Resources */ = {isa = PBXBuildFile; fileRef = 884477FA149F8320004CAC10 /* AstHindernisSchalter-Erklaerung.png */; };
 		8845AF8E14A53A0C000B99E9 /* CCNodeExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 8845AF8D14A53A0C000B99E9 /* CCNodeExt.m */; };
-		8847D9C1155989B3004BA8F3 /* Feuer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8847D9C0155989B3004BA8F3 /* Feuer.mm */; };
 		8859B0C4147C7F7E009F08EE /* PortalEntry.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8859B0C3147C7F7E009F08EE /* PortalEntry.mm */; };
 		885F01A0147C74F700EA546F /* Level1_4.mm in Sources */ = {isa = PBXBuildFile; fileRef = 885F019B147C74F700EA546F /* Level1_4.mm */; };
 		885F01A1147C74F700EA546F /* Level1_8-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 885F019C147C74F700EA546F /* Level1_8-hd.png */; };
@@ -248,6 +247,9 @@
 		889B3943152C8AE7009ED6A4 /* Vogel.mm in Sources */ = {isa = PBXBuildFile; fileRef = 889B3942152C8AE7009ED6A4 /* Vogel.mm */; };
 		88A07ACA15610D5300D65615 /* facebook_active-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 88A07AC915610D5300D65615 /* facebook_active-hd.png */; };
 		88A07ACC15610ED600D65615 /* facebook_active.png in Resources */ = {isa = PBXBuildFile; fileRef = 88A07ACB15610ED600D65615 /* facebook_active.png */; };
+		88A07ADC156118CC00D65615 /* Feuer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 88A07AD9156118CC00D65615 /* Feuer.mm */; };
+		88A07ADF156119E500D65615 /* Wasserfall.plist in Resources */ = {isa = PBXBuildFile; fileRef = 88A07ADE156119E500D65615 /* Wasserfall.plist */; };
+		88A07AE115611A0200D65615 /* Wasserfall.mm in Sources */ = {isa = PBXBuildFile; fileRef = 88A07AE015611A0200D65615 /* Wasserfall.mm */; };
 		88A9723E148D05C800192D55 /* PauseLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 88A9723D148D05C800192D55 /* PauseLayer.mm */; };
 		88A97242148D0A8000192D55 /* pauseScreen-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 88A97240148D0A8000192D55 /* pauseScreen-hd.png */; };
 		88A97243148D0A8000192D55 /* pauseScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 88A97241148D0A8000192D55 /* pauseScreen.png */; };
@@ -641,8 +643,6 @@
 		8845AF8714A536BD000B99E9 /* PauseLayerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PauseLayerDelegate.h; sourceTree = "<group>"; };
 		8845AF8C14A53A0C000B99E9 /* CCNodeExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCNodeExt.h; path = BaseFiles/GameLayers/CCNodeExt.h; sourceTree = "<group>"; };
 		8845AF8D14A53A0C000B99E9 /* CCNodeExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CCNodeExt.m; path = BaseFiles/GameLayers/CCNodeExt.m; sourceTree = "<group>"; };
-		8847D9BF155989B3004BA8F3 /* Feuer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Feuer.h; sourceTree = "<group>"; };
-		8847D9C0155989B3004BA8F3 /* Feuer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Feuer.mm; sourceTree = "<group>"; };
 		8859B0C2147C7F7E009F08EE /* PortalEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PortalEntry.h; sourceTree = "<group>"; };
 		8859B0C3147C7F7E009F08EE /* PortalEntry.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PortalEntry.mm; sourceTree = "<group>"; };
 		885F019A147C74F700EA546F /* Level1_4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Level1_4.h; sourceTree = "<group>"; };
@@ -736,6 +736,11 @@
 		889B3942152C8AE7009ED6A4 /* Vogel.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = Vogel.mm; path = Tiere/Vogel.mm; sourceTree = "<group>"; };
 		88A07AC915610D5300D65615 /* facebook_active-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "facebook_active-hd.png"; sourceTree = "<group>"; };
 		88A07ACB15610ED600D65615 /* facebook_active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook_active.png; sourceTree = "<group>"; };
+		88A07AD8156118CC00D65615 /* Feuer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Feuer.h; sourceTree = "<group>"; };
+		88A07AD9156118CC00D65615 /* Feuer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Feuer.mm; sourceTree = "<group>"; };
+		88A07ADA156118CC00D65615 /* Wasserfall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Wasserfall.h; sourceTree = "<group>"; };
+		88A07ADE156119E500D65615 /* Wasserfall.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Wasserfall.plist; sourceTree = "<group>"; };
+		88A07AE015611A0200D65615 /* Wasserfall.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Wasserfall.mm; sourceTree = "<group>"; };
 		88A9723C148D05C800192D55 /* PauseLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PauseLayer.h; sourceTree = "<group>"; };
 		88A9723D148D05C800192D55 /* PauseLayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PauseLayer.mm; sourceTree = "<group>"; };
 		88A97240148D0A8000192D55 /* pauseScreen-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pauseScreen-hd.png"; sourceTree = "<group>"; };
@@ -1164,6 +1169,7 @@
 			isa = PBXGroup;
 			children = (
 				88EA8C641529C2AD0081E75B /* fire.plist */,
+				88A07ADE156119E500D65615 /* Wasserfall.plist */,
 				882B500214B26D2D005CBCD5 /* firewall.plist */,
 				882B500A14B27BB6005CBCD5 /* firewall-hd.plist */,
 				882B500614B27972005CBCD5 /* VerkohlterAstZuStaub-hd.plist */,
@@ -1382,15 +1388,6 @@
 			path = Sound;
 			sourceTree = "<group>";
 		};
-		8847D9BD15598949004BA8F3 /* Elemente */ = {
-			isa = PBXGroup;
-			children = (
-				8847D9BF155989B3004BA8F3 /* Feuer.h */,
-				8847D9C0155989B3004BA8F3 /* Feuer.mm */,
-			);
-			name = Elemente;
-			sourceTree = "<group>";
-		};
 		885F0199147C74F700EA546F /* LevelFiles */ = {
 			isa = PBXGroup;
 			children = (
@@ -1531,7 +1528,7 @@
 		885F0268147C751400EA546F /* BaseFiles */ = {
 			isa = PBXGroup;
 			children = (
-				8847D9BD15598949004BA8F3 /* Elemente */,
+				88A07AD7156118CC00D65615 /* Elemente */,
 				889B393F152C8AAB009ED6A4 /* Tiere */,
 				885F0269147C751400EA546F /* Äste */,
 				885F0270147C751400EA546F /* GameLayers */,
@@ -1615,6 +1612,17 @@
 				889B3942152C8AE7009ED6A4 /* Vogel.mm */,
 			);
 			name = Tiere;
+			sourceTree = "<group>";
+		};
+		88A07AD7156118CC00D65615 /* Elemente */ = {
+			isa = PBXGroup;
+			children = (
+				88A07AD8156118CC00D65615 /* Feuer.h */,
+				88A07AD9156118CC00D65615 /* Feuer.mm */,
+				88A07ADA156118CC00D65615 /* Wasserfall.h */,
+				88A07AE015611A0200D65615 /* Wasserfall.mm */,
+			);
+			path = Elemente;
 			sourceTree = "<group>";
 		};
 		88A9724F148D3F2B00192D55 /* AstSchalterAnimation */ = {
@@ -2327,6 +2335,7 @@
 				750C8BF015609DEE003D0C2B /* IconLevel-hd.png in Resources */,
 				88A07ACA15610D5300D65615 /* facebook_active-hd.png in Resources */,
 				88A07ACC15610ED600D65615 /* facebook_active.png in Resources */,
+				88A07ADF156119E500D65615 /* Wasserfall.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2516,7 +2525,8 @@
 				8833F5131528670500D8E6D1 /* AstSchalter.mm in Sources */,
 				8833F5151528675800D8E6D1 /* BackgroundLayer.mm in Sources */,
 				889B3943152C8AE7009ED6A4 /* Vogel.mm in Sources */,
-				8847D9C1155989B3004BA8F3 /* Feuer.mm in Sources */,
+				88A07ADC156118CC00D65615 /* Feuer.mm in Sources */,
+				88A07AE115611A0200D65615 /* Wasserfall.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

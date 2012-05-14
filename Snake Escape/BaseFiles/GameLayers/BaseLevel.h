@@ -29,6 +29,7 @@
 #import <AudioToolbox/AudioToolbox.h>
 #import "Vogel.h"
 #import "Feuer.h"
+#import "Wasserfall.h"
 #define PTM_RATIO 32
 @class PauseLayer;
 

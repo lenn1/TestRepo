@@ -33,7 +33,7 @@
     BOOL schlangeInAir;
     ALuint aufziehsound;
     BOOL schlangetot;
-    
+    unsigned schlangeState;
     b2World* world;
     b2Body* _body;
 }
@@ -45,9 +45,14 @@
 -(void)runSchlangMovesToAstAnimationWithAst:(AstNormal*)ast;
 -(void)setSchlangeLangGezogen:(CGPoint)location;
 -(void)schlangeVerkohlt;
+-(void)setSchlangeStateWater;
+-(void)setSchlangeStateNormal;
+-(void)setSchlangeStateHarz;
+
 @property(readwrite,assign)CCSprite* schlange;
 @property(readwrite,assign)id<SchlangeLayerDelegate> delegate;
 @property(readwrite)BOOL schlangeInAir;
 @property(assign)b2Body* _body;
 @property (readonly)ALuint aufziehsound;
+@property (readonly) unsigned schlangeState;
 @end
