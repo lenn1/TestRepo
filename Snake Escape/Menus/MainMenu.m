@@ -62,25 +62,28 @@
         
         CCMenuItemImage* play = [CCMenuItemImage itemFromNormalImage:@"spielen.png" selectedImage:@"spielen_active.png" target:self selector:@selector(playGame)];
         play.position = ccp(160, 20);
-        
-     
+             
         CCMenuItemImage* options = [CCMenuItemImage itemFromNormalImage:@"optionen.png" selectedImage:@"optionen_active.png" target:self selector:@selector(optionGame)];
-        options.position = ccp(160, -40);
+        options.position = ccp(160, -50);
         
         CCMenuItemImage* credits = [CCMenuItemImage itemFromNormalImage:@"credits.png" selectedImage:@"credits_active.png" target:self selector:@selector(credits)];
-        credits.position = ccp(160, -100);
+        credits.position = ccp(160, -120);
         
         CCMenuItemImage* gamecenter = [CCMenuItemImage itemFromNormalImage:@"gamecenter.png" selectedImage:@"gamecenter_active.png" target:self selector:@selector(self)];
-        gamecenter.position = ccp(-160, -80);
+        gamecenter.scale = 1.4;
+        gamecenter.position = ccp(-170, -80);
         
         CCMenuItemImage* facebook = [CCMenuItemImage itemFromNormalImage:@"facebook.png" selectedImage:@"facebook_active.png" target:self selector:@selector(self)];
+        facebook.scale = 1.4;
         facebook.position = ccp(-110, -80);
                
         CCMenuItemImage* twitter = [CCMenuItemImage itemFromNormalImage:@"twitter.png" selectedImage:@"twitter_active.png" target:self selector:@selector(self)];
-        twitter.position = ccp(-60, -80);
+        twitter.scale = 1.4;
+        twitter.position = ccp(-50, -80);
         
         CCMenuItemImage* google = [CCMenuItemImage itemFromNormalImage:@"google.png" selectedImage:@"google_active.png" target:self selector:@selector(self)];
-        google.position = ccp(-10, -80);
+        google.scale = 1.4;
+        google.position = ccp(10, -80);
         
         
         CCMenu* menu = [CCMenu menuWithItems:play,options,credits, gamecenter, facebook, twitter, google, nil];
