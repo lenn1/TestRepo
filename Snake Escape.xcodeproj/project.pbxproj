@@ -15,7 +15,6 @@
 		7552953F14B9C67500601679 /* TitleExcellent.png in Resources */ = {isa = PBXBuildFile; fileRef = 7552953D14B9C67500601679 /* TitleExcellent.png */; };
 		757E211F1560784200CAF280 /* hintergrund_main.png in Resources */ = {isa = PBXBuildFile; fileRef = 757E211D1560784200CAF280 /* hintergrund_main.png */; };
 		757E21201560784200CAF280 /* hintergrund_main-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 757E211E1560784200CAF280 /* hintergrund_main-hd.png */; };
-		757E213715607BED00CAF280 /* facebook_active-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 757E212115607BEB00CAF280 /* facebook_active-hd.png */; };
 		757E213815607BED00CAF280 /* facebook-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 757E212215607BEB00CAF280 /* facebook-hd.png */; };
 		757E213915607BED00CAF280 /* facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = 757E212315607BEB00CAF280 /* facebook.png */; };
 		757E213A15607BED00CAF280 /* gamecenter_active-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 757E212415607BEB00CAF280 /* gamecenter_active-hd.png */; };
@@ -248,6 +247,7 @@
 		88997471149CB66A00E218D8 /* fallen.wav in Resources */ = {isa = PBXBuildFile; fileRef = 88997470149CB66A00E218D8 /* fallen.wav */; };
 		889B3943152C8AE7009ED6A4 /* Vogel.mm in Sources */ = {isa = PBXBuildFile; fileRef = 889B3942152C8AE7009ED6A4 /* Vogel.mm */; };
 		88A07ACA15610D5300D65615 /* facebook_active-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 88A07AC915610D5300D65615 /* facebook_active-hd.png */; };
+		88A07ACC15610ED600D65615 /* facebook_active.png in Resources */ = {isa = PBXBuildFile; fileRef = 88A07ACB15610ED600D65615 /* facebook_active.png */; };
 		88A9723E148D05C800192D55 /* PauseLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 88A9723D148D05C800192D55 /* PauseLayer.mm */; };
 		88A97242148D0A8000192D55 /* pauseScreen-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 88A97240148D0A8000192D55 /* pauseScreen-hd.png */; };
 		88A97243148D0A8000192D55 /* pauseScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 88A97241148D0A8000192D55 /* pauseScreen.png */; };
@@ -434,7 +434,6 @@
 		7552953D14B9C67500601679 /* TitleExcellent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = TitleExcellent.png; path = LevelClearMenuIcons/TitleExcellent.png; sourceTree = "<group>"; };
 		757E211D1560784200CAF280 /* hintergrund_main.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hintergrund_main.png; sourceTree = "<group>"; };
 		757E211E1560784200CAF280 /* hintergrund_main-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hintergrund_main-hd.png"; sourceTree = "<group>"; };
-		757E212115607BEB00CAF280 /* facebook_active-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "facebook_active-hd.png"; sourceTree = "<group>"; };
 		757E212215607BEB00CAF280 /* facebook-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "facebook-hd.png"; sourceTree = "<group>"; };
 		757E212315607BEB00CAF280 /* facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook.png; sourceTree = "<group>"; };
 		757E212415607BEB00CAF280 /* gamecenter_active-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gamecenter_active-hd.png"; sourceTree = "<group>"; };
@@ -736,6 +735,7 @@
 		889B3941152C8AE7009ED6A4 /* Vogel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Vogel.h; path = Tiere/Vogel.h; sourceTree = "<group>"; };
 		889B3942152C8AE7009ED6A4 /* Vogel.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = Vogel.mm; path = Tiere/Vogel.mm; sourceTree = "<group>"; };
 		88A07AC915610D5300D65615 /* facebook_active-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "facebook_active-hd.png"; sourceTree = "<group>"; };
+		88A07ACB15610ED600D65615 /* facebook_active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook_active.png; sourceTree = "<group>"; };
 		88A9723C148D05C800192D55 /* PauseLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PauseLayer.h; sourceTree = "<group>"; };
 		88A9723D148D05C800192D55 /* PauseLayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PauseLayer.mm; sourceTree = "<group>"; };
 		88A97240148D0A8000192D55 /* pauseScreen-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pauseScreen-hd.png"; sourceTree = "<group>"; };
@@ -1079,11 +1079,11 @@
 				75C41791156086DB0038E7E2 /* optionen_active.png */,
 				75C41792156086DB0038E7E2 /* optionen-hd.png */,
 				75C41793156086DB0038E7E2 /* optionen.png */,
-				757E212115607BEB00CAF280 /* facebook_active-hd.png */,
 				757E212215607BEB00CAF280 /* facebook-hd.png */,
 				757E212315607BEB00CAF280 /* facebook.png */,
 				757E212415607BEB00CAF280 /* gamecenter_active-hd.png */,
 				757E212515607BEB00CAF280 /* gamecenter_active.png */,
+				88A07ACB15610ED600D65615 /* facebook_active.png */,
 				88A07AC915610D5300D65615 /* facebook_active-hd.png */,
 				757E212615607BEB00CAF280 /* gamecenter-hd.png */,
 				757E212715607BEB00CAF280 /* gamecenter.png */,
@@ -2277,7 +2277,6 @@
 				75908BAB15603F27000E9718 /* IconLevel_back-hd.png in Resources */,
 				757E211F1560784200CAF280 /* hintergrund_main.png in Resources */,
 				757E21201560784200CAF280 /* hintergrund_main-hd.png in Resources */,
-				757E213715607BED00CAF280 /* facebook_active-hd.png in Resources */,
 				757E213815607BED00CAF280 /* facebook-hd.png in Resources */,
 				757E213915607BED00CAF280 /* facebook.png in Resources */,
 				757E213A15607BED00CAF280 /* gamecenter_active-hd.png in Resources */,
@@ -2327,6 +2326,7 @@
 				750C8BEF15609DEE003D0C2B /* IconLevel.png in Resources */,
 				750C8BF015609DEE003D0C2B /* IconLevel-hd.png in Resources */,
 				88A07ACA15610D5300D65615 /* facebook_active-hd.png in Resources */,
+				88A07ACC15610ED600D65615 /* facebook_active.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
