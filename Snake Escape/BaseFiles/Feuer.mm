@@ -24,7 +24,7 @@
         _body->SetUserData(self);
 
         b2PolygonShape feuerShape;
-        feuerShape.SetAsBox(15.0/PTM_RATIO, 20.0/PTM_RATIO);
+        feuerShape.SetAsBox(5.0/PTM_RATIO, 20.0/PTM_RATIO);
         b2FixtureDef ballShapeDef;
         ballShapeDef.shape = &feuerShape;
         ballShapeDef.density = 1.0f;
