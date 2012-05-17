@@ -473,9 +473,6 @@ public:
             schlangeLayer.schlangeInAir = YES;
             AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
 
-
-            //BOX2D
-            
             schlangeLayer._body->SetLinearVelocity(b2Vec2(0.0/PTM_RATIO, 100.0/PTM_RATIO));
         }
     }
@@ -499,6 +496,22 @@ public:
     }
     //---------- /ASTSCHALTER   
     
+    //---------- RUTSCHIGER AST
+    if([ast isKindOfClass:[Rutschiger_Ast class]])
+    {
+        if(schlangeLayer.schlangeState == SchlangeStateHarz)
+        {
+            [self stopAllActions];
+        }
+        else
+        {
+            schlangeLayer._body->SetActive(true);
+            [schlangeLayer.schlange setDisplayFrame:[[CCSpriteFrameCache sharedSpriteFrameCache]spriteFrameByName:@"schlange0"]];
+            schlangeLayer.schlangeInAir = YES;
+        }
+        
+    }
+    //---------- /RUTSCHIGER AST   
     
     
     [ast AstWurdeBesucht];

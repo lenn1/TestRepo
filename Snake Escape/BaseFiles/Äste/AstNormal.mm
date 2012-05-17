@@ -30,10 +30,6 @@
     }
     return self;
 }
--(void)loaded
-{
-    NSLog(@"loaded");
-}
 -(void)setDelegate:(id)delegate
 {
     // NOTHING

@@ -24,7 +24,7 @@
 }
 -(void)LevelSetup
 {
-    
+    [schlangeLayer setSchlangeStateHarz];
     /* VOGEL DEBUG */
     
     Vogel *vogel = [[Vogel alloc]init];
@@ -66,7 +66,7 @@
     AstNormal* ast1 = [[AstNormal alloc]init];
     ast1.position = ccp(120,150);
     
-    AstNormal* ast2 = [[AstNormal alloc]init];
+    Rutschiger_Ast* ast2 = [[Rutschiger_Ast alloc]init];
     ast2.position = ccp(260,150);
     
     PortalExit* portalExit = [[PortalExit alloc]init];

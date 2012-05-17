@@ -48,7 +48,7 @@
 -(void)setSchlangeStateWater;
 -(void)setSchlangeStateNormal;
 -(void)setSchlangeStateHarz;
-
+-(void)turnSnakePhysicsOn;
 @property(readwrite,assign)CCSprite* schlange;
 @property(readwrite,assign)id<SchlangeLayerDelegate> delegate;
 @property(readwrite)BOOL schlangeInAir;

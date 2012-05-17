@@ -331,4 +331,10 @@
     
     
 }
+-(void)turnSnakePhysicsOn
+{
+    _body->SetActive(true);
+    schlangeInAir = YES;
+}
+
 @end

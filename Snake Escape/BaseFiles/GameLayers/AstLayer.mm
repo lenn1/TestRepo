@@ -47,9 +47,9 @@
             {
                 if(ast != lastAst && ast.visitable)
                 {
+                    [delegate setSchlangeInAir:NO];
                    [delegate collisionDetectedWithAst:ast];
                    lastAst = ast;
-                    [delegate setSchlangeInAir:NO];
                 }
             }
         }

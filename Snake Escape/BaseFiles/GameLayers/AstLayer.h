@@ -15,6 +15,7 @@
 #import "SchlangeLayer.h"
 #import "AstSchalter.h"
 #import "AstHindernis.h"
+#import "Rutschiger Ast.h"
 @protocol AstLayerDelegate <NSObject>
 @required
 -(CGPoint)getSchlangePosition;
