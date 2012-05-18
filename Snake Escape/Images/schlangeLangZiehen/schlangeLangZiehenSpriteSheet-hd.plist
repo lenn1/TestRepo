@@ -4,13 +4,10 @@
 <dict>
 	<key>frames</key>
 	<dict>
-		
 		<key>schlange0</key>
 		<dict>
 			<key>aliases</key>
-			<array>
-			
-			</array>
+			<array/>
 			<key>spriteColorRect</key>
 			<string>{{2, 0}, {109, 111}}</string>
 			<key>spriteOffset</key>
@@ -26,13 +23,10 @@
 			<key>textureRotated</key>
 			<false/>
 		</dict>
-		
 		<key>schlange1</key>
 		<dict>
 			<key>aliases</key>
-			<array>
-			
-			</array>
+			<array/>
 			<key>spriteColorRect</key>
 			<string>{{208, 26}, {216, 124}}</string>
 			<key>spriteOffset</key>
@@ -48,13 +42,10 @@
 			<key>textureRotated</key>
 			<false/>
 		</dict>
-		
 		<key>schlange10</key>
 		<dict>
 			<key>aliases</key>
-			<array>
-			
-			</array>
+			<array/>
 			<key>spriteColorRect</key>
 			<string>{{208, 28}, {294, 120}}</string>
 			<key>spriteOffset</key>
@@ -70,13 +61,10 @@
 			<key>textureRotated</key>
 			<false/>
 		</dict>
-		
 		<key>schlange11</key>
 		<dict>
 			<key>aliases</key>
-			<array>
-			
-			</array>
+			<array/>
 			<key>spriteColorRect</key>
 			<string>{{208, 28}, {302, 120}}</string>
 			<key>spriteOffset</key>
@@ -92,13 +80,10 @@
 			<key>textureRotated</key>
 			<false/>
 		</dict>
-		
 		<key>schlange12</key>
 		<dict>
 			<key>aliases</key>
-			<array>
-			
-			</array>
+			<array/>
 			<key>spriteColorRect</key>
 			<string>{{207, 28}, {312, 120}}</string>
 			<key>spriteOffset</key>
@@ -114,13 +99,10 @@
 			<key>textureRotated</key>
 			<false/>
 		</dict>
-		
 		<key>schlange2</key>
 		<dict>
 			<key>aliases</key>
-			<array>
-			
-			</array>
+			<array/>
 			<key>spriteColorRect</key>
 			<string>{{208, 26}, {220, 124}}</string>
 			<key>spriteOffset</key>
@@ -136,13 +118,10 @@
 			<key>textureRotated</key>
 			<false/>
 		</dict>
-		
 		<key>schlange3</key>
 		<dict>
 			<key>aliases</key>
-			<array>
-			
-			</array>
+			<array/>
 			<key>spriteColorRect</key>
 			<string>{{207, 27}, {230, 122}}</string>
 			<key>spriteOffset</key>
@@ -158,13 +137,10 @@
 			<key>textureRotated</key>
 			<false/>
 		</dict>
-		
 		<key>schlange4</key>
 		<dict>
 			<key>aliases</key>
-			<array>
-			
-			</array>
+			<array/>
 			<key>spriteColorRect</key>
 			<string>{{208, 26}, {240, 122}}</string>
 			<key>spriteOffset</key>
@@ -180,13 +156,10 @@
 			<key>textureRotated</key>
 			<false/>
 		</dict>
-		
 		<key>schlange5</key>
 		<dict>
 			<key>aliases</key>
-			<array>
-			
-			</array>
+			<array/>
 			<key>spriteColorRect</key>
 			<string>{{208, 27}, {250, 122}}</string>
 			<key>spriteOffset</key>
@@ -202,13 +175,10 @@
 			<key>textureRotated</key>
 			<false/>
 		</dict>
-		
 		<key>schlange6</key>
 		<dict>
 			<key>aliases</key>
-			<array>
-			
-			</array>
+			<array/>
 			<key>spriteColorRect</key>
 			<string>{{209, 27}, {254, 122}}</string>
 			<key>spriteOffset</key>
@@ -224,13 +194,10 @@
 			<key>textureRotated</key>
 			<false/>
 		</dict>
-		
 		<key>schlange7</key>
 		<dict>
 			<key>aliases</key>
-			<array>
-			
-			</array>
+			<array/>
 			<key>spriteColorRect</key>
 			<string>{{208, 27}, {264, 122}}</string>
 			<key>spriteOffset</key>
@@ -246,13 +213,10 @@
 			<key>textureRotated</key>
 			<false/>
 		</dict>
-		
 		<key>schlange8</key>
 		<dict>
 			<key>aliases</key>
-			<array>
-			
-			</array>
+			<array/>
 			<key>spriteColorRect</key>
 			<string>{{208, 27}, {272, 122}}</string>
 			<key>spriteOffset</key>
@@ -268,13 +232,10 @@
 			<key>textureRotated</key>
 			<false/>
 		</dict>
-		
 		<key>schlange9</key>
 		<dict>
 			<key>aliases</key>
-			<array>
-			
-			</array>
+			<array/>
 			<key>spriteColorRect</key>
 			<string>{{209, 27}, {278, 120}}</string>
 			<key>spriteOffset</key>
@@ -290,7 +251,6 @@
 			<key>textureRotated</key>
 			<false/>
 		</dict>
-		
 	</dict>
 	<key>metadata</key>
 	<dict>
@@ -301,7 +261,7 @@
 		<key>size</key>
 		<string>{2048, 1024}</string>
 		<key>name</key>
-		<string>schlangeLangZiehenSpriteSheet</string>
+		<string>schlangeLangZiehenSpriteSheet2</string>
 		<key>premultipliedAlpha</key>
 		<false/>
 		<key>target</key>

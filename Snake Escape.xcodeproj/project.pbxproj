@@ -435,10 +435,6 @@
 		750C8BEA15609DEE003D0C2B /* IconLevel_lock-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "IconLevel_lock-hd.png"; sourceTree = "<group>"; };
 		750C8BEB15609DEE003D0C2B /* IconLevel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IconLevel.png; sourceTree = "<group>"; };
 		750C8BEC15609DEE003D0C2B /* IconLevel-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "IconLevel-hd.png"; sourceTree = "<group>"; };
-		753044FA156142160096B602 /* schlangeLangZiehenSpriteSheet2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = schlangeLangZiehenSpriteSheet2.png; sourceTree = "<group>"; };
-		753044FD156143680096B602 /* schlangeLangZiehenSpriteSheet2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = schlangeLangZiehenSpriteSheet2.plist; sourceTree = "<group>"; };
-		753044FF156146460096B602 /* schlangeLangZiehenSpriteSheet2-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "schlangeLangZiehenSpriteSheet2-hd.plist"; sourceTree = "<group>"; };
-		75304500156146460096B602 /* schlangeLangZiehenSpriteSheet2-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "schlangeLangZiehenSpriteSheet2-hd.png"; sourceTree = "<group>"; };
 		7552953C14B9C67500601679 /* TitleExcellent-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "TitleExcellent-hd.png"; path = "LevelClearMenuIcons/TitleExcellent-hd.png"; sourceTree = "<group>"; };
 		7552953D14B9C67500601679 /* TitleExcellent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = TitleExcellent.png; path = LevelClearMenuIcons/TitleExcellent.png; sourceTree = "<group>"; };
 		757E211D1560784200CAF280 /* hintergrund_main.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hintergrund_main.png; sourceTree = "<group>"; };
@@ -1530,10 +1526,6 @@
 		885F01EF147C750100EA546F /* schlangeLangZiehen */ = {
 			isa = PBXGroup;
 			children = (
-				753044FF156146460096B602 /* schlangeLangZiehenSpriteSheet2-hd.plist */,
-				75304500156146460096B602 /* schlangeLangZiehenSpriteSheet2-hd.png */,
-				753044FD156143680096B602 /* schlangeLangZiehenSpriteSheet2.plist */,
-				753044FA156142160096B602 /* schlangeLangZiehenSpriteSheet2.png */,
 				881F5DE2147EE485004E6583 /* schlangeLangZiehenSpriteSheet.plist */,
 				881F5DE3147EE485004E6583 /* schlangeLangZiehenSpriteSheet.png */,
 				881F5DE7147EF421004E6583 /* schlangeLangZiehenSpriteSheet-hd.plist */,
