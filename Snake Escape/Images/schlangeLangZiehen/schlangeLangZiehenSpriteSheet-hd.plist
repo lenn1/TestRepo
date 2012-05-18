@@ -261,7 +261,7 @@
 		<key>size</key>
 		<string>{2048, 1024}</string>
 		<key>name</key>
-		<string>schlangeLangZiehenSpriteSheet2</string>
+		<string>schlangeLangZiehenSpriteSheet</string>
 		<key>premultipliedAlpha</key>
 		<false/>
 		<key>target</key>
