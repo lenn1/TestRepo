@@ -24,7 +24,6 @@
 }
 -(void)LevelSetup
 {
-    [schlangeLayer setSchlangeStateHarz];
     /* VOGEL DEBUG */
     
     Vogel *vogel = [[Vogel alloc]init];
@@ -39,18 +38,13 @@
     
     /* VOGEL DEBUG */
     
+    Baumharz* harz1 = [[Baumharz alloc]initWithWorld:world];
+    harz1.position = ccp(50,200);
+    [self addChild:harz1];
     
-    /*FEUER DEBUG*/
-    Feuer* feuer = [[Feuer alloc]initWithWorld:world];
-    [self addChild:feuer];
-    feuer.position = ccp(310,150);
-    /*FEUER DEBUG*/
-    
-    Wasserfall* wasserfall = [[Wasserfall alloc]initWithWorld:world];
-    [self addChild:wasserfall];
-    wasserfall.position = ccp(40,480);
-    
-    
+
+     
+
     [schlangeLayer setSchlangePosition:ccp(120, 230)];
 
     levelPack = 1;

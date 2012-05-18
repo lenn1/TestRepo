@@ -59,6 +59,14 @@ public:
                 [[levelPtr getSchlangeLayer]setSchlangeStateWater];
             }
             
+            // Schlange Baumharz Check.
+            if(([fixA isKindOfClass:[Baumharz class]] && [fixB isKindOfClass:[SchlangeLayer class]]) || 
+               ([fixB isKindOfClass:[Baumharz class]] && [fixA isKindOfClass:[SchlangeLayer class]]))
+            {
+                NSLog(@"Baumharz gefangen");
+                [[levelPtr getSchlangeLayer]setSchlangeStateHarz];
+            }
+            
                 
         }
         
@@ -469,6 +477,7 @@ public:
             [[SimpleAudioEngine sharedEngine]playEffect:@"StachelAst.wav"];
             schlangeLayer._body->SetActive(true);
 
+        
             [schlangeLayer.schlange setDisplayFrame:[[CCSpriteFrameCache sharedSpriteFrameCache]spriteFrameByName:@"schlange0"]];
             schlangeLayer.schlangeInAir = YES;
             AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
@@ -502,11 +511,11 @@ public:
         if(schlangeLayer.schlangeState == SchlangeStateHarz)
         {
             [self stopAllActions];
+            [schlangeLayer setSchlangeStateNormal];
         }
         else
         {
             schlangeLayer._body->SetActive(true);
-            [schlangeLayer.schlange setDisplayFrame:[[CCSpriteFrameCache sharedSpriteFrameCache]spriteFrameByName:@"schlange0"]];
             schlangeLayer.schlangeInAir = YES;
         }
         
