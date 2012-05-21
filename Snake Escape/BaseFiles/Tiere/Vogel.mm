@@ -16,11 +16,24 @@
     {
         self.scale = 1.0;
         fangRadius.radius = 30.0f;
-        CCTexture2D *texture = [[CCTextureCache sharedTextureCache] addImage: @"vogel.png"];
-        CGRect rect = CGRectZero;
-        rect.size = texture.contentSize;
-        [self setTexture:texture];
-        [self setTextureRect:rect];
+
+        
+        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"vogel.plist"];
+        CCSpriteBatchNode *spriteSheet = [CCSpriteBatchNode batchNodeWithFile:@"vogel.png"];
+        [self addChild:spriteSheet];
+        
+        [self setDisplayFrame:[[CCSpriteFrameCache sharedSpriteFrameCache]spriteFrameByName:@"vogel0"]];
+        
+        NSMutableArray *frames = [NSMutableArray array];
+        [frames addObject:[[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:@"vogel0"]];
+        [frames addObject:[[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:@"vogel1"]];
+        
+        
+        CCAnimation *fluegelschlag = [CCAnimation animationWithFrames:frames delay:0.7];
+        CCActionInterval* fluegelSchlagAnimation = [CCAnimate actionWithAnimation:fluegelschlag restoreOriginalFrame:YES];
+        CCRepeatForever* repeat = [CCRepeatForever actionWithAction:fluegelSchlagAnimation];
+        [self runAction:repeat];
+        
         directionRight = YES;
         maxRight= self.position.x+100.0;
         maxLeft = self.position.x-100.0;
@@ -41,6 +54,7 @@
         return (maxLeft+sqrtf(powf(maxLeft-(self.position.x-distance), 2)));
 
 }
+
 
 -(void)FrameUpdate:(ccTime)delta
 {
@@ -67,7 +81,7 @@
     
     if(schlangeGefangen)
     {
-        [[delegate getSchlangeLayer]setSchlangePosition:ccp(self.position.x,self.position.y-30.0)];
+        [[delegate getSchlangeLayer]setSchlangePosition:ccp(self.position.x,self.position.y-42.0)];
         if([delegate getSchlangeLayer].schlange.position.x < abwurfPosition+5 && [delegate getSchlangeLayer].schlange.position.x > abwurfPosition-5)
         {
             [delegate getSchlangeLayer]._body->SetActive(true);
@@ -83,7 +97,16 @@
                 [delegate getSchlangeLayer]._body->SetLinearVelocity(b2Vec2(-speed/PTM_RATIO,0.0));
             }
 
+            NSMutableArray *frames = [NSMutableArray array];
+            [frames addObject:[[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:@"vogel0"]];
+            [frames addObject:[[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:@"vogel1"]];
             
+            
+            CCAnimation *fluegelschlag = [CCAnimation animationWithFrames:frames delay:0.7];
+            CCActionInterval* fluegelSchlagAnimation = [CCAnimate actionWithAnimation:fluegelschlag restoreOriginalFrame:YES];
+            CCRepeatForever* repeat = [CCRepeatForever actionWithAction:fluegelSchlagAnimation];
+            [self runAction:repeat];
+
         }
     }
     else 
@@ -98,6 +121,17 @@
                     schlangeGefangen = YES;
                     [delegate getSchlangeLayer]._body->SetActive(false);
                     [[delegate getSchlangeLayer] moveSchlangeTo:ccp([self XPositionInSeconds:0.1],self.position.y-30.0)];
+                    [self stopAllActions];
+                    NSMutableArray *frames = [NSMutableArray array];
+                    [frames addObject:[[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:@"vogel2"]];
+                    [frames addObject:[[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:@"vogel3"]];
+                    
+                    
+                    CCAnimation *fluegelschlag = [CCAnimation animationWithFrames:frames delay:0.7];
+                    CCActionInterval* fluegelSchlagAnimation = [CCAnimate actionWithAnimation:fluegelschlag restoreOriginalFrame:YES];
+                    CCRepeatForever* repeat = [CCRepeatForever actionWithAction:fluegelSchlagAnimation];
+                    [self runAction:repeat];
+                    
                 }
             }
             else 

@@ -47,20 +47,6 @@
       //  [[SimpleAudioEngine sharedEngine] playEffect:@"AstSchalter.wav"];
       //  [[SimpleAudioEngine sharedEngine] playEffect:@"AstHindernis.mp3"];
         
-        /*
-        NSMutableArray *frames = [NSMutableArray array];
-        for(int i = 1; i <= 4; ++i) 
-        {
-            [frames addObject:[[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:[NSString stringWithFormat:@"astkatapult%d",i]]];
-        }
-        
-        CCAnimation *SchalterUmschalten = [CCAnimation animationWithFrames:frames delay:0.05];
-        
-        CCAction* SchalterUmschaltenAction = [CCAnimate actionWithAnimation:SchalterUmschalten restoreOriginalFrame:NO];
-
-         [self runAction:SchalterUmschaltenAction];        */
-        
-        
         [self schedule:@selector(updateSchlange) interval:0.05];
     }
 }
