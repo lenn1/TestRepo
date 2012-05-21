@@ -70,7 +70,8 @@
 -(void)setLevelSelectionPage;
 +(NSArray*)getNeededHighScores;
 -(void)addToFrameUpdate:(id)CCNode1 , ...;
-
+-(void)setSchlangeInActive;
+-(void)setSchlangeActive;
 @property NSInteger levelTimeout;
 @property(assign,readonly)NSString* LevelName;
 @end

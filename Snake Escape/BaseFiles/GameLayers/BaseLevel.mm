@@ -515,12 +515,12 @@ public:
         }
         else
         {
-            schlangeLayer._body->SetActive(true);
             schlangeLayer.schlangeInAir = YES;
+            [self schedule:@selector(setSchlangeActive) interval:0.1];
         }
         
     }
-    //---------- /RUTSCHIGER AST   
+    //---------- /RUTSCHIGER AST
     
     
     [ast AstWurdeBesucht];
@@ -594,6 +594,15 @@ public:
 -(void)setSchlangeInAir:(BOOL)schlangeInAir
 {
     schlangeLayer.schlangeInAir = schlangeInAir;
+}
+-(void)setSchlangeActive
+{
+    [self unschedule:@selector(setSchlangeActive)];
+    schlangeLayer._body->SetActive(true);
+}
+-(void)setSchlangeInActive
+{
+    schlangeLayer._body->SetActive(false);
 }
 -(void)schlangeAbschiessenCancel
 {
