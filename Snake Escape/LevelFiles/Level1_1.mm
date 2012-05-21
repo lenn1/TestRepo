@@ -30,20 +30,14 @@
     [self addChild:vogel];
     vogel.position = ccp(100,300);
     vogel.maxLeft = 40;
-    vogel.maxRight = 400;
-    vogel.abwurfPosition = 120;
+    vogel.maxRight = 450;
+    vogel.abwurfPosition = 190;
     vogel.speed = 150;
     [self addToFrameUpdate:vogel,nil];
     vogel.delegate = self;
     
     /* VOGEL DEBUG */
-    
-    Baumharz* harz1 = [[Baumharz alloc]initWithWorld:world];
-    harz1.position = ccp(50,200);
-    [self addChild:harz1];
-    
-
-     
+         
 
     [schlangeLayer setSchlangePosition:ccp(120, 230)];
 
@@ -60,7 +54,7 @@
     AstNormal* ast1 = [[AstNormal alloc]init];
     ast1.position = ccp(120,150);
     
-    Rutschiger_Ast* ast2 = [[Rutschiger_Ast alloc]init];
+    AstKatapult* ast2 = [[AstKatapult alloc]init];
     ast2.position = ccp(260,150);
     
     PortalExit* portalExit = [[PortalExit alloc]init];

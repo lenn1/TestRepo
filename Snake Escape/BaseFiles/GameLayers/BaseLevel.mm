@@ -505,6 +505,26 @@ public:
     }
     //---------- /ASTSCHALTER   
     
+    //---------- ASTKATAPULT
+    if([ast isKindOfClass:[AstKatapult class]])
+    {
+        if(![(AstKatapult*)ast abgefeuert])
+        {
+            ((AstKatapult*)ast).baseLevelPtr = self;
+            [self stopAllActions];
+            [schlangeLayer moveSchlangeTo:ast.fangRadius.position];
+            
+            
+        }
+        else
+        {
+            [self stopAllActions];
+            [schlangeLayer moveSchlangeTo:ast.fangRadius.position];
+        }
+        
+    }
+    //---------- /ASTKATAPULT   
+    
     //---------- RUTSCHIGER AST
     if([ast isKindOfClass:[Rutschiger_Ast class]])
     {

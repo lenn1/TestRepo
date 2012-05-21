@@ -32,6 +32,7 @@
 #import "Feuer.h"
 #import "Wasserfall.h"
 #import "Baumharz.h"
+#import "AstKatapult.h"
 #define PTM_RATIO 32
 @class PauseLayer;
 

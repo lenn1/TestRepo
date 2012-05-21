@@ -274,6 +274,11 @@
 		88C99D9C14B2160000DF0D0A /* Level1_12.png in Resources */ = {isa = PBXBuildFile; fileRef = 88C99D9A14B2160000DF0D0A /* Level1_12.png */; };
 		88CCE98D156641A300192F86 /* Baumharz.mm in Sources */ = {isa = PBXBuildFile; fileRef = 88CCE98C156641A300192F86 /* Baumharz.mm */; };
 		88CCE9901566448A00192F86 /* harz.png in Resources */ = {isa = PBXBuildFile; fileRef = 88CCE98F1566448A00192F86 /* harz.png */; };
+		88D429BE156A3B2F00409154 /* AstKatapult.mm in Sources */ = {isa = PBXBuildFile; fileRef = 88D429BD156A3B2F00409154 /* AstKatapult.mm */; };
+		88D429C2156A3EA900409154 /* AstKatapult-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = 88D429C0156A3EA900409154 /* AstKatapult-hd.plist */; };
+		88D429C3156A3EA900409154 /* AstKatapult-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 88D429C1156A3EA900409154 /* AstKatapult-hd.png */; };
+		88D429C6156A3F6C00409154 /* AstKatapult.plist in Resources */ = {isa = PBXBuildFile; fileRef = 88D429C4156A3F6C00409154 /* AstKatapult.plist */; };
+		88D429C7156A3F6C00409154 /* AstKatapult.png in Resources */ = {isa = PBXBuildFile; fileRef = 88D429C5156A3F6C00409154 /* AstKatapult.png */; };
 		88D7089F149EAD030008E4B6 /* Level1_1.mm in Sources */ = {isa = PBXBuildFile; fileRef = 88D7089E149EAD030008E4B6 /* Level1_1.mm */; };
 		88D708A2149EADC50008E4B6 /* Level1_2.mm in Sources */ = {isa = PBXBuildFile; fileRef = 88D708A1149EADC50008E4B6 /* Level1_2.mm */; };
 		88D708A5149EB0490008E4B6 /* Level1_3.mm in Sources */ = {isa = PBXBuildFile; fileRef = 88D708A4149EB0490008E4B6 /* Level1_3.mm */; };
@@ -775,6 +780,12 @@
 		88CCE98B156641A300192F86 /* Baumharz.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Baumharz.h; sourceTree = "<group>"; };
 		88CCE98C156641A300192F86 /* Baumharz.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Baumharz.mm; sourceTree = "<group>"; };
 		88CCE98F1566448A00192F86 /* harz.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = harz.png; sourceTree = "<group>"; };
+		88D429BC156A3B2F00409154 /* AstKatapult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AstKatapult.h; sourceTree = "<group>"; };
+		88D429BD156A3B2F00409154 /* AstKatapult.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AstKatapult.mm; sourceTree = "<group>"; };
+		88D429C0156A3EA900409154 /* AstKatapult-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "AstKatapult-hd.plist"; sourceTree = "<group>"; };
+		88D429C1156A3EA900409154 /* AstKatapult-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AstKatapult-hd.png"; sourceTree = "<group>"; };
+		88D429C4156A3F6C00409154 /* AstKatapult.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AstKatapult.plist; sourceTree = "<group>"; };
+		88D429C5156A3F6C00409154 /* AstKatapult.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AstKatapult.png; sourceTree = "<group>"; };
 		88D7089D149EAD030008E4B6 /* Level1_1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Level1_1.h; sourceTree = "<group>"; };
 		88D7089E149EAD030008E4B6 /* Level1_1.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Level1_1.mm; sourceTree = "<group>"; };
 		88D708A0149EADC50008E4B6 /* Level1_2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Level1_2.h; sourceTree = "<group>"; };
@@ -1490,6 +1501,10 @@
 		885F01A5147C750100EA546F /* Äste */ = {
 			isa = PBXGroup;
 			children = (
+				88D429C0156A3EA900409154 /* AstKatapult-hd.plist */,
+				88D429C1156A3EA900409154 /* AstKatapult-hd.png */,
+				88D429C4156A3F6C00409154 /* AstKatapult.plist */,
+				88D429C5156A3F6C00409154 /* AstKatapult.png */,
 				88A9724F148D3F2B00192D55 /* AstSchalterAnimation */,
 				88A97240148D0A8000192D55 /* pauseScreen-hd.png */,
 				88A97241148D0A8000192D55 /* pauseScreen.png */,
@@ -1548,6 +1563,8 @@
 		885F0269147C751400EA546F /* Äste */ = {
 			isa = PBXGroup;
 			children = (
+				88D429BC156A3B2F00409154 /* AstKatapult.h */,
+				88D429BD156A3B2F00409154 /* AstKatapult.mm */,
 				88F1263B15651F0C00E3BEE1 /* Rutschiger Ast.h */,
 				88F1263C15651F0C00E3BEE1 /* Rutschiger Ast.m */,
 				885F026A147C751400EA546F /* AstNormal.h */,
@@ -2350,6 +2367,10 @@
 				88A07ACC15610ED600D65615 /* facebook_active.png in Resources */,
 				88A07ADF156119E500D65615 /* Wasserfall.plist in Resources */,
 				88CCE9901566448A00192F86 /* harz.png in Resources */,
+				88D429C2156A3EA900409154 /* AstKatapult-hd.plist in Resources */,
+				88D429C3156A3EA900409154 /* AstKatapult-hd.png in Resources */,
+				88D429C6156A3F6C00409154 /* AstKatapult.plist in Resources */,
+				88D429C7156A3F6C00409154 /* AstKatapult.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2543,6 +2564,7 @@
 				88A07AE115611A0200D65615 /* Wasserfall.mm in Sources */,
 				88F1263D15651F0C00E3BEE1 /* Rutschiger Ast.m in Sources */,
 				88CCE98D156641A300192F86 /* Baumharz.mm in Sources */,
+				88D429BE156A3B2F00409154 /* AstKatapult.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
