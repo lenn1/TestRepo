@@ -513,7 +513,7 @@ public:
             ((AstKatapult*)ast).baseLevelPtr = self;
             [self stopAllActions];
             [schlangeLayer moveSchlangeTo:ast.fangRadius.position];
-            
+            // Das Physikhandling nach der Animation usw. wird von der Astkatapult klasse geregelt. 
             
         }
         else
