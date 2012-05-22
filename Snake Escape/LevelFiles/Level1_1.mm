@@ -73,7 +73,6 @@
     Affe* affe1 = [[Affe alloc]initWithWorld:world];
     [self addChild:affe1];
     [affe1 setAnkerPosition:ast2.position];
-    ast2.visitable = NO;
 
     
 }

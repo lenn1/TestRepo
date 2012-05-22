@@ -28,7 +28,6 @@
         ankerBodyDef.position.Set(0.0/PTM_RATIO, 0.0/PTM_RATIO);
         anker = world->CreateBody(&ankerBodyDef);
         
-        
         b2BodyDef affeBodyDef;
         
         affeBodyDef.type = b2_dynamicBody;
@@ -60,10 +59,30 @@
         
         jointdef.Initialize(anker, body, affeHandPosition);
         world->CreateJoint(&jointdef);
+        [self schedule:@selector(jump) interval:6];
         
         
     }
     return self;
+}
+-(void)jump
+{
+    [self unschedule:@selector(jump)];
+    anker->SetType(b2_dynamicBody);
+    anker->SetLinearVelocity(b2Vec2(-100/PTM_RATIO, 500.0/PTM_RATIO));
+    [self setDisplayFrame:[[CCSpriteFrameCache sharedSpriteFrameCache]spriteFrameByName:@"affe2"]];
+    b2MassData m;
+    m.mass = 0.1;
+    m.I = 1;
+    m.center = body->GetLocalCenter();
+    
+    body->SetMassData(&m);
+
+    
+}
+-(void)FrameUpdate:(ccTime)delta
+{
+    
 }
 
 -(void)setAnkerPosition:(CGPoint)position
