@@ -28,5 +28,5 @@ typedef struct
 @property(readonly,assign)NSString* name;
 @property(readonly)Radius fangRadius;
 @property(readwrite)BOOL astAktiv;
-@property(readonly)BOOL visitable;
+@property(readwrite)BOOL visitable;
 @end

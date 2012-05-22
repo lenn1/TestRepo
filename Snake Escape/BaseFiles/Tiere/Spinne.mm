@@ -177,7 +177,7 @@
     }
 }
 
--(void)setAnkerPosition:(CGPoint)position;
+-(void)setAnkerPosition:(CGPoint)position
 {
     anker->SetTransform(b2Vec2(position.x/PTM_RATIO, 480.0/PTM_RATIO), anker->GetAngle());
 }

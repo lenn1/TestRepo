@@ -267,6 +267,11 @@
 		88AB1531156ACD4D006468A7 /* spinne.plist in Resources */ = {isa = PBXBuildFile; fileRef = 88AB152F156ACD4D006468A7 /* spinne.plist */; };
 		88AB1532156ACD4D006468A7 /* spinne.png in Resources */ = {isa = PBXBuildFile; fileRef = 88AB1530156ACD4D006468A7 /* spinne.png */; };
 		88AD5B9B14A8A1E80049A322 /* LevelPack2.mm in Sources */ = {isa = PBXBuildFile; fileRef = 88AD5B9A14A8A1E80049A322 /* LevelPack2.mm */; };
+		88AE7102156BA84D0042CE1D /* Affe.mm in Sources */ = {isa = PBXBuildFile; fileRef = 88AE7101156BA84D0042CE1D /* Affe.mm */; };
+		88AE710A156BB6260042CE1D /* affe-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = 88AE7106156BB6260042CE1D /* affe-hd.plist */; };
+		88AE710B156BB6260042CE1D /* affe-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 88AE7107156BB6260042CE1D /* affe-hd.png */; };
+		88AE710C156BB6260042CE1D /* affe.plist in Resources */ = {isa = PBXBuildFile; fileRef = 88AE7108156BB6260042CE1D /* affe.plist */; };
+		88AE710D156BB6260042CE1D /* affe.png in Resources */ = {isa = PBXBuildFile; fileRef = 88AE7109156BB6260042CE1D /* affe.png */; };
 		88B22276148C40A00022412A /* AstHindernis.mm in Sources */ = {isa = PBXBuildFile; fileRef = 88B22275148C40A00022412A /* AstHindernis.mm */; };
 		88B2227C148C426B0022412A /* astHindernis-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 88B2227A148C426B0022412A /* astHindernis-hd.png */; };
 		88B2227D148C426B0022412A /* astHindernis.png in Resources */ = {isa = PBXBuildFile; fileRef = 88B2227B148C426B0022412A /* astHindernis.png */; };
@@ -779,6 +784,12 @@
 		88AB1530156ACD4D006468A7 /* spinne.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spinne.png; sourceTree = "<group>"; };
 		88AD5B9914A8A1E80049A322 /* LevelPack2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LevelPack2.h; path = "Snake Escape/Menus/LevelPack2.h"; sourceTree = SOURCE_ROOT; };
 		88AD5B9A14A8A1E80049A322 /* LevelPack2.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = LevelPack2.mm; path = "Snake Escape/Menus/LevelPack2.mm"; sourceTree = SOURCE_ROOT; };
+		88AE7100156BA84D0042CE1D /* Affe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Affe.h; path = Tiere/Affe.h; sourceTree = "<group>"; };
+		88AE7101156BA84D0042CE1D /* Affe.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = Affe.mm; path = Tiere/Affe.mm; sourceTree = "<group>"; };
+		88AE7106156BB6260042CE1D /* affe-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "affe-hd.plist"; sourceTree = "<group>"; };
+		88AE7107156BB6260042CE1D /* affe-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "affe-hd.png"; sourceTree = "<group>"; };
+		88AE7108156BB6260042CE1D /* affe.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = affe.plist; sourceTree = "<group>"; };
+		88AE7109156BB6260042CE1D /* affe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = affe.png; sourceTree = "<group>"; };
 		88B22274148C40A00022412A /* AstHindernis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AstHindernis.h; sourceTree = "<group>"; };
 		88B22275148C40A00022412A /* AstHindernis.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AstHindernis.mm; sourceTree = "<group>"; };
 		88B22278148C42570022412A /* AstSchalter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AstSchalter.h; sourceTree = "<group>"; };
@@ -1393,6 +1404,10 @@
 		88419FF615581CE100219BE2 /* Tiere */ = {
 			isa = PBXGroup;
 			children = (
+				88AE7106156BB6260042CE1D /* affe-hd.plist */,
+				88AE7107156BB6260042CE1D /* affe-hd.png */,
+				88AE7108156BB6260042CE1D /* affe.plist */,
+				88AE7109156BB6260042CE1D /* affe.png */,
 				88DFB9A2156B88C200DF877A /* spinnenfaden-hd.png */,
 				88DFB9A3156B88C200DF877A /* spinnenfaden.png */,
 				88AB152B156ACC98006468A7 /* spinne-hd.plist */,
@@ -1667,6 +1682,8 @@
 				889B3942152C8AE7009ED6A4 /* Vogel.mm */,
 				88AB1523156AC65E006468A7 /* Spinne.h */,
 				88AB1524156AC65E006468A7 /* Spinne.mm */,
+				88AE7100156BA84D0042CE1D /* Affe.h */,
+				88AE7101156BA84D0042CE1D /* Affe.mm */,
 			);
 			name = Tiere;
 			sourceTree = "<group>";
@@ -2408,6 +2425,10 @@
 				88AB1532156ACD4D006468A7 /* spinne.png in Resources */,
 				88DFB9A4156B88C200DF877A /* spinnenfaden-hd.png in Resources */,
 				88DFB9A5156B88C200DF877A /* spinnenfaden.png in Resources */,
+				88AE710A156BB6260042CE1D /* affe-hd.plist in Resources */,
+				88AE710B156BB6260042CE1D /* affe-hd.png in Resources */,
+				88AE710C156BB6260042CE1D /* affe.plist in Resources */,
+				88AE710D156BB6260042CE1D /* affe.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2603,6 +2624,7 @@
 				88CCE98D156641A300192F86 /* Baumharz.mm in Sources */,
 				88D429BE156A3B2F00409154 /* AstKatapult.mm in Sources */,
 				88AB1525156AC65E006468A7 /* Spinne.mm in Sources */,
+				88AE7102156BA84D0042CE1D /* Affe.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
