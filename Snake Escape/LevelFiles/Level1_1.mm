@@ -50,11 +50,17 @@
     
     self.levelTimeout = 15;
     
+    Spinne* spinne = [[Spinne alloc]initWithWorld:world];
+    [spinne setAnkerPosition:ccp(170.0, 480.0)];
+    spinne.joint->SetLimits(-300/PTM_RATIO, -100.0/PTM_RATIO);
+    
+    [self addToFrameUpdate:spinne,nil];
+    [self addChild:spinne];
     
     AstNormal* ast1 = [[AstNormal alloc]init];
     ast1.position = ccp(120,150);
     
-    AstKatapult* ast2 = [[AstKatapult alloc]init];
+    AstNormal* ast2 = [[AstNormal alloc]init];
     ast2.position = ccp(260,150);
     
     PortalExit* portalExit = [[PortalExit alloc]init];

@@ -67,6 +67,18 @@ public:
                 [[levelPtr getSchlangeLayer]setSchlangeStateHarz];
             }
             
+            // Schlange im Spinnenfaden Check.
+            if(([fixA isKindOfClass:[Spinne class]] && [fixB isKindOfClass:[SchlangeLayer class]]) || 
+               ([fixB isKindOfClass:[Spinne class]] && [fixA isKindOfClass:[SchlangeLayer class]]))
+            {
+                if([fixA isKindOfClass:[Spinne class]])
+                    [(Spinne*)fixA fadenGetroffen];
+                if([fixB isKindOfClass:[Spinne class]])
+                    [(Spinne*)fixB fadenGetroffen];
+                
+            }
+            
+            
                 
         }
         
@@ -233,9 +245,18 @@ public:
 {   
 
         world->Step(delta, 10, 10);
-    
+    //Iterate over the bodies in the physics world
+	for (b2Body* b = world->GetBodyList(); b; b = b->GetNext())
+	{
+		if (b->GetUserData() != NULL) 
+        {
+			//Synchronize the AtlasSprites position and rotation with the corresponding body
+			CCSprite *myActor = (CCSprite*)b->GetUserData();
+			myActor.position = CGPointMake( b->GetPosition().x * PTM_RATIO, b->GetPosition().y * PTM_RATIO);
+			myActor.rotation = -1 * CC_RADIANS_TO_DEGREES(b->GetAngle());
+		}
+	}
     // BOX2D KRAM ENDE
-    
     
         
     for(id node in FrameUpdateAbles)
