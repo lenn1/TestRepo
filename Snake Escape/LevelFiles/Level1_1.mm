@@ -71,10 +71,6 @@
     [astLayer addAeste:ast1,ast2,portalExit,nil];
     
 
-    
-    Affe* affe1 = [[Affe alloc]initWithWorld:world];
-    [self addChild:affe1];
-    [affe1 setAnkerPosition:ast2.position];
 
     
 }

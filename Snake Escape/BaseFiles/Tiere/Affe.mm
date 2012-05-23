@@ -25,7 +25,7 @@
         world = worldPtr;
         b2BodyDef ankerBodyDef;
         ankerBodyDef.type = b2_staticBody;
-        ankerBodyDef.position.Set(-20.0/PTM_RATIO, -45.0/PTM_RATIO);
+        ankerBodyDef.position.Set(0.0/PTM_RATIO, 0.0/PTM_RATIO);
         anker = world->CreateBody(&ankerBodyDef);
         
         b2BodyDef affeBodyDef;
