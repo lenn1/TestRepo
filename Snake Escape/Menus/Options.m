@@ -65,20 +65,21 @@
     
     if([[SimpleAudioEngine sharedEngine]enabled])
     {
-        menuItem1 = [CCMenuItemImage itemFromNormalImage:@"ButtonEnableSound.png" selectedImage:@"ButtonEnableSoundSelected.png" target:self selector:@selector(toggleSound)];
+        menuItem1 = [CCMenuItemImage itemFromNormalImage:@"sound_on.png" selectedImage:@"sound_on_active.png" target:self selector:@selector(toggleSound)];
     }
     else
     {
-        menuItem1 = [CCMenuItemImage itemFromNormalImage:@"ButtonDisableSound.png" selectedImage:@"ButtonDisableSoundSelected.png" target:self selector:@selector(toggleSound)];
+        menuItem1 = [CCMenuItemImage itemFromNormalImage:@"sound_off.png" selectedImage:@"sound_off_active.png" target:self selector:@selector(toggleSound)];
         
     }
     menuItem1.tag = SoundMenuItemTag;
     
-    CCMenuItem* menuItem2 = [CCMenuItemImage itemFromNormalImage:@"ButtonReset.png" selectedImage:@"ButtonResetSelected.png" target:self selector:@selector(resetGame)];
-    CCMenuItem* menuItem3 = [CCMenuItemImage itemFromNormalImage:@"ButtonMainMenu.png" selectedImage:@"ButtonMainMenuSelected.png" target:self selector:@selector(resetGame)];
+    CCMenuItem* menuItem2 = [CCMenuItemImage itemFromNormalImage:@"reset.png" selectedImage:@"reset_active.png" target:self selector:@selector(resetGame)];
+    CCMenuItem* menuItem3 = [CCMenuItemImage itemFromNormalImage:@"mainmenu.png" selectedImage:@"mainmenu_active.png" target:self selector:@selector(resetGame)];
     
     menu = [CCMenu menuWithItems:menuItem1,menuItem2,menuItem3, nil];
-    [menu alignItemsVerticallyWithPadding:5];
+    [menu alignItemsVerticallyWithPadding:12];
+    menu.position = ccp(400, 110);
     
     [self addChild:menu];
 }
@@ -89,7 +90,7 @@
         CCDirector* director = [CCDirector sharedDirector];
         CGSize size = [director winSize];
         
-        CCSprite* bg = [CCSprite spriteWithFile:@"hintergrund_basic.png"];
+        CCSprite* bg = [CCSprite spriteWithFile:@"hintergrund_main.png"];
         bg.position = ccp(size.width/2,size.height/2);
         [self addChild:bg];
         
