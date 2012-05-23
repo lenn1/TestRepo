@@ -25,13 +25,13 @@
 -(void)LevelSetup
 {
     /* VOGEL DEBUG */
-    
+
     Vogel *vogel = [[Vogel alloc]init];
     [self addChild:vogel];
     vogel.position = ccp(100,300);
     vogel.maxLeft = 40;
     vogel.maxRight = 450;
-    vogel.abwurfPosition = 190;
+    vogel.abwurfPosition = 260.0;
     vogel.speed = 150;
     [self addToFrameUpdate:vogel,nil];
     vogel.delegate = self;
@@ -49,11 +49,11 @@
     erklaerung.position = ccp(deviceWidth/2, deviceHeight/2-30);
     [backgroundLayer addChild:erklaerung];
     
-    self.levelTimeout = 15;
+    self.levelTimeout = 99;//15 früher
     
     Spinne* spinne = [[Spinne alloc]initWithWorld:world];
     [spinne setAnkerPosition:ccp(170.0, 480.0)];
-    spinne.joint->SetLimits(-300/PTM_RATIO, -100.0/PTM_RATIO);
+    spinne.joint->SetLimits(-200/PTM_RATIO, -100.0/PTM_RATIO);
     
     [self addToFrameUpdate:spinne,nil];
     [self addChild:spinne];
@@ -61,8 +61,9 @@
     AstNormal* ast1 = [[AstNormal alloc]init];
     ast1.position = ccp(120,150);
     
-    AstNormal* ast2 = [[AstNormal alloc]init];
+    Rutschiger_Ast* ast2 = [[Rutschiger_Ast alloc]init];
     ast2.position = ccp(260,150);
+    [ast2 AstWurdeBesucht];
     
     PortalExit* portalExit = [[PortalExit alloc]init];
     portalExit.position = ccp(365,120);

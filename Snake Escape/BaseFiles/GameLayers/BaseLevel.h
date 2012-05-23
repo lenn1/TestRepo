@@ -35,6 +35,7 @@
 #import "AstKatapult.h"
 #import "Spinne.h"
 #import "Affe.h"
+#import "Stein.h"
 #define PTM_RATIO 32
 @class PauseLayer;
 

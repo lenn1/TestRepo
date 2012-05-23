@@ -25,7 +25,7 @@
         world = worldPtr;
         b2BodyDef ankerBodyDef;
         ankerBodyDef.type = b2_staticBody;
-        ankerBodyDef.position.Set(0.0/PTM_RATIO, 0.0/PTM_RATIO);
+        ankerBodyDef.position.Set(-20.0/PTM_RATIO, -45.0/PTM_RATIO);
         anker = world->CreateBody(&ankerBodyDef);
         
         b2BodyDef affeBodyDef;
@@ -55,7 +55,7 @@
         b2RevoluteJointDef jointdef;
         
         b2Vec2 affeHandPosition;
-        affeHandPosition = b2Vec2(body->GetLocalCenter().x+20/PTM_RATIO,body->GetLocalCenter().y+45/PTM_RATIO);
+        affeHandPosition = b2Vec2(body->GetLocalCenter().x+20.0/PTM_RATIO,body->GetLocalCenter().y+45.0/PTM_RATIO);
         
         jointdef.Initialize(anker, body, affeHandPosition);
         world->CreateJoint(&jointdef);

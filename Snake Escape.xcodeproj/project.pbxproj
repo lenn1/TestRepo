@@ -243,6 +243,10 @@
 		888CE7B1156D6E2C00615C89 /* stein7.png in Resources */ = {isa = PBXBuildFile; fileRef = 888CE7A1156D6E2C00615C89 /* stein7.png */; };
 		888CE7B2156D6E2C00615C89 /* stein8-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 888CE7A2156D6E2C00615C89 /* stein8-hd.png */; };
 		888CE7B3156D6E2C00615C89 /* stein8.png in Resources */ = {isa = PBXBuildFile; fileRef = 888CE7A3156D6E2C00615C89 /* stein8.png */; };
+		888CE7B8156D79B700615C89 /* rutschigerAst-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 888CE7B4156D79B700615C89 /* rutschigerAst-hd.png */; };
+		888CE7B9156D79B700615C89 /* rutschigerAst.png in Resources */ = {isa = PBXBuildFile; fileRef = 888CE7B5156D79B700615C89 /* rutschigerAst.png */; };
+		888CE7BA156D79B700615C89 /* rutschigerAstAktiv-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 888CE7B6156D79B700615C89 /* rutschigerAstAktiv-hd.png */; };
+		888CE7BB156D79B700615C89 /* rutschigerAstAktiv.png in Resources */ = {isa = PBXBuildFile; fileRef = 888CE7B7156D79B700615C89 /* rutschigerAstAktiv.png */; };
 		8899746E149CB56700E218D8 /* Flitsch.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8899746D149CB56700E218D8 /* Flitsch.wav */; };
 		88997471149CB66A00E218D8 /* fallen.wav in Resources */ = {isa = PBXBuildFile; fileRef = 88997470149CB66A00E218D8 /* fallen.wav */; };
 		889B3943152C8AE7009ED6A4 /* Vogel.mm in Sources */ = {isa = PBXBuildFile; fileRef = 889B3942152C8AE7009ED6A4 /* Vogel.mm */; };
@@ -749,6 +753,10 @@
 		888CE7A1156D6E2C00615C89 /* stein7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stein7.png; sourceTree = "<group>"; };
 		888CE7A2156D6E2C00615C89 /* stein8-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stein8-hd.png"; sourceTree = "<group>"; };
 		888CE7A3156D6E2C00615C89 /* stein8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stein8.png; sourceTree = "<group>"; };
+		888CE7B4156D79B700615C89 /* rutschigerAst-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rutschigerAst-hd.png"; sourceTree = "<group>"; };
+		888CE7B5156D79B700615C89 /* rutschigerAst.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rutschigerAst.png; sourceTree = "<group>"; };
+		888CE7B6156D79B700615C89 /* rutschigerAstAktiv-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rutschigerAstAktiv-hd.png"; sourceTree = "<group>"; };
+		888CE7B7156D79B700615C89 /* rutschigerAstAktiv.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rutschigerAstAktiv.png; sourceTree = "<group>"; };
 		8899746D149CB56700E218D8 /* Flitsch.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Flitsch.wav; sourceTree = "<group>"; };
 		88997470149CB66A00E218D8 /* fallen.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = fallen.wav; sourceTree = "<group>"; };
 		889B3941152C8AE7009ED6A4 /* Vogel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Vogel.h; path = Tiere/Vogel.h; sourceTree = "<group>"; };
@@ -1513,6 +1521,10 @@
 		885F01A5147C750100EA546F /* Äste */ = {
 			isa = PBXGroup;
 			children = (
+				888CE7B4156D79B700615C89 /* rutschigerAst-hd.png */,
+				888CE7B5156D79B700615C89 /* rutschigerAst.png */,
+				888CE7B6156D79B700615C89 /* rutschigerAstAktiv-hd.png */,
+				888CE7B7156D79B700615C89 /* rutschigerAstAktiv.png */,
 				88D429C0156A3EA900409154 /* AstKatapult-hd.plist */,
 				88D429C1156A3EA900409154 /* AstKatapult-hd.png */,
 				88D429C4156A3F6C00409154 /* AstKatapult.plist */,
@@ -2418,6 +2430,10 @@
 				888CE7B1156D6E2C00615C89 /* stein7.png in Resources */,
 				888CE7B2156D6E2C00615C89 /* stein8-hd.png in Resources */,
 				888CE7B3156D6E2C00615C89 /* stein8.png in Resources */,
+				888CE7B8156D79B700615C89 /* rutschigerAst-hd.png in Resources */,
+				888CE7B9156D79B700615C89 /* rutschigerAst.png in Resources */,
+				888CE7BA156D79B700615C89 /* rutschigerAstAktiv-hd.png in Resources */,
+				888CE7BB156D79B700615C89 /* rutschigerAstAktiv.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

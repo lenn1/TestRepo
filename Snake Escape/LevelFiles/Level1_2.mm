@@ -28,14 +28,27 @@
     levelPack = 1;
     
     self.levelTimeout = 15;
-    
     [schlangeLayer setSchlangePosition:ccp(80, 250)];
+    
+
+    Feuer* feuer = [[Feuer alloc]initWithWorld:world];
+    [self addChild:feuer];
+    feuer.position = ccp(200,180);
+    
+    Wasserfall* wassserfall = [[Wasserfall alloc]initWithWorld:world];
+    [self addChild:wassserfall];
+    wassserfall.position = ccp(30,320);
     
     AstNormal* ast1 = [[AstNormal alloc]init];
     ast1.position = ccp(80,100);
     
     AstNormal* ast2 = [[AstNormal alloc]init];
     ast2.position = ccp(200,150);
+    
+    Stein* stein1 = [[Stein alloc]initWithWorld:world AndStein:1];
+    [self addChild:stein1];
+    stein1.position = ccp(200,20);
+    
     
     AstNormal* ast3 = [[AstNormal alloc]init];
     ast3.position = ccp(325,100);
@@ -44,6 +57,7 @@
     portalExit.position = ccp(450,160);
     
     [astLayer addAeste:ast1,ast2,ast3,portalExit,nil];
+
     
 }
 -(void)nextLevel
