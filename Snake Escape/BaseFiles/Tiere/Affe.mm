@@ -70,7 +70,7 @@
     [self unschedule:@selector(jump)];
     anker->SetType(b2_dynamicBody);
     anker->SetLinearVelocity(b2Vec2(-100/PTM_RATIO, 500.0/PTM_RATIO));
-    [self setDisplayFrame:[[CCSpriteFrameCache sharedSpriteFrameCache]spriteFrameByName:@"affe2"]];
+    [self setDisplayFrame:[[CCSpriteFrameCache sharedSpriteFrameCache]spriteFrameByName:@"affe3"]];
     b2MassData m;
     m.mass = 0.1;
     m.I = 1;

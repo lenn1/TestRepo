@@ -29,7 +29,7 @@
         [frames addObject:[[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:@"vogel1"]];
         
         
-        CCAnimation *fluegelschlag = [CCAnimation animationWithFrames:frames delay:0.7];
+        CCAnimation *fluegelschlag = [CCAnimation animationWithFrames:frames delay:0.6];
         CCActionInterval* fluegelSchlagAnimation = [CCAnimate actionWithAnimation:fluegelschlag restoreOriginalFrame:YES];
         CCRepeatForever* repeat = [CCRepeatForever actionWithAction:fluegelSchlagAnimation];
         [self runAction:repeat];
@@ -102,7 +102,7 @@
             [frames addObject:[[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:@"vogel1"]];
             
             
-            CCAnimation *fluegelschlag = [CCAnimation animationWithFrames:frames delay:0.7];
+            CCAnimation *fluegelschlag = [CCAnimation animationWithFrames:frames delay:0.5];
             CCActionInterval* fluegelSchlagAnimation = [CCAnimate actionWithAnimation:fluegelschlag restoreOriginalFrame:YES];
             CCRepeatForever* repeat = [CCRepeatForever actionWithAction:fluegelSchlagAnimation];
             [self runAction:repeat];
@@ -127,7 +127,7 @@
                     [frames addObject:[[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:@"vogel3"]];
                     
                     
-                    CCAnimation *fluegelschlag = [CCAnimation animationWithFrames:frames delay:0.7];
+                    CCAnimation *fluegelschlag = [CCAnimation animationWithFrames:frames delay:0.2];
                     CCActionInterval* fluegelSchlagAnimation = [CCAnimate actionWithAnimation:fluegelschlag restoreOriginalFrame:YES];
                     CCRepeatForever* repeat = [CCRepeatForever actionWithAction:fluegelSchlagAnimation];
                     [self runAction:repeat];

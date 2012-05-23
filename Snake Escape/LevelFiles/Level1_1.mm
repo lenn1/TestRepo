@@ -8,7 +8,7 @@
 
 #import "Level1_1.h"
 #import "Level1_2.h"
-
+#import "Stein.h"
 @implementation Level1_1
 +(CCScene*)scene
 {
@@ -38,6 +38,10 @@
     
     /* VOGEL DEBUG */
          
+    
+    Stein* stein1 = [[Stein alloc]initWithWorld:world AndStein:3];
+    [self addChild:stein1];
+    stein1.position = ccp(250,150);
 
     [schlangeLayer setSchlangePosition:ccp(120, 230)];
 

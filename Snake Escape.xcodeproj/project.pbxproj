@@ -226,6 +226,23 @@
 		88705D0D14A017A70036F87E /* Credits.m in Sources */ = {isa = PBXBuildFile; fileRef = 88705D0814A017A60036F87E /* Credits.m */; };
 		88705D0F14A017A70036F87E /* MainMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 88705D0C14A017A70036F87E /* MainMenu.m */; };
 		88754F4514ABC003008501DC /* Level1_12.mm in Sources */ = {isa = PBXBuildFile; fileRef = 88754F4414ABC003008501DC /* Level1_12.mm */; };
+		888CE791156D6B2B00615C89 /* Stein.mm in Sources */ = {isa = PBXBuildFile; fileRef = 888CE790156D6B2B00615C89 /* Stein.mm */; };
+		888CE7A4156D6E2C00615C89 /* stein1-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 888CE794156D6E2C00615C89 /* stein1-hd.png */; };
+		888CE7A5156D6E2C00615C89 /* stein1.png in Resources */ = {isa = PBXBuildFile; fileRef = 888CE795156D6E2C00615C89 /* stein1.png */; };
+		888CE7A6156D6E2C00615C89 /* stein2-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 888CE796156D6E2C00615C89 /* stein2-hd.png */; };
+		888CE7A7156D6E2C00615C89 /* stein2.png in Resources */ = {isa = PBXBuildFile; fileRef = 888CE797156D6E2C00615C89 /* stein2.png */; };
+		888CE7A8156D6E2C00615C89 /* stein3-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 888CE798156D6E2C00615C89 /* stein3-hd.png */; };
+		888CE7A9156D6E2C00615C89 /* stein3.png in Resources */ = {isa = PBXBuildFile; fileRef = 888CE799156D6E2C00615C89 /* stein3.png */; };
+		888CE7AA156D6E2C00615C89 /* stein4-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 888CE79A156D6E2C00615C89 /* stein4-hd.png */; };
+		888CE7AB156D6E2C00615C89 /* stein4.png in Resources */ = {isa = PBXBuildFile; fileRef = 888CE79B156D6E2C00615C89 /* stein4.png */; };
+		888CE7AC156D6E2C00615C89 /* stein5-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 888CE79C156D6E2C00615C89 /* stein5-hd.png */; };
+		888CE7AD156D6E2C00615C89 /* stein5.png in Resources */ = {isa = PBXBuildFile; fileRef = 888CE79D156D6E2C00615C89 /* stein5.png */; };
+		888CE7AE156D6E2C00615C89 /* stein6-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 888CE79E156D6E2C00615C89 /* stein6-hd.png */; };
+		888CE7AF156D6E2C00615C89 /* stein6.png in Resources */ = {isa = PBXBuildFile; fileRef = 888CE79F156D6E2C00615C89 /* stein6.png */; };
+		888CE7B0156D6E2C00615C89 /* stein7-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 888CE7A0156D6E2C00615C89 /* stein7-hd.png */; };
+		888CE7B1156D6E2C00615C89 /* stein7.png in Resources */ = {isa = PBXBuildFile; fileRef = 888CE7A1156D6E2C00615C89 /* stein7.png */; };
+		888CE7B2156D6E2C00615C89 /* stein8-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 888CE7A2156D6E2C00615C89 /* stein8-hd.png */; };
+		888CE7B3156D6E2C00615C89 /* stein8.png in Resources */ = {isa = PBXBuildFile; fileRef = 888CE7A3156D6E2C00615C89 /* stein8.png */; };
 		8899746E149CB56700E218D8 /* Flitsch.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8899746D149CB56700E218D8 /* Flitsch.wav */; };
 		88997471149CB66A00E218D8 /* fallen.wav in Resources */ = {isa = PBXBuildFile; fileRef = 88997470149CB66A00E218D8 /* fallen.wav */; };
 		889B3943152C8AE7009ED6A4 /* Vogel.mm in Sources */ = {isa = PBXBuildFile; fileRef = 889B3942152C8AE7009ED6A4 /* Vogel.mm */; };
@@ -714,6 +731,24 @@
 		88705D0C14A017A70036F87E /* MainMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainMenu.m; path = "Snake Escape/Menus/MainMenu.m"; sourceTree = SOURCE_ROOT; };
 		88754F4314ABC003008501DC /* Level1_12.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Level1_12.h; sourceTree = "<group>"; };
 		88754F4414ABC003008501DC /* Level1_12.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Level1_12.mm; sourceTree = "<group>"; };
+		888CE78F156D6B2B00615C89 /* Stein.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stein.h; sourceTree = "<group>"; };
+		888CE790156D6B2B00615C89 /* Stein.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Stein.mm; sourceTree = "<group>"; };
+		888CE794156D6E2C00615C89 /* stein1-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stein1-hd.png"; sourceTree = "<group>"; };
+		888CE795156D6E2C00615C89 /* stein1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stein1.png; sourceTree = "<group>"; };
+		888CE796156D6E2C00615C89 /* stein2-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stein2-hd.png"; sourceTree = "<group>"; };
+		888CE797156D6E2C00615C89 /* stein2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stein2.png; sourceTree = "<group>"; };
+		888CE798156D6E2C00615C89 /* stein3-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stein3-hd.png"; sourceTree = "<group>"; };
+		888CE799156D6E2C00615C89 /* stein3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stein3.png; sourceTree = "<group>"; };
+		888CE79A156D6E2C00615C89 /* stein4-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stein4-hd.png"; sourceTree = "<group>"; };
+		888CE79B156D6E2C00615C89 /* stein4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stein4.png; sourceTree = "<group>"; };
+		888CE79C156D6E2C00615C89 /* stein5-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stein5-hd.png"; sourceTree = "<group>"; };
+		888CE79D156D6E2C00615C89 /* stein5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stein5.png; sourceTree = "<group>"; };
+		888CE79E156D6E2C00615C89 /* stein6-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stein6-hd.png"; sourceTree = "<group>"; };
+		888CE79F156D6E2C00615C89 /* stein6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stein6.png; sourceTree = "<group>"; };
+		888CE7A0156D6E2C00615C89 /* stein7-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stein7-hd.png"; sourceTree = "<group>"; };
+		888CE7A1156D6E2C00615C89 /* stein7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stein7.png; sourceTree = "<group>"; };
+		888CE7A2156D6E2C00615C89 /* stein8-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stein8-hd.png"; sourceTree = "<group>"; };
+		888CE7A3156D6E2C00615C89 /* stein8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stein8.png; sourceTree = "<group>"; };
 		8899746D149CB56700E218D8 /* Flitsch.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Flitsch.wav; sourceTree = "<group>"; };
 		88997470149CB66A00E218D8 /* fallen.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = fallen.wav; sourceTree = "<group>"; };
 		889B3941152C8AE7009ED6A4 /* Vogel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Vogel.h; path = Tiere/Vogel.h; sourceTree = "<group>"; };
@@ -1450,6 +1485,7 @@
 		885F01A4147C750100EA546F /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				888CE793156D6E2C00615C89 /* Steine */,
 				88419FF615581CE100219BE2 /* Tiere */,
 				75728B6E14B7E024008E0F1F /* Menu */,
 				88705CF014A014170036F87E /* LevelIcons */,
@@ -1609,6 +1645,29 @@
 			path = LevelIcons;
 			sourceTree = "<group>";
 		};
+		888CE793156D6E2C00615C89 /* Steine */ = {
+			isa = PBXGroup;
+			children = (
+				888CE794156D6E2C00615C89 /* stein1-hd.png */,
+				888CE795156D6E2C00615C89 /* stein1.png */,
+				888CE796156D6E2C00615C89 /* stein2-hd.png */,
+				888CE797156D6E2C00615C89 /* stein2.png */,
+				888CE798156D6E2C00615C89 /* stein3-hd.png */,
+				888CE799156D6E2C00615C89 /* stein3.png */,
+				888CE79A156D6E2C00615C89 /* stein4-hd.png */,
+				888CE79B156D6E2C00615C89 /* stein4.png */,
+				888CE79C156D6E2C00615C89 /* stein5-hd.png */,
+				888CE79D156D6E2C00615C89 /* stein5.png */,
+				888CE79E156D6E2C00615C89 /* stein6-hd.png */,
+				888CE79F156D6E2C00615C89 /* stein6.png */,
+				888CE7A0156D6E2C00615C89 /* stein7-hd.png */,
+				888CE7A1156D6E2C00615C89 /* stein7.png */,
+				888CE7A2156D6E2C00615C89 /* stein8-hd.png */,
+				888CE7A3156D6E2C00615C89 /* stein8.png */,
+			);
+			path = Steine;
+			sourceTree = "<group>";
+		};
 		889B393F152C8AAB009ED6A4 /* Tiere */ = {
 			isa = PBXGroup;
 			children = (
@@ -1631,6 +1690,8 @@
 				88A07AE015611A0200D65615 /* Wasserfall.mm */,
 				88CCE98B156641A300192F86 /* Baumharz.h */,
 				88CCE98C156641A300192F86 /* Baumharz.mm */,
+				888CE78F156D6B2B00615C89 /* Stein.h */,
+				888CE790156D6B2B00615C89 /* Stein.mm */,
 			);
 			path = Elemente;
 			sourceTree = "<group>";
@@ -2341,6 +2402,22 @@
 				7518A05D156D2B1E00D7AA56 /* sound_on_active.png in Resources */,
 				7518A05E156D2B1E00D7AA56 /* sound_on-hd.png in Resources */,
 				7518A05F156D2B1E00D7AA56 /* sound_on.png in Resources */,
+				888CE7A4156D6E2C00615C89 /* stein1-hd.png in Resources */,
+				888CE7A5156D6E2C00615C89 /* stein1.png in Resources */,
+				888CE7A6156D6E2C00615C89 /* stein2-hd.png in Resources */,
+				888CE7A7156D6E2C00615C89 /* stein2.png in Resources */,
+				888CE7A8156D6E2C00615C89 /* stein3-hd.png in Resources */,
+				888CE7A9156D6E2C00615C89 /* stein3.png in Resources */,
+				888CE7AA156D6E2C00615C89 /* stein4-hd.png in Resources */,
+				888CE7AB156D6E2C00615C89 /* stein4.png in Resources */,
+				888CE7AC156D6E2C00615C89 /* stein5-hd.png in Resources */,
+				888CE7AD156D6E2C00615C89 /* stein5.png in Resources */,
+				888CE7AE156D6E2C00615C89 /* stein6-hd.png in Resources */,
+				888CE7AF156D6E2C00615C89 /* stein6.png in Resources */,
+				888CE7B0156D6E2C00615C89 /* stein7-hd.png in Resources */,
+				888CE7B1156D6E2C00615C89 /* stein7.png in Resources */,
+				888CE7B2156D6E2C00615C89 /* stein8-hd.png in Resources */,
+				888CE7B3156D6E2C00615C89 /* stein8.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2537,6 +2614,7 @@
 				88D429BE156A3B2F00409154 /* AstKatapult.mm in Sources */,
 				88AB1525156AC65E006468A7 /* Spinne.mm in Sources */,
 				88AE7102156BA84D0042CE1D /* Affe.mm in Sources */,
+				888CE791156D6B2B00615C89 /* Stein.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
