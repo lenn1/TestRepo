@@ -8,10 +8,11 @@
 #import "cocos2d.h"
 #import "CCSprite.h"
 #import "Box2D.h"
-
 @interface Baumharz : CCSprite
 {
     b2Body* body;
+    BOOL toDestroy;
 }
 - (id)initWithWorld:(b2World*)worldPtr;
+-(void)toDestroy;
 @end

@@ -14,6 +14,7 @@
     self = [super init];
     if (self) 
     {
+        toDestroy = NO;
         CCTexture2D *texture = [[CCTextureCache sharedTextureCache] addImage: @"harz.png"];
         CGRect rect = CGRectZero;
         rect.size = texture.contentSize;
@@ -33,9 +34,21 @@
         harzFixtureDef.isSensor = true;
         harzFixtureDef.userData = self;
         body->CreateFixture(&harzFixtureDef);
-        
     }
     return self;
+}
+-(void)toDestroy
+{
+    toDestroy = YES;
+}
+-(void)FrameUpdate:(ccTime)delta
+{
+    if(toDestroy && body)
+    {
+        body->GetWorld()->DestroyBody(body);
+        [self.parent removeChild:self cleanup:YES];
+        body = NULL;
+    }
 }
 -(void)setPosition:(CGPoint)position
 {

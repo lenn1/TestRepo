@@ -65,6 +65,10 @@ public:
             {
                 NSLog(@"Baumharz gefangen");
                 [[levelPtr getSchlangeLayer]setSchlangeStateHarz];
+                if([fixA isKindOfClass:[Baumharz class]])
+                    [fixA toDestroy];
+                if([fixB isKindOfClass:[Baumharz class]])
+                    [fixB toDestroy];
             }
             
             // Schlange im Spinnenfaden Check.

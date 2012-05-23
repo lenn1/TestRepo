@@ -37,9 +37,17 @@
     AstNormal* ast2 = [[AstNormal alloc]init];
     ast2.position = ccp(220,150);
     
-    StachelAst* ast3 = [[StachelAst alloc]init];
+   // StachelAst* ast3 = [[StachelAst alloc]init];
+    //ast3.position = ccp(130,230);
+    
+    Rutschiger_Ast* ast3 = [[Rutschiger_Ast alloc]init];
     ast3.position = ccp(130,230);
-
+    
+    Baumharz* harz1 = [[Baumharz alloc]initWithWorld:world];
+    [self addChild:harz1];
+    harz1.position = ccp(220.0,300.0);
+    [self addToFrameUpdate:harz1,nil];
+    
     AstHindernis* ast4 = [[AstHindernis alloc]initWithWorld:world];
     ast4.position = ccp(140,40);
     ast4.rotation = 120;
