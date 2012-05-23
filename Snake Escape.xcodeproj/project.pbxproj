@@ -94,6 +94,7 @@
 		88072D7D149A38B000E77D0E /* number-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = 88072D7B149A38B000E77D0E /* number-hd.plist */; };
 		88072D81149A396C00E77D0E /* number.plist in Resources */ = {isa = PBXBuildFile; fileRef = 88072D7F149A396C00E77D0E /* number.plist */; };
 		88072D82149A396C00E77D0E /* number.png in Resources */ = {isa = PBXBuildFile; fileRef = 88072D80149A396C00E77D0E /* number.png */; };
+		880A6E64156D8DB100AA4AEA /* harz-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 880A6E63156D8DB100AA4AEA /* harz-hd.png */; };
 		88111CEE14A10EA000E5BF57 /* Level1_6.mm in Sources */ = {isa = PBXBuildFile; fileRef = 88111CED14A10EA000E5BF57 /* Level1_6.mm */; };
 		88111CF214A1154400E5BF57 /* Level1_6-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 88111CF014A1154400E5BF57 /* Level1_6-hd.png */; };
 		88111CF314A1154400E5BF57 /* Level1_6.png in Resources */ = {isa = PBXBuildFile; fileRef = 88111CF114A1154400E5BF57 /* Level1_6.png */; };
@@ -536,6 +537,7 @@
 		88072D7B149A38B000E77D0E /* number-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "number-hd.plist"; sourceTree = "<group>"; };
 		88072D7F149A396C00E77D0E /* number.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = number.plist; sourceTree = "<group>"; };
 		88072D80149A396C00E77D0E /* number.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = number.png; sourceTree = "<group>"; };
+		880A6E63156D8DB100AA4AEA /* harz-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "harz-hd.png"; sourceTree = "<group>"; };
 		88111CEC14A10E9F00E5BF57 /* Level1_6.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Level1_6.h; sourceTree = "<group>"; };
 		88111CED14A10EA000E5BF57 /* Level1_6.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Level1_6.mm; sourceTree = "<group>"; };
 		88111CF014A1154400E5BF57 /* Level1_6-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Level1_6-hd.png"; sourceTree = "<group>"; };
@@ -1506,6 +1508,7 @@
 				8805436D149FAAEA00D96AEB /* sanduhr-hd.plist */,
 				8805436E149FAAEA00D96AEB /* sanduhr-hd.png */,
 				88CCE98F1566448A00192F86 /* harz.png */,
+				880A6E63156D8DB100AA4AEA /* harz-hd.png */,
 				8805436F149FAAEA00D96AEB /* sanduhr.plist */,
 				88054370149FAAEA00D96AEB /* sanduhr.png */,
 				88072D7F149A396C00E77D0E /* number.plist */,
@@ -2434,6 +2437,7 @@
 				888CE7B9156D79B700615C89 /* rutschigerAst.png in Resources */,
 				888CE7BA156D79B700615C89 /* rutschigerAstAktiv-hd.png in Resources */,
 				888CE7BB156D79B700615C89 /* rutschigerAstAktiv.png in Resources */,
+				880A6E64156D8DB100AA4AEA /* harz-hd.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
