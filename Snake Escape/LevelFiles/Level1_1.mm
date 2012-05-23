@@ -38,10 +38,7 @@
     
     /* VOGEL DEBUG */
          
-    
-    Stein* stein1 = [[Stein alloc]initWithWorld:world AndStein:3];
-    [self addChild:stein1];
-    stein1.position = ccp(250,150);
+
 
     [schlangeLayer setSchlangePosition:ccp(120, 230)];
 
