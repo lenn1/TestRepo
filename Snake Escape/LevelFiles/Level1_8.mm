@@ -39,7 +39,7 @@
     AstNormal* ast1 = [[AstNormal alloc]init];
     ast1.position = ccp(125,150);
     
-    AstNormal* ast2 = [[AstNormal alloc]init];
+    AstKatapult* ast2 = [[AstKatapult alloc]init];
     ast2.position = ccp(230,125);
     
     VerkohlterAst* ast3 = [[VerkohlterAst alloc]init];
