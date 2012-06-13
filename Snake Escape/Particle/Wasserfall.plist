@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>angle</key>
-	<real>90</real>
+	<real>270.27755737304688</real>
 	<key>angleVariance</key>
-	<real>12.329999923706055</real>
+	<real>0.0</real>
 	<key>blendFuncDestination</key>
 	<integer>1</integer>
 	<key>blendFuncSource</key>
@@ -15,11 +15,11 @@
 	<key>emitterType</key>
 	<real>0.0</real>
 	<key>finishColorAlpha</key>
-	<real>0.0</real>
+	<real>0.89999997615814209</real>
 	<key>finishColorBlue</key>
 	<real>1</real>
 	<key>finishColorGreen</key>
-	<real>0.43999999761581421</real>
+	<real>0.25999999046325684</real>
 	<key>finishColorRed</key>
 	<real>0.0</real>
 	<key>finishColorVarianceAlpha</key>
@@ -31,15 +31,15 @@
 	<key>finishColorVarianceRed</key>
 	<real>0.0</real>
 	<key>finishParticleSize</key>
-	<real>3.9500000476837158</real>
+	<real>24.110000610351562</real>
 	<key>finishParticleSizeVariance</key>
 	<real>0.0</real>
 	<key>gravityx</key>
 	<real>0.0</real>
 	<key>gravityy</key>
-	<real>-434.20999145507812</real>
+	<real>0.0</real>
 	<key>maxParticles</key>
-	<real>663</real>
+	<real>48</real>
 	<key>maxRadius</key>
 	<real>100</real>
 	<key>maxRadiusVariance</key>
@@ -47,9 +47,9 @@
 	<key>minRadius</key>
 	<real>0.0</real>
 	<key>particleLifespan</key>
-	<real>1.9078999757766724</real>
+	<real>1</real>
 	<key>particleLifespanVariance</key>
-	<real>4.2762999534606934</real>
+	<real>0.0</real>
 	<key>radialAccelVariance</key>
 	<real>0.0</real>
 	<key>radialAcceleration</key>
@@ -67,37 +67,37 @@
 	<key>rotationStartVariance</key>
 	<real>0.0</real>
 	<key>sourcePositionVariancex</key>
-	<real>25</real>
+	<real>15.376953125</real>
 	<key>sourcePositionVariancey</key>
 	<real>0.0</real>
 	<key>sourcePositionx</key>
-	<real>225.15625</real>
+	<real>82.674552917480469</real>
 	<key>sourcePositiony</key>
-	<real>211.4705810546875</real>
+	<real>320.2510986328125</real>
 	<key>speed</key>
-	<real>59.209999084472656</real>
+	<real>217.46504211425781</real>
 	<key>speedVariance</key>
-	<real>0.0</real>
+	<real>159.07688903808594</real>
 	<key>startColorAlpha</key>
 	<real>1</real>
 	<key>startColorBlue</key>
 	<real>1</real>
 	<key>startColorGreen</key>
-	<real>0.75999999046325684</real>
+	<real>0.25999999046325684</real>
 	<key>startColorRed</key>
-	<real>0.49000000953674316</real>
+	<real>0.0</real>
 	<key>startColorVarianceAlpha</key>
 	<real>0.0</real>
 	<key>startColorVarianceBlue</key>
-	<real>0.50999999046325684</real>
+	<real>0.0</real>
 	<key>startColorVarianceGreen</key>
 	<real>0.0</real>
 	<key>startColorVarianceRed</key>
 	<real>0.0</real>
 	<key>startParticleSize</key>
-	<real>26.052631378173828</real>
+	<real>24</real>
 	<key>startParticleSizeVariance</key>
-	<real>5</real>
+	<real>8</real>
 	<key>tangentialAccelVariance</key>
 	<real>0.0</real>
 	<key>tangentialAcceleration</key>
