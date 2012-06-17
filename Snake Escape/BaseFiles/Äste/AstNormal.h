@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
+#import "Box2D.h"
 typedef struct 
 {
     CGFloat radius;
@@ -21,6 +22,7 @@ typedef struct
     Radius fangRadius;
     BOOL astAktiv;
     BOOL visitable;
+    b2World* world;
 }
 -(void)AstWurdeBesucht;
 -(void)setDelegate:(id)delegate;
@@ -29,4 +31,6 @@ typedef struct
 @property(readonly)Radius fangRadius;
 @property(readwrite)BOOL astAktiv;
 @property(readwrite)BOOL visitable;
+@property(readwrite)b2World* world;
+
 @end

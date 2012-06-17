@@ -16,6 +16,7 @@
 #import "AstSchalter.h"
 #import "AstHindernis.h"
 #import "Rutschiger Ast.h"
+#import "Box2D.h"
 @protocol AstLayerDelegate <NSObject>
 @required
 -(CGPoint)getSchlangePosition;
@@ -35,8 +36,11 @@
     id<AstLayerDelegate> delegate;
     AstNormal* lastAst;
     PortalExit* portal;
+    b2World* world;
 }
 @property(readwrite,assign)id<AstLayerDelegate>delegate;
+@property(assign,readonly)NSMutableSet* aeste;
+@property(readwrite)b2World* world;
 -(void)FrameUpdate:(ccTime)delta;
 -(void)addAeste:(AstNormal*)ast1 , ...;
 

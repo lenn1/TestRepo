@@ -341,7 +341,7 @@
 		88E49A1A14AA1B4F002270F1 /* LevelClearNextSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 88E49A1614AA1B4F002270F1 /* LevelClearNextSelected.png */; };
 		88EA8C651529C2AD0081E75B /* fire.plist in Resources */ = {isa = PBXBuildFile; fileRef = 88EA8C641529C2AD0081E75B /* fire.plist */; };
 		88EEEFCD147D3598000FAB36 /* StachelAst.mm in Sources */ = {isa = PBXBuildFile; fileRef = 88EEEFCC147D3598000FAB36 /* StachelAst.mm */; };
-		88F1263D15651F0C00E3BEE1 /* Rutschiger Ast.m in Sources */ = {isa = PBXBuildFile; fileRef = 88F1263C15651F0C00E3BEE1 /* Rutschiger Ast.m */; };
+		88F1263D15651F0C00E3BEE1 /* Rutschiger Ast.mm in Sources */ = {isa = PBXBuildFile; fileRef = 88F1263C15651F0C00E3BEE1 /* Rutschiger Ast.mm */; };
 		88FCA7861476D1CE00D5AF2E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88FCA7851476D1CE00D5AF2E /* QuartzCore.framework */; };
 		88FCA7881476D1CE00D5AF2E /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88FCA7871476D1CE00D5AF2E /* OpenGLES.framework */; };
 		88FCA78A1476D1CE00D5AF2E /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88FCA7891476D1CE00D5AF2E /* OpenAL.framework */; };
@@ -817,6 +817,7 @@
 		88BB5ECF149E9FFF00ED646B /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "Resources/Default@2x.png"; sourceTree = "<group>"; };
 		88BF66A8147821FF00B90B8B /* MathHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MathHelper.h; sourceTree = "<group>"; };
 		88BF66A9147821FF00B90B8B /* MathHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MathHelper.m; sourceTree = "<group>"; };
+		88C1011D158DE60C00FDE4BB /* AffeDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AffeDelegate.h; path = Tiere/AffeDelegate.h; sourceTree = "<group>"; };
 		88C99D9414B212E700DF0D0A /* Level1_9-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Level1_9-hd.png"; sourceTree = "<group>"; };
 		88C99D9514B212E700DF0D0A /* Level1_9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Level1_9.png; sourceTree = "<group>"; };
 		88C99D9914B2160000DF0D0A /* Level1_12-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Level1_12-hd.png"; sourceTree = "<group>"; };
@@ -878,7 +879,7 @@
 		88EEEFCB147D3598000FAB36 /* StachelAst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StachelAst.h; sourceTree = "<group>"; };
 		88EEEFCC147D3598000FAB36 /* StachelAst.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = StachelAst.mm; sourceTree = "<group>"; };
 		88F1263B15651F0C00E3BEE1 /* Rutschiger Ast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Rutschiger Ast.h"; sourceTree = "<group>"; };
-		88F1263C15651F0C00E3BEE1 /* Rutschiger Ast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Rutschiger Ast.m"; sourceTree = "<group>"; };
+		88F1263C15651F0C00E3BEE1 /* Rutschiger Ast.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "Rutschiger Ast.mm"; sourceTree = "<group>"; };
 		88FCA7811476D1CE00D5AF2E /* Snake Escape.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Snake Escape.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		88FCA7851476D1CE00D5AF2E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		88FCA7871476D1CE00D5AF2E /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -1595,7 +1596,7 @@
 				88D429BC156A3B2F00409154 /* AstKatapult.h */,
 				88D429BD156A3B2F00409154 /* AstKatapult.mm */,
 				88F1263B15651F0C00E3BEE1 /* Rutschiger Ast.h */,
-				88F1263C15651F0C00E3BEE1 /* Rutschiger Ast.m */,
+				88F1263C15651F0C00E3BEE1 /* Rutschiger Ast.mm */,
 				885F026A147C751400EA546F /* AstNormal.h */,
 				885F026B147C751400EA546F /* AstNormal.mm */,
 				88B22274148C40A00022412A /* AstHindernis.h */,
@@ -1694,6 +1695,7 @@
 				88AB1524156AC65E006468A7 /* Spinne.mm */,
 				88AE7100156BA84D0042CE1D /* Affe.h */,
 				88AE7101156BA84D0042CE1D /* Affe.mm */,
+				88C1011D158DE60C00FDE4BB /* AffeDelegate.h */,
 			);
 			name = Tiere;
 			sourceTree = "<group>";
@@ -2633,7 +2635,7 @@
 				889B3943152C8AE7009ED6A4 /* Vogel.mm in Sources */,
 				88A07ADC156118CC00D65615 /* Feuer.mm in Sources */,
 				88A07AE115611A0200D65615 /* Wasserfall.mm in Sources */,
-				88F1263D15651F0C00E3BEE1 /* Rutschiger Ast.m in Sources */,
+				88F1263D15651F0C00E3BEE1 /* Rutschiger Ast.mm in Sources */,
 				88CCE98D156641A300192F86 /* Baumharz.mm in Sources */,
 				88D429BE156A3B2F00409154 /* AstKatapult.mm in Sources */,
 				88AB1525156AC65E006468A7 /* Spinne.mm in Sources */,

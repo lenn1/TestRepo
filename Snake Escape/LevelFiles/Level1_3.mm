@@ -37,10 +37,12 @@
     [schlangeLayer setSchlangePosition:ccp(90, 230)];
     
     AstNormal* ast1 = [[AstNormal alloc]init];
-    ast1.position = ccp(90,120);
+    ast1.position = ccp(90,170);
     
-    VerkohlterAst* ast2 = [[VerkohlterAst alloc]init];
-    ast2.position = ccp(230,180);
+    //VERKOHLTERAST HIER MACHEN UND SO
+    AstNormal* ast2 = [[AstNormal alloc]init];
+    ast2.position = ccp(290,100);
+    
     
     PortalExit* portalExit = [[PortalExit alloc]init];
     portalExit.position = ccp(415,135);
@@ -50,9 +52,11 @@
     
     
     
-    Affe* affe1 = [[Affe alloc]initWithWorld:world];
+    Affe* affe1 = [[Affe alloc]initWithWorld:world AndDelegate:self];
     [self addChild:affe1];
-    [affe1 setAnkerPosition:ast2.position];
+    [affe1 setAnkerPosition:ast1.position];
+    affe1.lastAst = ast1;
+    [self addToFrameUpdate:affe1,nil];
     
 }
 -(void)nextLevel

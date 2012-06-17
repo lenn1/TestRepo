@@ -7,9 +7,9 @@
 //
 
 #import "AstNormal.h"
-
+#define PTM_RATIO 32.0
 @implementation AstNormal
-@synthesize fangRadius,astAktiv,name,visitable;
+@synthesize fangRadius,astAktiv,name,visitable,world;
 
 -(id)init
 {
@@ -27,6 +27,7 @@
         [self setTexture:texture];
         [self setTextureRect:rect];
         
+
     }
     return self;
 }

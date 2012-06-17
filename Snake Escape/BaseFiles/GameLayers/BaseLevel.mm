@@ -34,6 +34,8 @@ public:
             id fixA = (id)c->GetFixtureA()->GetUserData();
             id fixB = (id)c->GetFixtureB()->GetUserData();
             
+         //   NSLog(@"%@,%@",NSStringFromClass([fixA class]),NSStringFromClass([fixB class]));
+            
             // Schlange im Feuer Check.
                 if(([fixA isKindOfClass:[Feuer class]] && [fixB isKindOfClass:[SchlangeLayer class]]) || 
                    ([fixB isKindOfClass:[Feuer class]] && [fixA isKindOfClass:[SchlangeLayer class]]))
@@ -81,6 +83,17 @@ public:
                     [(Spinne*)fixB fadenGetroffen];
                 
             }
+            // Affe hat Ast getroffen Check.
+            if(([fixA isKindOfClass:[Affe class]] && [fixB isKindOfClass:[AstNormal class]]) || 
+               ([fixB isKindOfClass:[Affe class]] && [fixA isKindOfClass:[AstNormal class]]))
+            {
+                if([fixA isKindOfClass:[Affe class]])
+                    [(Affe*)fixA astGetroffen];
+                if([fixB isKindOfClass:[Affe class]])
+                    [(Affe*)fixB astGetroffen];
+                
+            }
+            
             
             
                 
@@ -165,6 +178,7 @@ public:
         [self addChild:backgroundLayer];
         astLayer = [[AstLayer alloc]init];
         astLayer.delegate = self;
+        astLayer.world = world;
         [self addChild:astLayer];
         
         schlangeLayer = [[SchlangeLayer alloc]initWithLevelWidth:levelWidth AndWorld:world];
@@ -669,7 +683,10 @@ public:
 {
     return touchStartedOnSchlange;
 }
-
+-(NSMutableSet *)getAeste
+{
+    return astLayer.aeste;
+}
 -(SchlangeLayer *)getSchlangeLayer
 {
     return schlangeLayer;

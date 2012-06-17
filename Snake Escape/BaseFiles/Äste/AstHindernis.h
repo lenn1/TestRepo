@@ -13,7 +13,6 @@
 #define PTM_RATIO 32
 @interface AstHindernis : AstNormal 
 {
-    b2World* world;
     b2Body* astBody;
 }
 - (id)initWithWorld:(b2World*)worldPtr;

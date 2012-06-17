@@ -5,7 +5,6 @@
 //  Created by Lennart Hansen on 18.11.11.
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
-
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 #import "Box2D.h"
@@ -34,12 +33,12 @@
 #import "Baumharz.h"
 #import "AstKatapult.h"
 #import "Spinne.h"
-#import "Affe.h"
 #import "Stein.h"
-#define PTM_RATIO 32
+#import "Affe.h"
+#import "AffeDelegate.h"
 @class PauseLayer;
 
-@interface BaseLevel : CCScene<PauseLayerDelegate,SchlangeLayerDelegate,AstLayerDelegate,CCTargetedTouchDelegate,LevelClearLayerDelegate,VogelDelegate>
+@interface BaseLevel : CCScene<AffeDelegate,PauseLayerDelegate,SchlangeLayerDelegate,AstLayerDelegate,CCTargetedTouchDelegate,LevelClearLayerDelegate,VogelDelegate>
 {
     CGFloat deviceHeight;
     CGFloat deviceWidth;

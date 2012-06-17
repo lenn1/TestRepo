@@ -14,7 +14,7 @@
 
 @end
 @implementation AstLayer
-@synthesize delegate;
+@synthesize delegate,aeste,world;
 -(id)init
 {
     if(self = [super init])
@@ -95,6 +95,26 @@
 -(void)addAst:(AstNormal*)ast
 {
     [ast setDelegate:self];
+    [ast setWorld:world];
+    
+    b2BodyDef ballBodyDef;
+    ballBodyDef.type = b2_staticBody;
+    ballBodyDef.position.Set(ast.position.x/PTM_RATIO, ast.position.y/PTM_RATIO);
+    b2Body* body = world->CreateBody(&ballBodyDef);
+    b2CircleShape circle;
+    circle.m_radius = 24.5/PTM_RATIO;
+    
+    b2FixtureDef ballShapeDef;
+    ballShapeDef.shape = &circle;
+    ballShapeDef.density = 1.0f;
+    ballShapeDef.friction = 0.6f;
+    ballShapeDef.restitution = 0.1f;
+    ballShapeDef.userData = ast;
+    ballShapeDef.isSensor = true;
+    body->CreateFixture(&ballShapeDef);
+    
+    
+    
     [aeste addObject:ast];
     [self addChild:ast];
 }
