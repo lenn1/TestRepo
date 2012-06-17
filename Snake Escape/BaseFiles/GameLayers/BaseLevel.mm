@@ -88,15 +88,11 @@ public:
                ([fixB isKindOfClass:[Affe class]] && [fixA isKindOfClass:[AstNormal class]]))
             {
                 if([fixA isKindOfClass:[Affe class]])
-                    [(Affe*)fixA astGetroffen];
+                    ((Affe*)fixA).astHit = YES;
                 if([fixB isKindOfClass:[Affe class]])
-                    [(Affe*)fixB astGetroffen];
-                
+                    ((Affe*)fixA).astHit = YES;                
             }
-            
-            
-            
-                
+                            
         }
         
 
@@ -649,7 +645,10 @@ public:
         [schlangeLayer.schlange setDisplayFrame:[[CCSpriteFrameCache sharedSpriteFrameCache]spriteFrameByName:@"schlange0"]];
     }
 }
-
+-(AstNormal*)getSchlangeAst
+{
+    return astLayer.lastAst;
+}
 -(CGPoint)getSchlangePosition
 {
     return schlangeLayer.schlange.position;

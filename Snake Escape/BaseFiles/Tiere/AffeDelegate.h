@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-
+@class AstNormal;
 @protocol AffeDelegate <NSObject>
 @required
 -(NSMutableSet*)getAeste;
+-(AstNormal*)getSchlangeAst;
 @end

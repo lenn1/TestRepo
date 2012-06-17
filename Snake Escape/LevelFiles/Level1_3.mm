@@ -32,7 +32,7 @@
     erklaerung.position = ccp(deviceWidth/2, deviceHeight/2-30);
     [backgroundLayer addChild:erklaerung];
     
-    self.levelTimeout = 15;
+    self.levelTimeout = 30;
     
     [schlangeLayer setSchlangePosition:ccp(90, 230)];
     
@@ -43,19 +43,25 @@
     AstNormal* ast2 = [[AstNormal alloc]init];
     ast2.position = ccp(290,100);
     
+    AstNormal* ast3 = [[AstNormal alloc]init];
+    ast3.position = ccp(350,250);
+    
+    AstNormal* ast4 = [[AstNormal alloc]init];
+    ast4.position = ccp(200,270);
     
     PortalExit* portalExit = [[PortalExit alloc]init];
     portalExit.position = ccp(415,135);
     
-    [astLayer addAeste:ast1,ast2,portalExit,nil];
+    [astLayer addAeste:ast1,ast2,ast3,ast4,portalExit,nil];
     
     
     
     
     Affe* affe1 = [[Affe alloc]initWithWorld:world AndDelegate:self];
     [self addChild:affe1];
-    [affe1 setAnkerPosition:ast1.position];
-    affe1.lastAst = ast1;
+    [affe1 setAnkerPosition:ast3.position];
+    affe1.lastAst = ast3;
+    ast3.visitable = NO;
     [self addToFrameUpdate:affe1,nil];
     
 }

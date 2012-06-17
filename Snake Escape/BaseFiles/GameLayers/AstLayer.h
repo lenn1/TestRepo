@@ -41,6 +41,7 @@
 @property(readwrite,assign)id<AstLayerDelegate>delegate;
 @property(assign,readonly)NSMutableSet* aeste;
 @property(readwrite)b2World* world;
+@property (readonly)AstNormal*lastAst;
 -(void)FrameUpdate:(ccTime)delta;
 -(void)addAeste:(AstNormal*)ast1 , ...;
 

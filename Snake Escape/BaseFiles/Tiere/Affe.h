@@ -32,11 +32,12 @@
     id<AffeDelegate> _delegate;
     AstNormal* lastAst;
     BOOL affetot;
+    BOOL astHit;
 }
 -(id)initWithWorld:(b2World*)worldPtr AndDelegate:(id)delegate;
 -(void)setAnkerPosition:(CGPoint)position;
--(void)astGetroffen;
 @property (assign)AstNormal* lastAst;
 @property b2Body* anker;
 @property(assign,nonatomic)id<AffeDelegate>_delegate;
+@property(readwrite)BOOL astHit;
 @end

@@ -8,14 +8,14 @@
 
 #import "Affe.h"
 @implementation Affe
-@synthesize anker,_delegate,lastAst;
+@synthesize anker,_delegate,lastAst,astHit;
 -(id)initWithWorld:(b2World*)worldPtr AndDelegate:(id)delegate
 {
     self = [super init];
     if (self)
     {
         affetot = NO;
-        
+        astHit = NO;
         // DELEGATE
         self._delegate = delegate;
         aeste = [delegate getAeste];
@@ -95,26 +95,34 @@ b2Vec2 rad2vec(float r)
 
 -(void)jump
 {
+    [self unschedule:@selector(jump)];
+
+    float timeshift = arc4random() % 400;
+    timeshift /= 100;
+    [self schedule:@selector(jump) interval:2.0+timeshift];
+
+    
     lastAst.visitable = YES;
     NSMutableArray* NormaleAeste = [[NSMutableArray alloc]init];
     for(AstNormal* ast in aeste)
     {
         if([ast.name isEqualToString:@"AstNormal"] && ast!=lastAst)
         {
-            [NormaleAeste addObject:ast];
+            if(ast != [_delegate getSchlangeAst])
+                [NormaleAeste addObject:ast];
         }
     }
     int r = arc4random() % [NormaleAeste count];
-    AstNormal* ast;
-    ast = [NormaleAeste objectAtIndex:r];
-    CGPoint entfernung = [MathHelper getVektorFromPoint:lastAst.position toPoint:ast.position];
+    AstNormal* zielAst;
+    zielAst = [NormaleAeste objectAtIndex:r];
+    CGPoint entfernung = [MathHelper getVektorFromPoint:lastAst.position toPoint:zielAst.position];
     float alpha = atan((4*entfernung.y)/(2*entfernung.x));
     b2Vec2 velocity = rad2vec(alpha);
     alpha = fabsf(alpha);
     float speed = sqrt(((fabsf(entfernung.x)/PTM_RATIO)*-world->GetGravity().y)/sin(2*alpha));
     speed *= 1.5;
     NSLog(@"angle: %f speed: %f",CC_RADIANS_TO_DEGREES(alpha),speed);
-
+    [NormaleAeste release];
     
     if(entfernung.x >= 0.0 && entfernung.y >= 0.0)
     {
@@ -130,13 +138,13 @@ b2Vec2 rad2vec(float r)
     }
     else if(entfernung.x <= 0.0 && entfernung.y <= 0.0)
     {
-        velocity = b2Vec2(-speed,0.0);
+        velocity = b2Vec2(velocity.x*-speed,(velocity.y*-speed)-world->GetGravity().y);
         [self setDisplayFrame:[[CCSpriteFrameCache sharedSpriteFrameCache]spriteFrameByName:@"affe3"]];
 
     }
     else if(entfernung.x >= 0.0 && entfernung.y <= 0.0)
     {
-        velocity = b2Vec2(speed,0.0);
+        velocity = b2Vec2(velocity.x*speed,(velocity.y*-speed)-world->GetGravity().y);
         [self setDisplayFrame:[[CCSpriteFrameCache sharedSpriteFrameCache]spriteFrameByName:@"affe2"]];
 
     }
@@ -144,54 +152,55 @@ b2Vec2 rad2vec(float r)
     NSLog(@"vel: %f,%f",velocity.x,velocity.y);
         
     [self setRotation:0.0];
+    
+    NSLog(@"zielAst:%f.%f",zielAst.position.x,zielAst.position.y);
+
     world->DestroyJoint(handJoint);
     handJoint = NULL;
     body->SetLinearVelocity(velocity);
 
     body->SetAngularVelocity(0.0);
     body->SetTransform(body->GetPosition(), 0.0);
-    
-    
-    
 }
--(void)astGetroffen
+-(void)astGetroffenCheck
 {
-    NSLog(@"hit");
+    if(!affetot)
+        for (AstNormal*ast in aeste)
+        {
+            if([MathHelper IsCGPoint:ccp(body->GetPosition().x*PTM_RATIO,body->GetPosition().y*PTM_RATIO+40) InRadius:100.0 OfPoint:ast.position] && ast != [_delegate getSchlangeAst])
+            {    
+                if(![ast isKindOfClass:[PortalEntry class]] &&
+                   ![ast isKindOfClass:[PortalExit class]] &&
+                   ![ast isKindOfClass:[StachelAst class]] &&
+                   ![ast isKindOfClass:[Rutschiger_Ast class]] &&
+                   ![ast isKindOfClass:[VerkohlterAst class]] &&
+                   ![ast isKindOfClass:[AstKatapult class]] &&
+                   ast != lastAst)
+                {
+                    [self setAnkerPosition:ast.position];
+                    [self setPosition:ccp(ast.position.x-20.0,ast.position.y-45.0)];
+                    [self setRotation:0.0];
+                    b2RevoluteJointDef jointdef;
+                    
+                    b2Vec2 affeHandPosition;
+                    affeHandPosition = b2Vec2(body->GetWorldCenter().x+20.0/PTM_RATIO,body->GetWorldCenter().y+45.0/PTM_RATIO);
+                    
+                    jointdef.Initialize(anker, body, affeHandPosition);
+                    handJoint = world->CreateJoint(&jointdef);
+                    
+                    lastAst = ast;
+                    [self setDisplayFrame:[[CCSpriteFrameCache sharedSpriteFrameCache]spriteFrameByName:@"affe0"]];
+                    lastAst.visitable = NO;
+                    
+                }
+            }
+        }
+    astHit = NO;
 }
 -(void)FrameUpdate:(ccTime)delta
 {
-    if(!affetot)
-    for (AstNormal*ast in aeste)
-    {
-        if([MathHelper IsCGPoint:ccp(body->GetPosition().x*PTM_RATIO,body->GetPosition().y*PTM_RATIO+40) InRadius:45.0 OfPoint:ast.position])
-        {
-            if(![ast isKindOfClass:[PortalEntry class]] &&
-               ![ast isKindOfClass:[PortalExit class]] &&
-               ![ast isKindOfClass:[StachelAst class]] &&
-               ![ast isKindOfClass:[Rutschiger_Ast class]] &&
-               ![ast isKindOfClass:[VerkohlterAst class]] &&
-               ![ast isKindOfClass:[AstKatapult class]] &&
-               ast != lastAst)
-            {
-                [self setAnkerPosition:ast.position];
-                [self setPosition:ccp(ast.position.x-20.0,ast.position.y-45.0)];
-                [self setRotation:0.0];
-                b2RevoluteJointDef jointdef;
-                
-                b2Vec2 affeHandPosition;
-                affeHandPosition = b2Vec2(body->GetWorldCenter().x+20.0/PTM_RATIO,body->GetWorldCenter().y+45.0/PTM_RATIO);
-                
-                jointdef.Initialize(anker, body, affeHandPosition);
-                handJoint = world->CreateJoint(&jointdef);
-                
-                lastAst = ast;
-                [self setDisplayFrame:[[CCSpriteFrameCache sharedSpriteFrameCache]spriteFrameByName:@"affe0"]];
-                lastAst.visitable = NO;
-                
-            }
-        }
-    }
-
+    if(astHit)
+        [self astGetroffenCheck];
     
     if(self.position.y < -200.0)
     {

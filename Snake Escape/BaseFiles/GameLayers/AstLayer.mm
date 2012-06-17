@@ -14,7 +14,7 @@
 
 @end
 @implementation AstLayer
-@synthesize delegate,aeste,world;
+@synthesize delegate,aeste,lastAst,world;
 -(id)init
 {
     if(self = [super init])
@@ -102,7 +102,7 @@
     ballBodyDef.position.Set(ast.position.x/PTM_RATIO, ast.position.y/PTM_RATIO);
     b2Body* body = world->CreateBody(&ballBodyDef);
     b2CircleShape circle;
-    circle.m_radius = 24.5/PTM_RATIO;
+    circle.m_radius = 10.0/PTM_RATIO;
     
     b2FixtureDef ballShapeDef;
     ballShapeDef.shape = &circle;
