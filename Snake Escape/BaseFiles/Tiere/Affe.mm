@@ -66,17 +66,6 @@
         
         
         
-        // JOINT 
-        
-        b2RevoluteJointDef jointdef;
-        
-        b2Vec2 affeHandPosition;
-        affeHandPosition = b2Vec2(body->GetWorldCenter().x+20.0/PTM_RATIO,body->GetWorldCenter().y+45.0/PTM_RATIO);
-        
-        jointdef.Initialize(anker, body, affeHandPosition);
-        handJoint = world->CreateJoint(&jointdef);
-        
-        
         //---------- BOX2D --------- 
         
         

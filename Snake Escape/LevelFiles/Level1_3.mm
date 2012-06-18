@@ -59,9 +59,7 @@
     
     Affe* affe1 = [[Affe alloc]initWithWorld:world AndDelegate:self];
     [self addChild:affe1];
-    [affe1 setAnkerPosition:ast3.position];
-    affe1.lastAst = ast3;
-    ast3.visitable = NO;
+    [affe1 setPosition:ccpAdd(ast3.position, ccp(20, 30))];
     [self addToFrameUpdate:affe1,nil];
     
 }
