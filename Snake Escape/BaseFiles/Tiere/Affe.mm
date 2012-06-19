@@ -97,6 +97,7 @@ b2Vec2 rad2vec(float r)
 }
 -(void)jump
 {
+
     [self unschedule:@selector(jump)];
 
     float timeshift = arc4random() % 400;
@@ -104,72 +105,75 @@ b2Vec2 rad2vec(float r)
     [self schedule:@selector(jump) interval:2.0+timeshift];
     [self schedule:@selector(changeToAffe4) interval:timeshift];
     
-    lastAst.visitable = YES;
-    NSMutableArray* NormaleAeste = [[NSMutableArray alloc]init];
-    for(AstNormal* ast in aeste)
+    if(handJoint != NULL)
     {
-        if([ast.name isEqualToString:@"AstNormal"] && ast!=lastAst)
+        lastAst.visitable = YES;
+        NSMutableArray* NormaleAeste = [[NSMutableArray alloc]init];
+        for(AstNormal* ast in aeste)
         {
-            CGPoint bodyPositionInCocos2D = ccp(body->GetPosition().x*PTM_RATIO,body->GetPosition().y*PTM_RATIO);
-            CGFloat entfernung = [MathHelper distanceBetween:ast.position und:bodyPositionInCocos2D];
+            if([ast.name isEqualToString:@"AstNormal"] && ast!=lastAst)
+            {
+                CGPoint bodyPositionInCocos2D = ccp(body->GetPosition().x*PTM_RATIO,body->GetPosition().y*PTM_RATIO);
+                CGFloat entfernung = [MathHelper distanceBetween:ast.position und:bodyPositionInCocos2D];
             
-            if(ast != [_delegate getSchlangeAst] && entfernung < 250.0)
+                if(ast != [_delegate getSchlangeAst] && entfernung < 250.0)
                 [NormaleAeste addObject:ast];
+            }
         }
-    }
-    int r = arc4random() % [NormaleAeste count];
-    zielAst = [NormaleAeste objectAtIndex:r];
-    CGPoint bodyPositionInCocos2D = ccp(body->GetPosition().x*PTM_RATIO,body->GetPosition().y*PTM_RATIO);
-    CGPoint entfernung = [MathHelper getVektorFromPoint:bodyPositionInCocos2D toPoint:zielAst.position];
+        int r = arc4random() % [NormaleAeste count];
+        zielAst = [NormaleAeste objectAtIndex:r];
+        CGPoint bodyPositionInCocos2D = ccp(body->GetPosition().x*PTM_RATIO,body->GetPosition().y*PTM_RATIO);
+        CGPoint entfernung = [MathHelper getVektorFromPoint:bodyPositionInCocos2D toPoint:zielAst.position];
     
     
-    float alpha=0.,speed=0.;
-    b2Vec2 velocity = b2Vec2_zero;
+        float alpha=0.,speed=0.;
+        b2Vec2 velocity = b2Vec2_zero;
     
-    if(entfernung.x >= 0.0 && entfernung.y >= 0.0) // OBEN RECHTS
-    {
-        alpha = atan((4*entfernung.y)/(2*entfernung.x));
-        velocity = rad2vec(alpha);
-        alpha = fabsf(alpha);
-        speed = sqrt(((fabsf(entfernung.x)/PTM_RATIO)*-world->GetGravity().y)/sin(2*alpha));
-        speed *= 1.5;        
-        velocity = b2Vec2(velocity.x*speed,velocity.y*speed);
-        [self setDisplayFrame:[[CCSpriteFrameCache sharedSpriteFrameCache]spriteFrameByName:@"affe2"]];
+        if(entfernung.x >= 0.0 && entfernung.y >= 0.0) // OBEN RECHTS
+        {
+            alpha = atan((4*entfernung.y)/(2*entfernung.x));
+            velocity = rad2vec(alpha);
+            alpha = fabsf(alpha);
+            speed = sqrt(((fabsf(entfernung.x)/PTM_RATIO)*-world->GetGravity().y)/sin(2*alpha));
+            speed *= 1.5;        
+            velocity = b2Vec2(velocity.x*speed,velocity.y*speed);
+            [self setDisplayFrame:[[CCSpriteFrameCache sharedSpriteFrameCache]spriteFrameByName:@"affe2"]];
 
-    }
-    else if(entfernung.x <= 0.0 && entfernung.y >= 0.0) // OBEN LINKS
-    {
-        alpha = atan((4*entfernung.y)/(2*entfernung.x));
-        velocity = rad2vec(alpha);
-        alpha = fabsf(alpha);
-        speed = sqrt(((fabsf(entfernung.x)/PTM_RATIO)*-world->GetGravity().y)/sin(2*alpha));
-        speed *= 1.5;
-                velocity = b2Vec2(velocity.x*-speed,-velocity.y*speed);
-        [self setDisplayFrame:[[CCSpriteFrameCache sharedSpriteFrameCache]spriteFrameByName:@"affe3"]];
+        }
+        else if(entfernung.x <= 0.0 && entfernung.y >= 0.0) // OBEN LINKS
+        {
+            alpha = atan((4*entfernung.y)/(2*entfernung.x));
+            velocity = rad2vec(alpha);
+            alpha = fabsf(alpha);
+            speed = sqrt(((fabsf(entfernung.x)/PTM_RATIO)*-world->GetGravity().y)/sin(2*alpha));
+            speed *= 1.5;
+            velocity = b2Vec2(velocity.x*-speed,-velocity.y*speed);
+            [self setDisplayFrame:[[CCSpriteFrameCache sharedSpriteFrameCache]spriteFrameByName:@"affe3"]];
 
-    }
-    else if(entfernung.x <= 0.0 && entfernung.y <= 0.0) // UNTEN LINKS 
-    {
-        float fallZeit = sqrt((2*fabsf(entfernung.y/PTM_RATIO))/-world->GetGravity().y);
-        velocity.x = (entfernung.x/PTM_RATIO)/fallZeit;
-        [self setDisplayFrame:[[CCSpriteFrameCache sharedSpriteFrameCache]spriteFrameByName:@"affe3"]];
+        }
+        else if(entfernung.x <= 0.0 && entfernung.y <= 0.0) // UNTEN LINKS 
+        {
+            float fallZeit = sqrt((2*fabsf(entfernung.y/PTM_RATIO))/-world->GetGravity().y);
+            velocity.x = (entfernung.x/PTM_RATIO)/fallZeit;
+            [self setDisplayFrame:[[CCSpriteFrameCache sharedSpriteFrameCache]spriteFrameByName:@"affe3"]];
 
-    }
-    else if(entfernung.x >= 0.0 && entfernung.y <= 0.0) // UNTEN RECHTS
-    {
-        float fallZeit = sqrt((2*fabsf(entfernung.y/PTM_RATIO))/-world->GetGravity().y);
-        velocity.x = (entfernung.x/PTM_RATIO)/fallZeit;
+        }
+        else if(entfernung.x >= 0.0 && entfernung.y <= 0.0) // UNTEN RECHTS
+        {
+            float fallZeit = sqrt((2*fabsf(entfernung.y/PTM_RATIO))/-world->GetGravity().y);
+            velocity.x = (entfernung.x/PTM_RATIO)/fallZeit;
  
-        [self setDisplayFrame:[[CCSpriteFrameCache sharedSpriteFrameCache]spriteFrameByName:@"affe2"]];
+            [self setDisplayFrame:[[CCSpriteFrameCache sharedSpriteFrameCache]spriteFrameByName:@"affe2"]];
 
+        }
+    
+        world->DestroyJoint(handJoint);
+        handJoint = NULL;
+        [self setRotation:0.0];
+        body->SetAngularVelocity(0.0);
+        body->SetTransform(body->GetPosition(), 0.0);
+        body->SetLinearVelocity(velocity);
     }
-
-    world->DestroyJoint(handJoint);
-    handJoint = NULL;
-    [self setRotation:0.0];
-    body->SetAngularVelocity(0.0);
-    body->SetTransform(body->GetPosition(), 0.0);
-    body->SetLinearVelocity(velocity);
 }
 -(void)collisionWith:(AstNormal *)ast
 {

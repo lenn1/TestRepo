@@ -1,60 +1,90 @@
-//
+// 
 //  Level1_2.m
 //  Snake Escape
 //
-//  Created by Lennart Hansen on 19.12.11.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
+//  Created by Pix-Factory.
+//  Copyright 2011 Pix-Factory. All rights reserved.
 //
 
 #import "Level1_2.h"
+#import "Credits.h"
 #import "Level1_3.h"
 
 @implementation Level1_2
 +(CCScene*)scene
 {
-    return [[Level1_2 alloc]initWithBackGroundImageFile:@"Level1_2.png" AndLevelWidth:480];
-    
+	return [[Level1_2 alloc]initWithBackGroundImageFile:@"busch1.png" AndLevelWidth:480];
 }
 +(NSArray *)getNeededHighScores
 {
-    NSNumber* oneStar = [NSNumber numberWithInt:5000];
-    NSNumber* twoStars = [NSNumber numberWithInt:10000];
-    NSNumber* threeStars = [NSNumber numberWithInt:12000];
-    return [NSArray arrayWithObjects:oneStar,twoStars,threeStars, nil];
-    
+	NSNumber* oneStar = [NSNumber numberWithInt:5000];
+	NSNumber* twoStar = [NSNumber numberWithInt:10000];
+	NSNumber* threeStar = [NSNumber numberWithInt:13000];
+	return [NSArray arrayWithObjects:oneStar,twoStar,threeStar, nil];
 }
 -(void)LevelSetup
 {
-    levelPack = 1;
-    
-    self.levelTimeout = 15;
-    [schlangeLayer setSchlangePosition:ccp(80, 250)];
-    
-    
-    AstNormal* ast1 = [[AstNormal alloc]init];
-    ast1.position = ccp(80,100);
-    
-    AstNormal* ast2 = [[AstNormal alloc]init];
-    ast2.position = ccp(200,150);
-    
-    Stein* stein1 = [[Stein alloc]initWithWorld:world AndStein:1];
-    [self addChild:stein1];
-    stein1.position = ccp(200,20);
-    
-    
-    AstNormal* ast3 = [[AstNormal alloc]init];
-    ast3.position = ccp(325,100);
-    
-    PortalExit* portalExit = [[PortalExit alloc]init];
-    portalExit.position = ccp(450,160);
-    
-    [astLayer addAeste:ast1,ast2,ast3,portalExit,nil];
+	levelPack = 1;
+	self.levelTimeout = 20;
+	[schlangeLayer setSchlangePosition:ccp(92.617188, 222.304688)];
 
-    
+	PortalExit* ast1 = [[PortalExit alloc]init];
+	ast1.position = ccp(431.019531, 166.207031);
+	ast1.rotation = 0.000000;
+
+	AstNormal* ast2 = [[AstNormal alloc]init];
+	ast2.position = ccp(90.019531, 126.125000);
+	ast2.rotation = 0.000000;
+
+	AstNormal* ast3 = [[AstNormal alloc]init];
+	ast3.position = ccp(215.433594, 183.910156);
+	ast3.rotation = 0.000000;
+
+	AstNormal* ast4 = [[AstNormal alloc]init];
+	ast4.position = ccp(314.960938, 113.718750);
+	ast4.rotation = 0.000000;
+
+	CCSprite* baum0 = [CCSprite spriteWithFile:@"baum2.png"];
+	baum0.position = ccp(60.160156, 225.562500);
+	baum0.scale = 1.000000;
+	baum0.rotation = 0.000000;
+	[backgroundLayer addChild:baum0];
+
+	CCSprite* baum1 = [CCSprite spriteWithFile:@"baum1.png"];
+	baum1.position = ccp(227.351562, 205.363281);
+	baum1.scale = 1.000000;
+	baum1.rotation = 0.000000;
+	[backgroundLayer addChild:baum1];
+
+	CCSprite* baum2 = [CCSprite spriteWithFile:@"baum4.png"];
+	baum2.position = ccp(334.183594, 196.355469);
+	baum2.scale = 1.000000;
+	baum2.rotation = 0.000000;
+	[backgroundLayer addChild:baum2];
+
+	CCSprite* baum3 = [CCSprite spriteWithFile:@"baum3.png"];
+	baum3.position = ccp(416.796875, 211.628906);
+	baum3.scale = 1.280000;
+	baum3.rotation = 0.000000;
+	[backgroundLayer addChild:baum3];
+
+	CCSprite* baumkrone4 = [CCSprite spriteWithFile:@"baumkrone_2.png"];
+	baumkrone4.position = ccp(488.285156, 298.675781);
+	baumkrone4.scale = 1.000000;
+	baumkrone4.rotation = 0.000000;
+	[backgroundLayer addChild:baumkrone4];
+
+	CCSprite* baumkrone5 = [CCSprite spriteWithFile:@"baumkrone_16.png"];
+	baumkrone5.position = ccp(527.011719, 260.179688);
+	baumkrone5.scale = 1.000000;
+	baumkrone5.rotation = 0.000000;
+	[backgroundLayer addChild:baumkrone5];
+
+	[astLayer addAeste:ast1,ast2,ast3,ast4,nil];
+
 }
 -(void)nextLevel
 {
-    [[CCDirector sharedDirector]replaceScene:[Level1_3 scene]];
+	[[CCDirector sharedDirector]replaceScene:[Level1_3 scene]];
 }
-
 @end

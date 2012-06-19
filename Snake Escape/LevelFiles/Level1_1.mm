@@ -1,81 +1,68 @@
-//
+// 
 //  Level1_1.m
 //  Snake Escape
 //
-//  Created by Lennart Hansen on 19.12.11.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
+//  Created by Pix-Factory.
+//  Copyright 2011 Pix-Factory. All rights reserved.
 //
 
 #import "Level1_1.h"
+#import "Credits.h"
 #import "Level1_2.h"
-#import "Stein.h"
+
 @implementation Level1_1
 +(CCScene*)scene
 {
-    return [[Level1_1 alloc]initWithBackGroundImageFile:@"Level1_1.png" AndLevelWidth:480];
+	return [[Level1_1 alloc]initWithBackGroundImageFile:@"busch2.png" AndLevelWidth:480];
 }
 +(NSArray *)getNeededHighScores
 {
-    NSNumber* oneStar = [NSNumber numberWithInt:5000];
-    NSNumber* twoStars = [NSNumber numberWithInt:10000];
-    NSNumber* threeStars = [NSNumber numberWithInt:13000];
-    return [NSArray arrayWithObjects:oneStar,twoStars,threeStars, nil];
-    
+	NSNumber* oneStar = [NSNumber numberWithInt:5000];
+	NSNumber* twoStar = [NSNumber numberWithInt:10000];
+	NSNumber* threeStar = [NSNumber numberWithInt:13000];
+	return [NSArray arrayWithObjects:oneStar,twoStar,threeStar, nil];
 }
 -(void)LevelSetup
 {
-    // VOGEL DEBUG 
+	levelPack = 1;
+	self.levelTimeout = 15;
+	[schlangeLayer setSchlangePosition:ccp(110.566406, 215.445312)];
 
-    Vogel *vogel = [[Vogel alloc]init];
-    [self addChild:vogel];
-    vogel.position = ccp(100,300);
-    vogel.maxLeft = 40;
-    vogel.maxRight = 450;
-    vogel.abwurfPosition = 260.0;
-    vogel.speed = 150;
-    [self addToFrameUpdate:vogel,nil];
-    vogel.delegate = self;
-    
-    // VOGEL DEBUG
-         
+	PortalExit* ast1 = [[PortalExit alloc]init];
+	ast1.position = ccp(380.328125, 140.613281);
+	ast1.rotation = 0.000000;
 
+	AstNormal* ast2 = [[AstNormal alloc]init];
+	ast2.position = ccp(123.625000, 163.167969);
+	ast2.rotation = 0.000000;
 
-    [schlangeLayer setSchlangePosition:ccp(120, 230)];
+	AstNormal* ast3 = [[AstNormal alloc]init];
+	ast3.position = ccp(230.328125, 183.835938);
+	ast3.rotation = 0.000000;
 
-    levelPack = 1;
+	CCSprite* baum0 = [CCSprite spriteWithFile:@"baum1.png"];
+	baum0.position = ccp(157.816406, 173.664062);
+	baum0.scale = 1.420000;
+	baum0.rotation = 0.000000;
+	[backgroundLayer addChild:baum0];
 
-    
-    CCSprite* erklaerung = [CCSprite spriteWithFile:@"Level1-Erklaerung.png"];
-    erklaerung.position = ccp(deviceWidth/2, deviceHeight/2-30);
-    [backgroundLayer addChild:erklaerung];
-    
-    self.levelTimeout = 99;//15 früher
-    
-    Spinne* spinne = [[Spinne alloc]initWithWorld:world];
-    [spinne setAnkerPosition:ccp(170.0, 480.0)];
-    spinne.joint->SetLimits(-200/PTM_RATIO, -100.0/PTM_RATIO);
-    
-    [self addToFrameUpdate:spinne,nil];
-    [self addChild:spinne];
-    
-    AstNormal* ast1 = [[AstNormal alloc]init];
-    ast1.position = ccp(120,150);
-    
-    AstNormal* ast2 = [[AstNormal alloc]init];
-    ast2.position = ccp(260,150);
-    [ast2 AstWurdeBesucht];
-    
-    PortalExit* portalExit = [[PortalExit alloc]init];
-    portalExit.position = ccp(365,120);
-    
-    [astLayer addAeste:ast1,ast2,portalExit,nil];
-    
+	CCSprite* baum1 = [CCSprite spriteWithFile:@"baum2.png"];
+	baum1.position = ccp(351.003906, 163.804688);
+	baum1.scale = 1.000000;
+	baum1.rotation = 0.000000;
+	[backgroundLayer addChild:baum1];
 
+	CCSprite* baumkrone2 = [CCSprite spriteWithFile:@"baumkrone_1.png"];
+	baumkrone2.position = ccp(484.128906, 285.148438);
+	baumkrone2.scale = 1.000000;
+	baumkrone2.rotation = 0.000000;
+	[backgroundLayer addChild:baumkrone2];
 
-    
+	[astLayer addAeste:ast1,ast2,ast3,nil];
+
 }
 -(void)nextLevel
 {
-    [[CCDirector sharedDirector]replaceScene:[Level1_2 scene]];
+	[[CCDirector sharedDirector]replaceScene:[Level1_2 scene]];
 }
 @end
