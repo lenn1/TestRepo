@@ -33,9 +33,7 @@ public:
         {
             id fixA = (id)c->GetFixtureA()->GetUserData();
             id fixB = (id)c->GetFixtureB()->GetUserData();
-            
-         //   NSLog(@"%@,%@",NSStringFromClass([fixA class]),NSStringFromClass([fixB class]));
-            
+                        
             // Schlange im Feuer Check.
                 if(([fixA isKindOfClass:[Feuer class]] && [fixB isKindOfClass:[SchlangeLayer class]]) || 
                    ([fixB isKindOfClass:[Feuer class]] && [fixA isKindOfClass:[SchlangeLayer class]]))
@@ -88,9 +86,14 @@ public:
                ([fixB isKindOfClass:[Affe class]] && [fixA isKindOfClass:[AstNormal class]]))
             {
                 if([fixA isKindOfClass:[Affe class]])
-                    ((Affe*)fixA).astHit = YES;
+                {
+                    [((Affe*)fixA) collisionWith:(AstNormal*)fixB];
+                }
                 if([fixB isKindOfClass:[Affe class]])
-                    ((Affe*)fixA).astHit = YES;                
+                {
+                    [((Affe*)fixB) collisionWith:(AstNormal*)fixA];
+                }
+             
             }
                             
         }

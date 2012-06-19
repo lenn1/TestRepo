@@ -41,25 +41,23 @@
     
     //VERKOHLTERAST HIER MACHEN UND SO
     AstNormal* ast2 = [[AstNormal alloc]init];
-    ast2.position = ccp(290,100);
+    ast2.position = ccp(250,250);
     
     AstNormal* ast3 = [[AstNormal alloc]init];
-    ast3.position = ccp(350,250);
+    ast3.position = ccp(300,100);
     
-    AstNormal* ast4 = [[AstNormal alloc]init];
-    ast4.position = ccp(200,270);
     
     PortalExit* portalExit = [[PortalExit alloc]init];
     portalExit.position = ccp(415,135);
     
-    [astLayer addAeste:ast1,ast2,ast3,ast4,portalExit,nil];
+    [astLayer addAeste:ast1,ast2,ast3,portalExit,nil];
     
     
     
     
     Affe* affe1 = [[Affe alloc]initWithWorld:world AndDelegate:self];
     [self addChild:affe1];
-    [affe1 setPosition:ccpAdd(ast3.position, ccp(20, 30))];
+    [affe1 setPosition:ccpAdd(ast3.position, ccp(20, 100))];
     [self addToFrameUpdate:affe1,nil];
     
 }

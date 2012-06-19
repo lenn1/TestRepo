@@ -38,7 +38,6 @@
         ankerBodyDef.position.Set(0.0/PTM_RATIO, 0.0/PTM_RATIO);
         anker = world->CreateBody(&ankerBodyDef);
         
-        
         b2BodyDef affeBodyDef;
         
         affeBodyDef.type = b2_dynamicBody;
@@ -102,94 +101,120 @@ b2Vec2 rad2vec(float r)
         }
     }
     int r = arc4random() % [NormaleAeste count];
-    AstNormal* zielAst;
     zielAst = [NormaleAeste objectAtIndex:r];
-    CGPoint entfernung = [MathHelper getVektorFromPoint:lastAst.position toPoint:zielAst.position];
-    float alpha = atan((4*entfernung.y)/(2*entfernung.x));
-    b2Vec2 velocity = rad2vec(alpha);
-    alpha = fabsf(alpha);
-    float speed = sqrt(((fabsf(entfernung.x)/PTM_RATIO)*-world->GetGravity().y)/sin(2*alpha));
-    speed *= 1.5;
-    NSLog(@"angle: %f speed: %f",CC_RADIANS_TO_DEGREES(alpha),speed);
-    [NormaleAeste release];
+    CGPoint bodyPositionInCocos2D = ccp(body->GetPosition().x*PTM_RATIO,body->GetPosition().y*PTM_RATIO);
+    CGPoint entfernung = [MathHelper getVektorFromPoint:bodyPositionInCocos2D toPoint:zielAst.position];
     
-    if(entfernung.x >= 0.0 && entfernung.y >= 0.0)
+    // t = sqrt((2*height)/gravity)
+    //horspeed = width/t; 
+    
+    
+    float alpha,speed;
+    b2Vec2 velocity;
+    
+    if(entfernung.x >= 0.0 && entfernung.y >= 0.0) // OBEN RECHTS
     {
+        alpha = atan((4*entfernung.y)/(2*entfernung.x));
+        velocity = rad2vec(alpha);
+        alpha = fabsf(alpha);
+        speed = sqrt(((fabsf(entfernung.x)/PTM_RATIO)*-world->GetGravity().y)/sin(2*alpha));
+        speed *= 1.5;        
         velocity = b2Vec2(velocity.x*speed,velocity.y*speed);
         [self setDisplayFrame:[[CCSpriteFrameCache sharedSpriteFrameCache]spriteFrameByName:@"affe2"]];
 
     }
-    else if(entfernung.x <= 0.0 && entfernung.y >= 0.0)
+    else if(entfernung.x <= 0.0 && entfernung.y >= 0.0) // OBEN LINKS
     {
-        velocity = b2Vec2(velocity.x*-speed,-velocity.y*speed);
+        alpha = atan((4*entfernung.y)/(2*entfernung.x));
+        velocity = rad2vec(alpha);
+        alpha = fabsf(alpha);
+        speed = sqrt(((fabsf(entfernung.x)/PTM_RATIO)*-world->GetGravity().y)/sin(2*alpha));
+        speed *= 1.5;
+                velocity = b2Vec2(velocity.x*-speed,-velocity.y*speed);
         [self setDisplayFrame:[[CCSpriteFrameCache sharedSpriteFrameCache]spriteFrameByName:@"affe3"]];
 
     }
-    else if(entfernung.x <= 0.0 && entfernung.y <= 0.0)
+    else if(entfernung.x <= 0.0 && entfernung.y <= 0.0) // UNTEN LINKS 
     {
-        velocity = b2Vec2(velocity.x*-speed,(velocity.y*-speed)-world->GetGravity().y);
+        float fallZeit = sqrt((2*fabsf(entfernung.y/PTM_RATIO))/-world->GetGravity().y);
+        velocity.x = (entfernung.x/PTM_RATIO)/fallZeit;
         [self setDisplayFrame:[[CCSpriteFrameCache sharedSpriteFrameCache]spriteFrameByName:@"affe3"]];
 
     }
-    else if(entfernung.x >= 0.0 && entfernung.y <= 0.0)
+    else if(entfernung.x >= 0.0 && entfernung.y <= 0.0) // UNTEN RECHTS
     {
-        velocity = b2Vec2(velocity.x*speed,(velocity.y*-speed)-world->GetGravity().y);
+        float fallZeit = sqrt((2*fabsf(entfernung.y/PTM_RATIO))/-world->GetGravity().y);
+        velocity.x = (entfernung.x/PTM_RATIO)/fallZeit;
+ 
         [self setDisplayFrame:[[CCSpriteFrameCache sharedSpriteFrameCache]spriteFrameByName:@"affe2"]];
 
     }
-        
-    NSLog(@"vel: %f,%f",velocity.x,velocity.y);
-        
-    [self setRotation:0.0];
-    
-    NSLog(@"zielAst:%f.%f",zielAst.position.x,zielAst.position.y);
+
 
     world->DestroyJoint(handJoint);
     handJoint = NULL;
     body->SetLinearVelocity(velocity);
-
+    [self setRotation:0.0];
     body->SetAngularVelocity(0.0);
     body->SetTransform(body->GetPosition(), 0.0);
 }
--(void)astGetroffenCheck
+-(void)collisionWith:(AstNormal *)ast
+{
+    collisionAst = ast;
+    astHit = YES;
+}
+-(void)astGetroffenCheck:(AstNormal*)ast
 {
     if(!affetot)
-        for (AstNormal*ast in aeste)
-        {
-            if([MathHelper IsCGPoint:ccp(body->GetPosition().x*PTM_RATIO,body->GetPosition().y*PTM_RATIO+40) InRadius:100.0 OfPoint:ast.position] && ast != [_delegate getSchlangeAst])
-            {    
-                if(![ast isKindOfClass:[PortalEntry class]] &&
-                   ![ast isKindOfClass:[PortalExit class]] &&
-                   ![ast isKindOfClass:[StachelAst class]] &&
-                   ![ast isKindOfClass:[Rutschiger_Ast class]] &&
-                   ![ast isKindOfClass:[VerkohlterAst class]] &&
-                   ![ast isKindOfClass:[AstKatapult class]] &&
-                   ast != lastAst)
+    {
+                if(ast == zielAst || zielAst == nil)
                 {
-                    [self setAnkerPosition:ast.position];
-                    [self setPosition:ccp(ast.position.x-20.0,ast.position.y-45.0)];
-                    [self setRotation:0.0];
-                    b2RevoluteJointDef jointdef;
-                    
-                    b2Vec2 affeHandPosition;
-                    affeHandPosition = b2Vec2(body->GetWorldCenter().x+20.0/PTM_RATIO,body->GetWorldCenter().y+45.0/PTM_RATIO);
-                    
-                    jointdef.Initialize(anker, body, affeHandPosition);
-                    handJoint = world->CreateJoint(&jointdef);
-                    
-                    lastAst = ast;
-                    [self setDisplayFrame:[[CCSpriteFrameCache sharedSpriteFrameCache]spriteFrameByName:@"affe0"]];
-                    lastAst.visitable = NO;
-                    
+                    NSLog(@"check");
+                    zielAst = ast;
+                    [self moveAffeTo:ast];                    
                 }
-            }
-        }
+    } 
+        
     astHit = NO;
+}
+-(void)moveAffeTo:(AstNormal*)ast
+{
+    CGPoint position = ccpAdd(ast.position, ccp(-20.0,-45.0));
+    //BOX2D
+    body->SetTransform(b2Vec2(position.x/PTM_RATIO, position.y/PTM_RATIO), 0.0f);
+    body->SetAngularVelocity(0.0);
+    body->SetLinearVelocity(b2Vec2_zero);
+    
+    CCCallFuncND* func = [CCCallFuncND actionWithTarget:self selector:@selector(setAffeAliveAnAst:data:) data:ast];
+    CCMoveTo* move = [CCMoveTo actionWithDuration:0.2 position:position];
+
+    CCSequence* seq = [CCSequence actionOne:move two:func];
+    [self runAction:seq];
+}
+-(void)setAffeAliveAnAst:(id)sender data:(void*)data
+{
+    AstNormal* ast = (AstNormal*)data;
+    [self setAnkerPosition:ast.position];
+    [self setPosition:ccp(ast.position.x-20.0,ast.position.y-45.0)];
+    [self setRotation:0.0];
+    b2RevoluteJointDef jointdef;
+
+    b2Vec2 affeHandPosition;
+    affeHandPosition = b2Vec2(body->GetWorldCenter().x+20.0/PTM_RATIO,body->GetWorldCenter().y+45.0/PTM_RATIO);
+    jointdef.Initialize(anker, body, affeHandPosition);
+    handJoint = world->CreateJoint(&jointdef);
+    
+    lastAst = ast;
+    [self setDisplayFrame:[[CCSpriteFrameCache sharedSpriteFrameCache]spriteFrameByName:@"affe0"]];
+    
+    lastAst.visitable = NO;
+    body->SetAngularVelocity(0.0);
+    body->SetLinearVelocity(b2Vec2_zero);
 }
 -(void)FrameUpdate:(ccTime)delta
 {
     if(astHit)
-        [self astGetroffenCheck];
+        [self astGetroffenCheck:collisionAst];
     
     if(self.position.y < -200.0)
     {

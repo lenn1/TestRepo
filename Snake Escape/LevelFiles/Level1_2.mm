@@ -30,14 +30,6 @@
     self.levelTimeout = 15;
     [schlangeLayer setSchlangePosition:ccp(80, 250)];
     
-
-    Feuer* feuer = [[Feuer alloc]initWithWorld:world];
-    [self addChild:feuer];
-    feuer.position = ccp(200,180);
-    
-    Wasserfall* wassserfall = [[Wasserfall alloc]initWithWorld:world];
-    [self addChild:wassserfall];
-    wassserfall.position = ccp(30,320);
     
     AstNormal* ast1 = [[AstNormal alloc]init];
     ast1.position = ccp(80,100);

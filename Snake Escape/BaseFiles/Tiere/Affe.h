@@ -31,11 +31,14 @@
     NSMutableSet* aeste;
     id<AffeDelegate> _delegate;
     AstNormal* lastAst;
+    AstNormal* zielAst;
+    AstNormal* collisionAst;
     BOOL affetot;
     BOOL astHit;
 }
 -(id)initWithWorld:(b2World*)worldPtr AndDelegate:(id)delegate;
 -(void)setAnkerPosition:(CGPoint)position;
+-(void)collisionWith:(AstNormal*)ast;
 @property (assign)AstNormal* lastAst;
 @property b2Body* anker;
 @property(assign,nonatomic)id<AffeDelegate>_delegate;
