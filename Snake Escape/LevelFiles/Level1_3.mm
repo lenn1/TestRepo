@@ -43,14 +43,16 @@
     AstNormal* ast2 = [[AstNormal alloc]init];
     ast2.position = ccp(250,250);
     
+    AstNormal* ast4 = [[AstNormal alloc]init];
+    ast4.position = ccp(350,230);
+    
     AstNormal* ast3 = [[AstNormal alloc]init];
     ast3.position = ccp(300,100);
-    
     
     PortalExit* portalExit = [[PortalExit alloc]init];
     portalExit.position = ccp(415,135);
     
-    [astLayer addAeste:ast1,ast2,ast3,portalExit,nil];
+    [astLayer addAeste:ast1,ast2,ast3,ast4,portalExit,nil];
     
     
     
