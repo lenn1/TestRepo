@@ -486,6 +486,7 @@ public:
 -(void)setLevelSelectionPage
 {
     [[NSUserDefaults standardUserDefaults]setValue:[NSNumber numberWithInt:levelPack] forKey:@"LevelSelectionPage"];
+    [[NSUserDefaults standardUserDefaults]synchronize];
 }
 
 -(void)collisionDetectedWithAst:(AstNormal *)ast

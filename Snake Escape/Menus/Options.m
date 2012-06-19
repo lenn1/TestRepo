@@ -75,7 +75,7 @@
     menuItem1.tag = SoundMenuItemTag;
     
     CCMenuItem* menuItem2 = [CCMenuItemImage itemFromNormalImage:@"reset.png" selectedImage:@"reset_active.png" target:self selector:@selector(resetGame)];
-    CCMenuItem* menuItem3 = [CCMenuItemImage itemFromNormalImage:@"mainmenu.png" selectedImage:@"mainmenu_active.png" target:self selector:@selector(resetGame)];
+    CCMenuItem* menuItem3 = [CCMenuItemImage itemFromNormalImage:@"mainmenu.png" selectedImage:@"mainmenu_active.png" target:self selector:@selector(goToMainMenu)];
     
     menu = [CCMenu menuWithItems:menuItem1,menuItem2,menuItem3, nil];
     [menu alignItemsVerticallyWithPadding:12];

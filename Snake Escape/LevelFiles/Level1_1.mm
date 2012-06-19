@@ -24,7 +24,7 @@
 }
 -(void)LevelSetup
 {
-    /* VOGEL DEBUG */
+    // VOGEL DEBUG 
 
     Vogel *vogel = [[Vogel alloc]init];
     [self addChild:vogel];
@@ -36,7 +36,7 @@
     [self addToFrameUpdate:vogel,nil];
     vogel.delegate = self;
     
-    /* VOGEL DEBUG */
+    // VOGEL DEBUG
          
 
 
@@ -61,7 +61,7 @@
     AstNormal* ast1 = [[AstNormal alloc]init];
     ast1.position = ccp(120,150);
     
-    Rutschiger_Ast* ast2 = [[Rutschiger_Ast alloc]init];
+    AstNormal* ast2 = [[AstNormal alloc]init];
     ast2.position = ccp(260,150);
     [ast2 AstWurdeBesucht];
     
