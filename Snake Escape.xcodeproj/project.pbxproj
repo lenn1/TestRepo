@@ -336,6 +336,10 @@
 		885F027E147C751400EA546F /* BaseLevel.mm in Sources */ = {isa = PBXBuildFile; fileRef = 885F0276147C751400EA546F /* BaseLevel.mm */; };
 		885F027F147C751400EA546F /* SchlangeLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 885F0278147C751400EA546F /* SchlangeLayer.mm */; };
 		8863E5EE14A27E1C007F8B9E /* VerkohlterAst.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8863E5ED14A27E1C007F8B9E /* VerkohlterAst.wav */; };
+		886AF6EE15927E890099ED4A /* schlangeLangZiehenSpriteSheetHarz-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 886AF6EC15927E890099ED4A /* schlangeLangZiehenSpriteSheetHarz-hd.png */; };
+		886AF6EF15927E890099ED4A /* schlangeLangZiehenSpriteSheetHarz.png in Resources */ = {isa = PBXBuildFile; fileRef = 886AF6ED15927E890099ED4A /* schlangeLangZiehenSpriteSheetHarz.png */; };
+		886AF6F315927EED0099ED4A /* schlangeLangZiehenSpriteSheetHarz-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = 886AF6F115927EED0099ED4A /* schlangeLangZiehenSpriteSheetHarz-hd.plist */; };
+		886AF6F415927EED0099ED4A /* schlangeLangZiehenSpriteSheetHarz.plist in Resources */ = {isa = PBXBuildFile; fileRef = 886AF6F215927EED0099ED4A /* schlangeLangZiehenSpriteSheetHarz.plist */; };
 		88705CAF149FD1060036F87E /* Level1_1-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 88705CAD149FD1060036F87E /* Level1_1-hd.png */; };
 		88705CB0149FD1060036F87E /* Level1_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 88705CAE149FD1060036F87E /* Level1_1.png */; };
 		88705CB4149FD4B60036F87E /* Level1_2-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 88705CB2149FD4B60036F87E /* Level1_2-hd.png */; };
@@ -949,6 +953,10 @@
 		885F0277147C751400EA546F /* SchlangeLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SchlangeLayer.h; sourceTree = "<group>"; };
 		885F0278147C751400EA546F /* SchlangeLayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SchlangeLayer.mm; sourceTree = "<group>"; };
 		8863E5ED14A27E1C007F8B9E /* VerkohlterAst.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = VerkohlterAst.wav; sourceTree = "<group>"; };
+		886AF6EC15927E890099ED4A /* schlangeLangZiehenSpriteSheetHarz-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "schlangeLangZiehenSpriteSheetHarz-hd.png"; sourceTree = "<group>"; };
+		886AF6ED15927E890099ED4A /* schlangeLangZiehenSpriteSheetHarz.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = schlangeLangZiehenSpriteSheetHarz.png; sourceTree = "<group>"; };
+		886AF6F115927EED0099ED4A /* schlangeLangZiehenSpriteSheetHarz-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "schlangeLangZiehenSpriteSheetHarz-hd.plist"; sourceTree = "<group>"; };
+		886AF6F215927EED0099ED4A /* schlangeLangZiehenSpriteSheetHarz.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = schlangeLangZiehenSpriteSheetHarz.plist; sourceTree = "<group>"; };
 		88705CAD149FD1060036F87E /* Level1_1-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Level1_1-hd.png"; sourceTree = "<group>"; };
 		88705CAE149FD1060036F87E /* Level1_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Level1_1.png; sourceTree = "<group>"; };
 		88705CB2149FD4B60036F87E /* Level1_2-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Level1_2-hd.png"; sourceTree = "<group>"; };
@@ -1810,6 +1818,10 @@
 		883E59C2158F841300D8732D /* schlangeLangZiehen */ = {
 			isa = PBXGroup;
 			children = (
+				886AF6EC15927E890099ED4A /* schlangeLangZiehenSpriteSheetHarz-hd.png */,
+				886AF6F115927EED0099ED4A /* schlangeLangZiehenSpriteSheetHarz-hd.plist */,
+				886AF6F215927EED0099ED4A /* schlangeLangZiehenSpriteSheetHarz.plist */,
+				886AF6ED15927E890099ED4A /* schlangeLangZiehenSpriteSheetHarz.png */,
 				88DD3C5C15921AA2000AD247 /* schlangeLangZiehenSpriteSheetWasser-hd.plist */,
 				88DD3C5D15921AA2000AD247 /* schlangeLangZiehenSpriteSheetWasser-hd.png */,
 				88DD3C5E15921AA2000AD247 /* schlangeLangZiehenSpriteSheetWasser.plist */,
@@ -2948,6 +2960,10 @@
 				88C1296A1592366300D7A4B0 /* verbrennen.wav in Resources */,
 				88C1296B1592366300D7A4B0 /* verwandlung.wav in Resources */,
 				88C1296C1592366300D7A4B0 /* wasserfall.wav in Resources */,
+				886AF6EE15927E890099ED4A /* schlangeLangZiehenSpriteSheetHarz-hd.png in Resources */,
+				886AF6EF15927E890099ED4A /* schlangeLangZiehenSpriteSheetHarz.png in Resources */,
+				886AF6F315927EED0099ED4A /* schlangeLangZiehenSpriteSheetHarz-hd.plist in Resources */,
+				886AF6F415927EED0099ED4A /* schlangeLangZiehenSpriteSheetHarz.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -25,9 +25,11 @@
         CCSpriteBatchNode *spriteSheet = [CCSpriteBatchNode batchNodeWithFile:@"schlangeLangZiehenSpriteSheet.png"];
         [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"schlangeLangZiehenSpriteSheetWasser.plist"];
         CCSpriteBatchNode *spriteSheet2 = [CCSpriteBatchNode batchNodeWithFile:@"schlangeLangZiehenSpriteSheetWasser.png"];
+        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"schlangeLangZiehenSpriteSheetHarz.plist"];
+        CCSpriteBatchNode *spriteSheet3 = [CCSpriteBatchNode batchNodeWithFile:@"schlangeLangZiehenSpriteSheetHarz.png"];
+        [schlange addChild:spriteSheet3];
         [schlange addChild:spriteSheet2];
-        [schlange addChild:spriteSheet];
-
+       [schlange addChild:spriteSheet];
         
         abschussradius = 80;
         levelWidth = Width;
@@ -99,20 +101,23 @@
         schlangetot = YES;
         [delegate schlangeTot];
         [[SimpleAudioEngine sharedEngine]playEffect:@"fallen.wav"];
-
     }
 }
 -(void)setSchlangeStateWater
 {
     schlangeState = SchlangeStateWater;
+    [schlange setDisplayFrame:[[CCSpriteFrameCache sharedSpriteFrameCache]spriteFrameByName:[NSString stringWithFormat:@"schlange0Wasser"]]];
+
 }
 -(void)setSchlangeStateNormal;
 {
     schlangeState = SchlangeStateNormal;
+    [schlange setDisplayFrame:[[CCSpriteFrameCache sharedSpriteFrameCache]spriteFrameByName:[NSString stringWithFormat:@"schlange0"]]];
 }
 -(void)setSchlangeStateHarz
 {
     schlangeState = SchlangeStateHarz;
+    [schlange setDisplayFrame:[[CCSpriteFrameCache sharedSpriteFrameCache]spriteFrameByName:[NSString stringWithFormat:@"schlange0Harz"]]];
 }
 -(void)moveSchlangeTo:(CGPoint)position
 {
@@ -242,7 +247,7 @@
     
     if (schlangeState == 2/*SchlangeStateHarz*/)
     {
-        schlangePrefix = @"";
+        schlangePrefix = @"Harz";
     }
     else if (schlangeState == 1/*SchlangeStateWater*/)
     {
@@ -331,8 +336,17 @@
             if ([[self delegate]respondsToSelector:@selector(schlangeAbschiessenCancel)])
                 [[self delegate]schlangeAbschiessenCancel];
         }
+        NSString* schlangePrefix = @"";
         
-        [schlange setDisplayFrame:[[CCSpriteFrameCache sharedSpriteFrameCache]spriteFrameByName:@"schlange0"]];
+        if (schlangeState == 2/*SchlangeStateHarz*/)
+        {
+            schlangePrefix = @"Harz";
+        }
+        else if (schlangeState == 1/*SchlangeStateWater*/)
+        {
+            schlangePrefix = @"Wasser";
+        }
+        [schlange setDisplayFrame:[[CCSpriteFrameCache sharedSpriteFrameCache]spriteFrameByName:[NSString stringWithFormat:@"schlange0%@",schlangePrefix]]];
         [[SimpleAudioEngine sharedEngine]stopEffect:aufziehsound];
         
         if([touch tapCount] == 2)

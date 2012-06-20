@@ -59,7 +59,7 @@
     [self addChild:affe1];
     [affe1 setPosition:ccpAdd(ast3.position, ccp(20, 100))];
     [self addToFrameUpdate:affe1,nil];
-    
+
 }
 -(void)nextLevel
 {
