@@ -23,7 +23,11 @@
         [self setSchlangeStateNormal];
         [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"schlangeLangZiehenSpriteSheet.plist"];
         CCSpriteBatchNode *spriteSheet = [CCSpriteBatchNode batchNodeWithFile:@"schlangeLangZiehenSpriteSheet.png"];
+        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"schlangeLangZiehenSpriteSheetWasser.plist"];
+        CCSpriteBatchNode *spriteSheet2 = [CCSpriteBatchNode batchNodeWithFile:@"schlangeLangZiehenSpriteSheetWasser.png"];
+        [schlange addChild:spriteSheet2];
         [schlange addChild:spriteSheet];
+
         
         abschussradius = 80;
         levelWidth = Width;
@@ -234,14 +238,26 @@
     
     CCSpriteFrame *texture;
     
-    if(entfernung > 0 && entfernung < 53) texture = [[CCSpriteFrameCache sharedSpriteFrameCache]spriteFrameByName:@"schlange1"];
-    else if(entfernung >= 53 && entfernung < 57) texture =[[CCSpriteFrameCache sharedSpriteFrameCache]spriteFrameByName:@"schlange2"];
-    else if(entfernung >= 57 && entfernung < 62) texture = [[CCSpriteFrameCache sharedSpriteFrameCache]spriteFrameByName:@"schlange3"];
-    else if(entfernung >= 62 && entfernung < 68) texture = [[CCSpriteFrameCache sharedSpriteFrameCache]spriteFrameByName:@"schlange4"];
-    else if(entfernung >= 68 && entfernung < 70) texture = [[CCSpriteFrameCache sharedSpriteFrameCache]spriteFrameByName:@"schlange5"];
-    else if(entfernung >= 70 && entfernung < 75) texture = [[CCSpriteFrameCache sharedSpriteFrameCache]spriteFrameByName:@"schlange6"];
-    else if(entfernung >= 75 && entfernung < 80) texture = [[CCSpriteFrameCache sharedSpriteFrameCache]spriteFrameByName:@"schlange7"];
-    else if(entfernung >= 80 /*&& entfernung < 90*/ )texture = [[CCSpriteFrameCache sharedSpriteFrameCache]spriteFrameByName:@"schlange8"];
+    NSString* schlangePrefix = @"";
+    
+    if (schlangeState == 2/*SchlangeStateHarz*/)
+    {
+        schlangePrefix = @"";
+    }
+    else if (schlangeState == 1/*SchlangeStateWater*/)
+    {
+        schlangePrefix = @"Wasser";
+    }
+    
+    
+    if(entfernung > 0 && entfernung < 53) texture = [[CCSpriteFrameCache sharedSpriteFrameCache]spriteFrameByName:[NSString stringWithFormat:@"schlange1%@",schlangePrefix]];
+    else if(entfernung >= 53 && entfernung < 57) texture =[[CCSpriteFrameCache sharedSpriteFrameCache]spriteFrameByName:[NSString stringWithFormat:@"schlange2%@",schlangePrefix]];
+    else if(entfernung >= 57 && entfernung < 62) texture = [[CCSpriteFrameCache sharedSpriteFrameCache]spriteFrameByName:[NSString stringWithFormat:@"schlange3%@",schlangePrefix]];
+    else if(entfernung >= 62 && entfernung < 68) texture = [[CCSpriteFrameCache sharedSpriteFrameCache]spriteFrameByName:[NSString stringWithFormat:@"schlange4%@",schlangePrefix]];
+    else if(entfernung >= 68 && entfernung < 70) texture = [[CCSpriteFrameCache sharedSpriteFrameCache]spriteFrameByName:[NSString stringWithFormat:@"schlange5%@",schlangePrefix]];
+    else if(entfernung >= 70 && entfernung < 75) texture = [[CCSpriteFrameCache sharedSpriteFrameCache]spriteFrameByName:[NSString stringWithFormat:@"schlange6%@",schlangePrefix]];
+    else if(entfernung >= 75 && entfernung < 80) texture = [[CCSpriteFrameCache sharedSpriteFrameCache]spriteFrameByName:[NSString stringWithFormat:@"schlange7%@",schlangePrefix]];
+    else if(entfernung >= 80 /*&& entfernung < 90*/ )texture = [[CCSpriteFrameCache sharedSpriteFrameCache]spriteFrameByName:[NSString stringWithFormat:@"schlange8%@",schlangePrefix]];
     /*else if(entfernung >= 90 && entfernung < 100) texture = [[CCTextureCache sharedTextureCache] addImage: @"schlange90.png"];
      else if(entfernung >= 100) texture = [[CCTextureCache sharedTextureCache] addImage: @"schlange100.png"];
      */

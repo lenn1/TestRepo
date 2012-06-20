@@ -429,6 +429,10 @@
 		88D7397215908084006AEF20 /* baumkrone_8.png in Resources */ = {isa = PBXBuildFile; fileRef = 88D7394415908084006AEF20 /* baumkrone_8.png */; };
 		88D7397315908084006AEF20 /* baumkrone_9.png in Resources */ = {isa = PBXBuildFile; fileRef = 88D7394515908084006AEF20 /* baumkrone_9.png */; };
 		88D80BD914ABAFA000270BAA /* Level1_9.mm in Sources */ = {isa = PBXBuildFile; fileRef = 88D80BD814ABAFA000270BAA /* Level1_9.mm */; };
+		88DD3C6015921AA2000AD247 /* schlangeLangZiehenSpriteSheetWasser-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = 88DD3C5C15921AA2000AD247 /* schlangeLangZiehenSpriteSheetWasser-hd.plist */; };
+		88DD3C6115921AA2000AD247 /* schlangeLangZiehenSpriteSheetWasser-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 88DD3C5D15921AA2000AD247 /* schlangeLangZiehenSpriteSheetWasser-hd.png */; };
+		88DD3C6215921AA2000AD247 /* schlangeLangZiehenSpriteSheetWasser.plist in Resources */ = {isa = PBXBuildFile; fileRef = 88DD3C5E15921AA2000AD247 /* schlangeLangZiehenSpriteSheetWasser.plist */; };
+		88DD3C6315921AA2000AD247 /* schlangeLangZiehenSpriteSheetWasser.png in Resources */ = {isa = PBXBuildFile; fileRef = 88DD3C5F15921AA2000AD247 /* schlangeLangZiehenSpriteSheetWasser.png */; };
 		88E106DF14B7ABEA0066884B /* CCScrollLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 88E106DE14B7ABEA0066884B /* CCScrollLayer.m */; };
 		88E106EB14B7B3A40066884B /* UsefulStuff.m in Sources */ = {isa = PBXBuildFile; fileRef = 88E106EA14B7B3A40066884B /* UsefulStuff.m */; };
 		88E1808A14890671008917AD /* Level1Background-iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 88E1808914890671008917AD /* Level1Background-iPad.png */; };
@@ -1055,6 +1059,10 @@
 		88D7394515908084006AEF20 /* baumkrone_9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = baumkrone_9.png; sourceTree = "<group>"; };
 		88D80BD714ABAFA000270BAA /* Level1_9.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Level1_9.h; sourceTree = "<group>"; };
 		88D80BD814ABAFA000270BAA /* Level1_9.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Level1_9.mm; sourceTree = "<group>"; };
+		88DD3C5C15921AA2000AD247 /* schlangeLangZiehenSpriteSheetWasser-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "schlangeLangZiehenSpriteSheetWasser-hd.plist"; sourceTree = "<group>"; };
+		88DD3C5D15921AA2000AD247 /* schlangeLangZiehenSpriteSheetWasser-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "schlangeLangZiehenSpriteSheetWasser-hd.png"; sourceTree = "<group>"; };
+		88DD3C5E15921AA2000AD247 /* schlangeLangZiehenSpriteSheetWasser.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = schlangeLangZiehenSpriteSheetWasser.plist; sourceTree = "<group>"; };
+		88DD3C5F15921AA2000AD247 /* schlangeLangZiehenSpriteSheetWasser.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = schlangeLangZiehenSpriteSheetWasser.png; sourceTree = "<group>"; };
 		88E106D814B7AB7D0066884B /* CCScrollLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCScrollLayer.h; path = libs/CCScrollLayer.h; sourceTree = "<group>"; };
 		88E106DE14B7ABEA0066884B /* CCScrollLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CCScrollLayer.m; path = libs/CCScrollLayer.m; sourceTree = "<group>"; };
 		88E106E914B7B3A40066884B /* UsefulStuff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UsefulStuff.h; path = "Snake Escape/UsefulStuff.h"; sourceTree = SOURCE_ROOT; };
@@ -1784,6 +1792,10 @@
 		883E59C2158F841300D8732D /* schlangeLangZiehen */ = {
 			isa = PBXGroup;
 			children = (
+				88DD3C5C15921AA2000AD247 /* schlangeLangZiehenSpriteSheetWasser-hd.plist */,
+				88DD3C5D15921AA2000AD247 /* schlangeLangZiehenSpriteSheetWasser-hd.png */,
+				88DD3C5E15921AA2000AD247 /* schlangeLangZiehenSpriteSheetWasser.plist */,
+				88DD3C5F15921AA2000AD247 /* schlangeLangZiehenSpriteSheetWasser.png */,
 				883E59C3158F841300D8732D /* schlangeLangZiehenSpriteSheet-hd.plist */,
 				883E59C4158F841300D8732D /* schlangeLangZiehenSpriteSheet-hd.png */,
 				883E59C5158F841300D8732D /* schlangeLangZiehenSpriteSheet.plist */,
@@ -2908,6 +2920,10 @@
 				881065531590F46600C787FB /* baumkrone2-hd.png in Resources */,
 				881065541590F46600C787FB /* baumkrone2.plist in Resources */,
 				881065551590F46600C787FB /* baumkrone2.png in Resources */,
+				88DD3C6015921AA2000AD247 /* schlangeLangZiehenSpriteSheetWasser-hd.plist in Resources */,
+				88DD3C6115921AA2000AD247 /* schlangeLangZiehenSpriteSheetWasser-hd.png in Resources */,
+				88DD3C6215921AA2000AD247 /* schlangeLangZiehenSpriteSheetWasser.plist in Resources */,
+				88DD3C6315921AA2000AD247 /* schlangeLangZiehenSpriteSheetWasser.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
