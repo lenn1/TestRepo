@@ -13,7 +13,7 @@
 @implementation Level1_2
 +(CCScene*)scene
 {
-	return [[Level1_2 alloc]initWithBackGroundImageFile:@"busch1.png" AndLevelWidth:480];
+	return [[Level1_2 alloc]initWithBackGroundImageFile:@"busch2.png" AndLevelWidth:480];
 }
 +(NSArray *)getNeededHighScores
 {
@@ -44,37 +44,37 @@
 	ast4.position = ccp(314.960938, 113.718750);
 	ast4.rotation = 0.000000;
 
-	CCSprite* baum0 = [CCSprite spriteWithFile:@"baum2.png"];
+	CCSprite* baum0 = [CCSprite spriteWithSpriteFrameName:@"baum2"];
 	baum0.position = ccp(60.160156, 225.562500);
 	baum0.scale = 1.000000;
 	baum0.rotation = 0.000000;
 	[backgroundLayer addChild:baum0];
 
-	CCSprite* baum1 = [CCSprite spriteWithFile:@"baum1.png"];
+	CCSprite* baum1 = [CCSprite spriteWithSpriteFrameName:@"baum1"];
 	baum1.position = ccp(227.351562, 205.363281);
 	baum1.scale = 1.000000;
 	baum1.rotation = 0.000000;
 	[backgroundLayer addChild:baum1];
 
-	CCSprite* baum2 = [CCSprite spriteWithFile:@"baum4.png"];
+	CCSprite* baum2 = [CCSprite spriteWithSpriteFrameName:@"baum4"];
 	baum2.position = ccp(334.183594, 196.355469);
 	baum2.scale = 1.000000;
 	baum2.rotation = 0.000000;
 	[backgroundLayer addChild:baum2];
 
-	CCSprite* baum3 = [CCSprite spriteWithFile:@"baum3.png"];
+	CCSprite* baum3 = [CCSprite spriteWithSpriteFrameName:@"baum3"];
 	baum3.position = ccp(416.796875, 211.628906);
 	baum3.scale = 1.280000;
 	baum3.rotation = 0.000000;
 	[backgroundLayer addChild:baum3];
 
-	CCSprite* baumkrone4 = [CCSprite spriteWithFile:@"baumkrone_2.png"];
+	CCSprite* baumkrone4 = [CCSprite spriteWithSpriteFrameName:@"baumkrone_2"];
 	baumkrone4.position = ccp(488.285156, 298.675781);
 	baumkrone4.scale = 1.000000;
 	baumkrone4.rotation = 0.000000;
 	[backgroundLayer addChild:baumkrone4];
 
-	CCSprite* baumkrone5 = [CCSprite spriteWithFile:@"baumkrone_16.png"];
+	CCSprite* baumkrone5 = [CCSprite spriteWithSpriteFrameName:@"baumkrone_16"];
 	baumkrone5.position = ccp(527.011719, 260.179688);
 	baumkrone5.scale = 1.000000;
 	baumkrone5.rotation = 0.000000;

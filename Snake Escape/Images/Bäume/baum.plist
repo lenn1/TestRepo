@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>frames</key>
+	<dict>
+		
+		<key>baum1</key>
+		<dict>
+			<key>aliases</key>
+			<array>
+			
+			</array>
+			<key>spriteColorRect</key>
+			<string>{{170, 123}, {270, 350}}</string>
+			<key>spriteOffset</key>
+			<string>{55, -48}</string>
+			<key>spriteSize</key>
+			<string>{270, 350}</string>
+			<key>spriteSourceSize</key>
+			<string>{500, 500}</string>
+			<key>spriteTrimmed</key>
+			<true/>
+			<key>textureRect</key>
+			<string>{{0, 380}, {350, 270}}</string>
+			<key>textureRotated</key>
+			<true/>
+		</dict>
+		
+		<key>baum2</key>
+		<dict>
+			<key>aliases</key>
+			<array>
+			
+			</array>
+			<key>spriteColorRect</key>
+			<string>{{85, 87}, {242, 406}}</string>
+			<key>spriteOffset</key>
+			<string>{-44, -40}</string>
+			<key>spriteSize</key>
+			<string>{242, 406}</string>
+			<key>spriteSourceSize</key>
+			<string>{500, 500}</string>
+			<key>spriteTrimmed</key>
+			<true/>
+			<key>textureRect</key>
+			<string>{{352, 380}, {406, 242}}</string>
+			<key>textureRotated</key>
+			<true/>
+		</dict>
+		
+		<key>baum3</key>
+		<dict>
+			<key>aliases</key>
+			<array>
+			
+			</array>
+			<key>spriteColorRect</key>
+			<string>{{162, 169}, {180, 304}}</string>
+			<key>spriteOffset</key>
+			<string>{2, -71}</string>
+			<key>spriteSize</key>
+			<string>{180, 304}</string>
+			<key>spriteSourceSize</key>
+			<string>{500, 500}</string>
+			<key>spriteTrimmed</key>
+			<true/>
+			<key>textureRect</key>
+			<string>{{436, 0}, {304, 180}}</string>
+			<key>textureRotated</key>
+			<true/>
+		</dict>
+		
+		<key>baum4</key>
+		<dict>
+			<key>aliases</key>
+			<array>
+			
+			</array>
+			<key>spriteColorRect</key>
+			<string>{{52, 94}, {434, 378}}</string>
+			<key>spriteOffset</key>
+			<string>{19, -33}</string>
+			<key>spriteSize</key>
+			<string>{434, 378}</string>
+			<key>spriteSourceSize</key>
+			<string>{500, 500}</string>
+			<key>spriteTrimmed</key>
+			<true/>
+			<key>textureRect</key>
+			<string>{{0, 0}, {434, 378}}</string>
+			<key>textureRotated</key>
+			<false/>
+		</dict>
+		
+	</dict>
+	<key>metadata</key>
+	<dict>
+		<key>version</key>
+		<string>1.5.1</string>
+		<key>format</key>
+		<integer>3</integer>
+		<key>size</key>
+		<string>{1024, 1024}</string>
+		<key>name</key>
+		<string>baum</string>
+		<key>premultipliedAlpha</key>
+		<false/>
+		<key>target</key>
+		<dict>
+			<key>name</key>
+			<string>default</string>
+			<key>textureFileName</key>
+			<string>default</string>
+			<key>textureFileExtension</key>
+			<string>.png</string>
+			<key>coordinatesFileName</key>
+			<string>default</string>
+			<key>coordinatesFileExtension</key>
+			<string>.plist</string>
+			<key>premultipliedAlpha</key>
+			<false/>
+		</dict>
+	</dict>
+</dict>
+</plist>

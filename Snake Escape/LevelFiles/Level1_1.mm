@@ -40,19 +40,19 @@
 	ast3.position = ccp(230.328125, 183.835938);
 	ast3.rotation = 0.000000;
 
-	CCSprite* baum0 = [CCSprite spriteWithFile:@"baum1.png"];
+	CCSprite* baum0 = [CCSprite spriteWithSpriteFrameName:@"baum1"];
 	baum0.position = ccp(157.816406, 173.664062);
 	baum0.scale = 1.420000;
 	baum0.rotation = 0.000000;
 	[backgroundLayer addChild:baum0];
 
-	CCSprite* baum1 = [CCSprite spriteWithFile:@"baum2.png"];
+	CCSprite* baum1 = [CCSprite spriteWithSpriteFrameName:@"baum2"];
 	baum1.position = ccp(351.003906, 163.804688);
 	baum1.scale = 1.000000;
 	baum1.rotation = 0.000000;
 	[backgroundLayer addChild:baum1];
 
-	CCSprite* baumkrone2 = [CCSprite spriteWithFile:@"baumkrone_1.png"];
+	CCSprite* baumkrone2 = [CCSprite spriteWithSpriteFrameName:@"baumkrone_1"];
 	baumkrone2.position = ccp(484.128906, 285.148438);
 	baumkrone2.scale = 1.000000;
 	baumkrone2.rotation = 0.000000;
