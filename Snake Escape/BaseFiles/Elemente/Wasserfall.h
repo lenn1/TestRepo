@@ -9,10 +9,12 @@
 #import "CCNode.h"
 #import "cocos2d.h"
 #import "Box2D.h"
+#import "SimpleAudioEngine.h"
 @interface Wasserfall : CCNode
 {
     b2World* world;
     b2Body* _body;
+    ALuint wassersoundTag;
 }
 - (id)initWithWorld:(b2World*)worldptr;
 

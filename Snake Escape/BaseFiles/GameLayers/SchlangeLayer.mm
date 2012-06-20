@@ -267,6 +267,9 @@
 }
 -(void)schlangeVerkohlt
 {
+    [self unschedule:@selector(schlangeVerkohlt)];
+    if(!schlangetot)
+    {
     CCFadeOut *fadeout = [CCFadeOut actionWithDuration:0.1];
     [schlange runAction:fadeout];
     CCParticleSystemQuad* staub = [CCParticleSystemQuad particleWithFile:@"VerkohlterAstZuStaub.plist"];
@@ -275,6 +278,9 @@
     [self addChild:staub];
     [[CCTouchDispatcher sharedDispatcher]removeAllDelegates];
     _body->SetAwake(false);
+    schlangetot = YES;
+        [[SimpleAudioEngine sharedEngine]playEffect:@"verbrennen.wav"];
+    }
     
 }
 -(void)ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event

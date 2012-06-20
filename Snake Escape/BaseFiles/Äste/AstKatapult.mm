@@ -44,9 +44,7 @@
     [self unschedule:@selector(katapultAbschiessenAnimation)];
     if(!abgefeuert)
     {
-      //  [[SimpleAudioEngine sharedEngine] playEffect:@"AstSchalter.wav"];
-      //  [[SimpleAudioEngine sharedEngine] playEffect:@"AstHindernis.mp3"];
-        
+        [[SimpleAudioEngine sharedEngine] playEffect:@"katapult.wav"];        
         [self schedule:@selector(updateSchlange) interval:0.05];
     }
 }

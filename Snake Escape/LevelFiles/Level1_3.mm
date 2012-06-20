@@ -53,9 +53,7 @@
     portalExit.position = ccp(415,135);
     
     [astLayer addAeste:ast1,ast2,ast3,ast4,portalExit,nil];
-    
-    
-    
+       
     
     Affe* affe1 = [[Affe alloc]initWithWorld:world AndDelegate:self];
     [self addChild:affe1];

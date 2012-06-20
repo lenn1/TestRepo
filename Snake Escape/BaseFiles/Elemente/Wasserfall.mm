@@ -51,6 +51,17 @@
     }
     return self;
 }
+-(void)onEnter
+{
+    [super onEnter];
+    [[SimpleAudioEngine sharedEngine]playBackgroundMusic:@"wasserfall.wav" loop:YES];
+}
+-(void)onExit
+{
+    [[SimpleAudioEngine sharedEngine]stopBackgroundMusic];
+    [super onExit];
+
+}
 -(void)setPosition:(CGPoint)position
 {
     [super setPosition:position];

@@ -369,6 +369,12 @@
 		88BB5ECE149E9FE800ED646B /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 88BB5ECD149E9FE800ED646B /* Default.png */; };
 		88BB5ED0149E9FFF00ED646B /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 88BB5ECF149E9FFF00ED646B /* Default@2x.png */; };
 		88BF66AA147821FF00B90B8B /* MathHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 88BF66A9147821FF00B90B8B /* MathHelper.m */; };
+		88C129661592366300D7A4B0 /* affekurz.wav in Resources */ = {isa = PBXBuildFile; fileRef = 88C1295F1592366300D7A4B0 /* affekurz.wav */; };
+		88C129681592366300D7A4B0 /* katapult.wav in Resources */ = {isa = PBXBuildFile; fileRef = 88C129611592366300D7A4B0 /* katapult.wav */; };
+		88C129691592366300D7A4B0 /* sprung.wav in Resources */ = {isa = PBXBuildFile; fileRef = 88C129621592366300D7A4B0 /* sprung.wav */; };
+		88C1296A1592366300D7A4B0 /* verbrennen.wav in Resources */ = {isa = PBXBuildFile; fileRef = 88C129631592366300D7A4B0 /* verbrennen.wav */; };
+		88C1296B1592366300D7A4B0 /* verwandlung.wav in Resources */ = {isa = PBXBuildFile; fileRef = 88C129641592366300D7A4B0 /* verwandlung.wav */; };
+		88C1296C1592366300D7A4B0 /* wasserfall.wav in Resources */ = {isa = PBXBuildFile; fileRef = 88C129651592366300D7A4B0 /* wasserfall.wav */; };
 		88C99D9614B212E700DF0D0A /* Level1_9-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 88C99D9414B212E700DF0D0A /* Level1_9-hd.png */; };
 		88C99D9714B212E700DF0D0A /* Level1_9.png in Resources */ = {isa = PBXBuildFile; fileRef = 88C99D9514B212E700DF0D0A /* Level1_9.png */; };
 		88C99D9B14B2160000DF0D0A /* Level1_12-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 88C99D9914B2160000DF0D0A /* Level1_12-hd.png */; };
@@ -993,6 +999,12 @@
 		88BF66A8147821FF00B90B8B /* MathHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MathHelper.h; sourceTree = "<group>"; };
 		88BF66A9147821FF00B90B8B /* MathHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MathHelper.m; sourceTree = "<group>"; };
 		88C1011D158DE60C00FDE4BB /* AffeDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AffeDelegate.h; path = Tiere/AffeDelegate.h; sourceTree = "<group>"; };
+		88C1295F1592366300D7A4B0 /* affekurz.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = affekurz.wav; sourceTree = "<group>"; };
+		88C129611592366300D7A4B0 /* katapult.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = katapult.wav; sourceTree = "<group>"; };
+		88C129621592366300D7A4B0 /* sprung.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sprung.wav; sourceTree = "<group>"; };
+		88C129631592366300D7A4B0 /* verbrennen.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = verbrennen.wav; sourceTree = "<group>"; };
+		88C129641592366300D7A4B0 /* verwandlung.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = verwandlung.wav; sourceTree = "<group>"; };
+		88C129651592366300D7A4B0 /* wasserfall.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = wasserfall.wav; sourceTree = "<group>"; };
 		88C99D9414B212E700DF0D0A /* Level1_9-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Level1_9-hd.png"; sourceTree = "<group>"; };
 		88C99D9514B212E700DF0D0A /* Level1_9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Level1_9.png; sourceTree = "<group>"; };
 		88C99D9914B2160000DF0D0A /* Level1_12-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Level1_12-hd.png"; sourceTree = "<group>"; };
@@ -1497,6 +1509,12 @@
 		88351476149AAFCF00978285 /* Sound */ = {
 			isa = PBXGroup;
 			children = (
+				88C1295F1592366300D7A4B0 /* affekurz.wav */,
+				88C129611592366300D7A4B0 /* katapult.wav */,
+				88C129621592366300D7A4B0 /* sprung.wav */,
+				88C129631592366300D7A4B0 /* verbrennen.wav */,
+				88C129641592366300D7A4B0 /* verwandlung.wav */,
+				88C129651592366300D7A4B0 /* wasserfall.wav */,
 				882B500414B26FC2005CBCD5 /* feuer.mp3 */,
 				8827416214A28ABA001CA6D6 /* portalopen.wav */,
 				8827416314A28ABA001CA6D6 /* portalopenclose.wav */,
@@ -2924,6 +2942,12 @@
 				88DD3C6115921AA2000AD247 /* schlangeLangZiehenSpriteSheetWasser-hd.png in Resources */,
 				88DD3C6215921AA2000AD247 /* schlangeLangZiehenSpriteSheetWasser.plist in Resources */,
 				88DD3C6315921AA2000AD247 /* schlangeLangZiehenSpriteSheetWasser.png in Resources */,
+				88C129661592366300D7A4B0 /* affekurz.wav in Resources */,
+				88C129681592366300D7A4B0 /* katapult.wav in Resources */,
+				88C129691592366300D7A4B0 /* sprung.wav in Resources */,
+				88C1296A1592366300D7A4B0 /* verbrennen.wav in Resources */,
+				88C1296B1592366300D7A4B0 /* verwandlung.wav in Resources */,
+				88C1296C1592366300D7A4B0 /* wasserfall.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

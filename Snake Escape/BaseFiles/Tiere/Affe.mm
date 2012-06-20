@@ -89,6 +89,7 @@ b2Vec2 rad2vec(float r)
     [self unschedule:@selector(changeToAffe4)];
     [self setDisplayFrame:[[CCSpriteFrameCache sharedSpriteFrameCache]spriteFrameByName:@"affe4"]];
     [self schedule:@selector(changeToAffe0) interval:1];
+    [[SimpleAudioEngine sharedEngine]playEffect:@"affekurz.wav"];
 }
 -(void)changeToAffe0
 {
@@ -107,6 +108,8 @@ b2Vec2 rad2vec(float r)
     
     if(handJoint != NULL)
     {
+        [[SimpleAudioEngine sharedEngine]playEffect:@"sprung.wav"];
+
         lastAst.visitable = YES;
         NSMutableArray* NormaleAeste = [[NSMutableArray alloc]init];
         for(AstNormal* ast in aeste)
@@ -209,6 +212,8 @@ b2Vec2 rad2vec(float r)
 }
 -(void)setAffeAliveAnAst:(id)sender data:(void*)data
 {
+    if(handJoint == NULL)
+    {
     AstNormal* ast = (AstNormal*)data;
     [self setAnkerPosition:ast.position];
     [self setPosition:ccp(ast.position.x-20.0,ast.position.y-45.0)];
@@ -227,6 +232,7 @@ b2Vec2 rad2vec(float r)
     lastAst.visitable = NO;
     body->SetAngularVelocity(0.0);
     body->SetLinearVelocity(b2Vec2_zero);
+    }
 }
 -(void)FrameUpdate:(ccTime)delta
 {

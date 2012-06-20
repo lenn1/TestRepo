@@ -40,9 +40,9 @@ public:
                 {
                     NSLog(@"Feuer an Schlange");
                     if([[levelPtr getSchlangeLayer]schlangeState] != SchlangeStateWater)
-                    {
-                    [[levelPtr getSchlangeLayer]schlangeVerkohlt];
-                    [levelPtr schedule:@selector(schlangeTot) interval:2.0];
+                    {    
+                        [[levelPtr getSchlangeLayer]schlangeVerkohlt];
+                        [levelPtr schedule:@selector(schlangeTot) interval:2.0];
                     }
                     else 
                     {
