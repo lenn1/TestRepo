@@ -26,8 +26,6 @@
 -(void)LevelSetup
 {
     levelPack = 1;
-
-    
     
     self.levelTimeout = 20;
     
@@ -43,6 +41,15 @@
     portalExit.position = ccp(420,150);
 
     [astLayer addAeste:ast1,ast2,portalExit,nil];
+
+    Wasserfall* wasserfall1 = [[Wasserfall alloc]initWithWorld:world];
+    [self addChild:wasserfall1];
+    wasserfall1.position = ccp(50.0,320.0);
+    
+    Feuer* feuer1 = [[Feuer alloc]initWithWorld:world];
+    [self addChild:feuer1];
+    feuer1.position = ccp(350.0, 250.0);
+    
     
 }
 
