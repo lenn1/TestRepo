@@ -1,5 +1,5 @@
 //
-//  Level1_12.h
+//  Level1_14.h
 //  Snake Escape
 //
 //  Created by Pix-Factory
@@ -10,9 +10,9 @@
 #import "cocos2d.h"
 #import "BaseLevel.h"
 
-@interface Level1_12 : BaseLevel
+@interface Level1_14 : BaseLevel
 {
-    AstNormal* ast7;
+    
 }
--(void)astvisitedCheck;
+
 @end

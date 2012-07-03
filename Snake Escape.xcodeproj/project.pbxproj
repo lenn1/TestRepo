@@ -38,6 +38,8 @@
 		88111CF214A1154400E5BF57 /* Level1_6-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 88111CF014A1154400E5BF57 /* Level1_6-hd.png */; };
 		88111CF314A1154400E5BF57 /* Level1_6.png in Resources */ = {isa = PBXBuildFile; fileRef = 88111CF114A1154400E5BF57 /* Level1_6.png */; };
 		88111CF614A115F600E5BF57 /* Level1_7.mm in Sources */ = {isa = PBXBuildFile; fileRef = 88111CF514A115F600E5BF57 /* Level1_7.mm */; };
+		8814E7CF15A38F6A00F70463 /* Level1_13.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8814E7CE15A38F6A00F70463 /* Level1_13.mm */; };
+		8814E7D215A3920F00F70463 /* Level1_14.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8814E7D115A3920F00F70463 /* Level1_14.mm */; };
 		8827416414A28ABB001CA6D6 /* portalopen.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8827416214A28ABA001CA6D6 /* portalopen.wav */; };
 		8827416514A28ABB001CA6D6 /* portalopenclose.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8827416314A28ABA001CA6D6 /* portalopenclose.wav */; };
 		8827417514A2A434001CA6D6 /* Level1_11.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8827417414A2A434001CA6D6 /* Level1_11.mm */; };
@@ -594,6 +596,10 @@
 		88111CF114A1154400E5BF57 /* Level1_6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Level1_6.png; sourceTree = "<group>"; };
 		88111CF414A115F600E5BF57 /* Level1_7.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Level1_7.h; sourceTree = "<group>"; };
 		88111CF514A115F600E5BF57 /* Level1_7.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Level1_7.mm; sourceTree = "<group>"; };
+		8814E7CD15A38F6A00F70463 /* Level1_13.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Level1_13.h; sourceTree = "<group>"; };
+		8814E7CE15A38F6A00F70463 /* Level1_13.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Level1_13.mm; sourceTree = "<group>"; };
+		8814E7D015A3920F00F70463 /* Level1_14.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Level1_14.h; sourceTree = "<group>"; };
+		8814E7D115A3920F00F70463 /* Level1_14.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Level1_14.mm; sourceTree = "<group>"; };
 		8827416214A28ABA001CA6D6 /* portalopen.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = portalopen.wav; sourceTree = "<group>"; };
 		8827416314A28ABA001CA6D6 /* portalopenclose.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = portalopenclose.wav; sourceTree = "<group>"; };
 		8827417314A2A434001CA6D6 /* Level1_11.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Level1_11.h; sourceTree = "<group>"; };
@@ -1997,6 +2003,10 @@
 				88754F4414ABC003008501DC /* Level1_12.mm */,
 				88C99D9914B2160000DF0D0A /* Level1_12-hd.png */,
 				88C99D9A14B2160000DF0D0A /* Level1_12.png */,
+				8814E7CD15A38F6A00F70463 /* Level1_13.h */,
+				8814E7CE15A38F6A00F70463 /* Level1_13.mm */,
+				8814E7D015A3920F00F70463 /* Level1_14.h */,
+				8814E7D115A3920F00F70463 /* Level1_14.mm */,
 			);
 			path = LevelFiles;
 			sourceTree = "<group>";
@@ -3161,6 +3171,8 @@
 				88AB1525156AC65E006468A7 /* Spinne.mm in Sources */,
 				88AE7102156BA84D0042CE1D /* Affe.mm in Sources */,
 				888CE791156D6B2B00615C89 /* Stein.mm in Sources */,
+				8814E7CF15A38F6A00F70463 /* Level1_13.mm in Sources */,
+				8814E7D215A3920F00F70463 /* Level1_14.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
