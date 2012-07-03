@@ -46,7 +46,14 @@ public:
                     }
                     else 
                     {
-                        [[levelPtr getSchlangeLayer]setSchlangeStateNormal];
+                        if([fixA isKindOfClass:[Feuer class]])
+                        {
+                            ((Feuer*)fixA).setSchlangeNormalAfterContact = YES;
+                        }
+                        else
+                        {
+                            ((Feuer*)fixB).setSchlangeNormalAfterContact = YES;
+                        }
                     }
                 }
        
@@ -106,7 +113,34 @@ public:
     
     void EndContact(b2Contact* contact)
     
-    { /* handle end event */ }
+    {
+        for (b2Contact* c = contact; c; c = c->GetNext())
+        {
+            id fixA = (id)c->GetFixtureA()->GetUserData();
+            id fixB = (id)c->GetFixtureB()->GetUserData();
+            
+            // Schlange im Feuer Check.
+            if(([fixA isKindOfClass:[Feuer class]] && [fixB isKindOfClass:[SchlangeLayer class]]) || 
+               ([fixB isKindOfClass:[Feuer class]] && [fixA isKindOfClass:[SchlangeLayer class]]))
+            {
+                NSLog(@"Endcontact Feuer");
+                if([fixA isKindOfClass:[Feuer class]])
+                {
+                    if(((Feuer*)fixA).setSchlangeNormalAfterContact == YES)
+                    {
+                        [levelPtr.getSchlangeLayer setSchlangeStateNormal];
+                    }
+                }
+                else
+                {
+                    if(((Feuer*)fixB).setSchlangeNormalAfterContact == YES)
+                    {
+                        [levelPtr.getSchlangeLayer setSchlangeStateNormal];
+                    }                }
+            }
+
+        }
+    }
     
     
     
@@ -118,7 +152,9 @@ public:
     
     void PostSolve(b2Contact* contact, const b2ContactImpulse* impulse)
     
-    { /* handle post-solve event */ }
+    {   
+    
+    }
     
 };
 

@@ -9,6 +9,7 @@
 #import "Feuer.h"
 #define PTM_RATIO 32.0
 @implementation Feuer
+@synthesize setSchlangeNormalAfterContact;
 - (id)initWithWorld:(b2World*)worldptr 
 {
     self = [super init];
@@ -45,6 +46,7 @@
         staub.positionType = kCCPositionTypeRelative;
         [self addChild:staub];
         
+        setSchlangeNormalAfterContact = NO;
         
     }
     return self;

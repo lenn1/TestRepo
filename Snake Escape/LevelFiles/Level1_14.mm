@@ -7,7 +7,7 @@
 //
 
 #import "Level1_14.h"
-#import "Credits.h"
+#import "Level1_15.h"
 
 @implementation Level1_14
 +(CCScene*)scene
@@ -74,6 +74,6 @@
 }
 -(void)nextLevel
 {
-	[[CCDirector sharedDirector]replaceScene:[Credits scene]];
+	[[CCDirector sharedDirector]replaceScene:[Level1_15 scene]];
 }
 @end

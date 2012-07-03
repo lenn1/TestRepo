@@ -326,6 +326,7 @@
 		884477FB149F8320004CAC10 /* AstHindernisSchalter-Erklaerung-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 884477F9149F8320004CAC10 /* AstHindernisSchalter-Erklaerung-hd.png */; };
 		884477FC149F8320004CAC10 /* AstHindernisSchalter-Erklaerung.png in Resources */ = {isa = PBXBuildFile; fileRef = 884477FA149F8320004CAC10 /* AstHindernisSchalter-Erklaerung.png */; };
 		8845AF8E14A53A0C000B99E9 /* CCNodeExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 8845AF8D14A53A0C000B99E9 /* CCNodeExt.m */; };
+		885132E515A39A4400C3F7AA /* Level1_15.mm in Sources */ = {isa = PBXBuildFile; fileRef = 885132E415A39A4400C3F7AA /* Level1_15.mm */; };
 		8859B0C4147C7F7E009F08EE /* PortalEntry.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8859B0C3147C7F7E009F08EE /* PortalEntry.mm */; };
 		885F01A0147C74F700EA546F /* Level1_4.mm in Sources */ = {isa = PBXBuildFile; fileRef = 885F019B147C74F700EA546F /* Level1_4.mm */; };
 		885F01A1147C74F700EA546F /* Level1_8-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 885F019C147C74F700EA546F /* Level1_8-hd.png */; };
@@ -937,6 +938,8 @@
 		8845AF8714A536BD000B99E9 /* PauseLayerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PauseLayerDelegate.h; sourceTree = "<group>"; };
 		8845AF8C14A53A0C000B99E9 /* CCNodeExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCNodeExt.h; path = BaseFiles/GameLayers/CCNodeExt.h; sourceTree = "<group>"; };
 		8845AF8D14A53A0C000B99E9 /* CCNodeExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CCNodeExt.m; path = BaseFiles/GameLayers/CCNodeExt.m; sourceTree = "<group>"; };
+		885132E315A39A4400C3F7AA /* Level1_15.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Level1_15.h; sourceTree = "<group>"; };
+		885132E415A39A4400C3F7AA /* Level1_15.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Level1_15.mm; sourceTree = "<group>"; };
 		8859B0C2147C7F7E009F08EE /* PortalEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PortalEntry.h; sourceTree = "<group>"; };
 		8859B0C3147C7F7E009F08EE /* PortalEntry.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PortalEntry.mm; sourceTree = "<group>"; };
 		885F019A147C74F700EA546F /* Level1_4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Level1_4.h; sourceTree = "<group>"; };
@@ -2007,6 +2010,8 @@
 				8814E7CE15A38F6A00F70463 /* Level1_13.mm */,
 				8814E7D015A3920F00F70463 /* Level1_14.h */,
 				8814E7D115A3920F00F70463 /* Level1_14.mm */,
+				885132E315A39A4400C3F7AA /* Level1_15.h */,
+				885132E415A39A4400C3F7AA /* Level1_15.mm */,
 			);
 			path = LevelFiles;
 			sourceTree = "<group>";
@@ -3173,6 +3178,7 @@
 				888CE791156D6B2B00615C89 /* Stein.mm in Sources */,
 				8814E7CF15A38F6A00F70463 /* Level1_13.mm in Sources */,
 				8814E7D215A3920F00F70463 /* Level1_14.mm in Sources */,
+				885132E515A39A4400C3F7AA /* Level1_15.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

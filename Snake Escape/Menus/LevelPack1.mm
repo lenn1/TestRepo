@@ -21,6 +21,7 @@
 #import "Level1_12.h"
 #import "Level1_13.h"
 #import "Level1_14.h"
+#import "Level1_15.h"
 
 @implementation LevelPack1
 +(CCScene*) scene
@@ -44,7 +45,7 @@
 
         for(int i=2;i<=21;i++)
         {
-            if([[[NSUserDefaults standardUserDefaults]objectForKey:[NSString stringWithFormat:@"Level1_%d",i-1]]intValue] != 0 && i<=14)
+            if([[[NSUserDefaults standardUserDefaults]objectForKey:[NSString stringWithFormat:@"Level1_%d",i-1]]intValue] != 0 && i<=15)
             {
                 CCMenuItemImage* temp = [CCMenuItemImage itemFromNormalImage:@"IconLevel.png" selectedImage:@"IconSelectedLevel.png" target:self selector:NSSelectorFromString([NSString stringWithFormat:@"runLevel1_%d",i])];
                 
@@ -128,7 +129,7 @@
 -(void)runLevel1_12{[[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:0.5 scene:[Level1_12 scene]]];}
 -(void)runLevel1_13{[[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:0.5 scene:[Level1_13 scene]]];}
 -(void)runLevel1_14{[[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:0.5 scene:[Level1_14 scene]]];}
--(void)runLevel1_15{};
+-(void)runLevel1_15{[[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:0.5 scene:[Level1_15 scene]]];}
 -(void)runLevel1_16{};
 -(void)runLevel1_17{};
 -(void)runLevel1_18{};

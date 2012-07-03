@@ -13,6 +13,8 @@
 {
     b2World* world;
     b2Body* _body;
+    BOOL setSchlangeNormalAfterContact;
 }
 - (id)initWithWorld:(b2World*)worldptr;
+@property BOOL setSchlangeNormalAfterContact;
 @end
